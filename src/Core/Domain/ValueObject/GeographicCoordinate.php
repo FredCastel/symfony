@@ -1,0 +1,16 @@
+<?php
+
+namespace Core\Domain\ValueObject;
+
+use Core\Service\Assert\Assert;
+
+abstract class GeographicCoordinate extends SimpleValueObject
+{
+    protected function internalCheck(): void
+    {
+        Assert::that($this->value)
+            ->notEmpty()
+            ->notNull()
+            ->float();
+    }
+}

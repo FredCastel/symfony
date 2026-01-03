@@ -1,0 +1,32 @@
+<?= "<?php\n" ?>
+/**
+ *===========================================
+ *===== GENERATED class NEVER CHANGE IT  ====
+ *===========================================
+ */
+
+namespace <?= $ns ?>;
+
+<?= $class_data->getUseStatements(); ?>
+
+<?= $class_data->getClassDeclaration() ?> 
+{
+    public function __construct(
+        <?= $makers->doctrineEntityRepositoryMaker::getName($resource) ?> $repo,
+        <?= $makers->doctrineMapperMaker::getName($resource) ?> $mapper,
+        EntityManagerInterface $em
+    ) {
+        parent::__construct($repo, $mapper, $em);
+    }
+    
+    public function listenTo(): iterable
+    {
+        <?php if($actions):?>
+        <?php foreach ($actions as $action): ?>
+        yield <?= $makers->domainEventMaker::getName($action) ?>::class; 
+        <?php endforeach; ?>
+        <?php else: ?>
+        yield [];
+        <?php endif; ?>
+    }
+}

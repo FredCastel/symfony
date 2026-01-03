@@ -1,0 +1,3688 @@
+{
+  "key": "d4a83082-79bd-48f7-b384-079b17af7864",
+  "name": "Gestion",
+  "enabled": true,
+  "namespaces": [
+    {
+      "key": "core",
+      "name": "CORE",
+      "enabled": true,
+      "contexts": [],
+      "value_objects": [
+        {
+          "key": "b369caf7-2b8f-428e-9333-b66aecee81a4",
+          "name": "Address",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "27135afb-7e4e-411b-8459-59c895f48f39",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "6067089e-3971-48b7-a483-4c38911421ea",
+          "name": "AddressCommunication",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "fe363568-a2bf-44df-89f1-d701b061622b",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "f01f73c7-007d-40a0-9b31-f4503327cdd2",
+          "name": "AddressLocation",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "bb244be8-3d1b-4ebf-a887-ec45c8230b97",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "c735c9e9-4051-47be-a462-d3ece360828e",
+          "name": "Amount",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "c2061b14-6520-4f5f-97c8-b302445a61da",
+              "name": "Value",
+              "enabled": true,
+              "target_value_object_ref": "88d18c2f-4036-4ed8-b3dc-a8460f56ef23"
+            },
+            {
+              "key": "f64dd8e0-27bd-4126-a384-6fd1b276214a",
+              "name": "Currency",
+              "enabled": true,
+              "target_value_object_ref": "7bb988ce-d74f-4989-aa1b-122c9505ae3d",
+              "reference": true
+            }
+          ]
+        },
+        {
+          "key": "core>category",
+          "name": "Category",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "2039fc00-5f9a-4468-8692-1e0149586383",
+              "name": "Value",
+              "enabled": true,
+              "type": "char",
+              "length": 20
+            }
+          ]
+        },
+        {
+          "key": "80a6a147-5268-4ca9-bf96-19ccbbe41b44",
+          "name": "City",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "65fd2b03-68fc-47b0-89ef-7b2f5e57d68c",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "1790742e-dd12-45d6-afd3-c6b3fb1f7441",
+          "name": "Country",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "2d6b50fd-5b9c-439f-a3d7-160bc646822e",
+              "name": "Code",
+              "enabled": true,
+              "type": "char",
+              "length": 3
+            }
+          ]
+        },
+        {
+          "key": "7bb988ce-d74f-4989-aa1b-122c9505ae3d",
+          "name": "Currency",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "c2b049dd-bf59-4625-8fb4-54cc2806150e",
+              "name": "Code",
+              "enabled": true,
+              "type": "char",
+              "length": 3
+            }
+          ]
+        },
+        {
+          "key": "264d59be-bbd1-4806-9a51-7df644e2f2c2",
+          "name": "DateTime",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "97501307-8b20-4165-a62c-ff1a0ef8aa7f",
+              "name": "Value",
+              "enabled": true,
+              "type": "datetime"
+            }
+          ]
+        },
+        {
+          "key": "5d858ca6-0a9d-4573-91f1-d92092b74964",
+          "name": "Email",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "3f0c80fb-16ff-4d32-9173-e82c6381cfed",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "88d18c2f-4036-4ed8-b3dc-a8460f56ef23",
+          "name": "Float",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "daec1307-e2e1-407c-80f5-442ac361f22f",
+              "name": "Value",
+              "enabled": true,
+              "type": "float"
+            }
+          ]
+        },
+        {
+          "key": "core>id",
+          "name": "Id",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "core>id>input",
+              "name": "Value",
+              "enabled": true,
+              "type": "id"
+            }
+          ]
+        },
+        {
+          "key": "f975a5c7-23bb-40e5-8b21-12b537854b69",
+          "name": "Image",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "ac1480b5-5415-4e04-b681-d043317b6009",
+              "name": "Value",
+              "enabled": true,
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "key": "3fc06557-e89d-4037-8684-01ce47fe71f8",
+          "name": "Label",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "2372a4a2-79e3-43cf-bfeb-252a36b3bd5d",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "00b71014-422e-4657-ac9d-a65c58dfc1c7",
+          "name": "Name",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "b9a7304b-5a27-4c28-b84a-c8e82111eacb",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "e259f493-ff60-4b42-8f03-e514b0098601",
+          "name": "Quantity",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "f70d9455-719b-463c-aea3-4a9f96015ce9",
+              "name": "Value",
+              "enabled": true,
+              "target_value_object_ref": "88d18c2f-4036-4ed8-b3dc-a8460f56ef23"
+            },
+            {
+              "key": "559a8072-9a52-41ac-a14b-be2ce8a84dd5",
+              "name": "Unit",
+              "enabled": true,
+              "target_value_object_ref": "b25c4a07-3c65-456f-9c7d-fa9585fffcaf",
+              "reference": true
+            }
+          ]
+        },
+        {
+          "key": "core>simpleValueObject",
+          "name": "SimpleValueObject",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "52c51408-80bd-4164-b487-7aecc8cd0139",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "core>state",
+          "name": "State",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "27b767d8-d32b-4ebb-836d-50fa5b199185",
+              "name": "Value",
+              "enabled": true,
+              "type": "char",
+              "length": 20
+            }
+          ]
+        },
+        {
+          "key": "e931eb5e-3694-418f-80e0-d75294b3cbec",
+          "name": "Title",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "5061653e-63dc-43d3-ab3d-9afbff60464a",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "f9ecdd44-5ac9-4f7b-bd26-4a31ac1ef528",
+          "name": "UnZipCode",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "b5b4288d-dec3-4c60-a329-39cb7a6db36d",
+              "name": "Value",
+              "enabled": true,
+              "type": "char"
+            }
+          ]
+        },
+        {
+          "key": "b25c4a07-3c65-456f-9c7d-fa9585fffcaf",
+          "name": "Unit",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "665f8caa-be93-4cac-b43a-028d0cd76287",
+              "name": "Code",
+              "enabled": true,
+              "type": "char"
+            }
+          ]
+        },
+        {
+          "key": "43f22535-ffa1-46d0-992c-8c1d72e03099",
+          "name": "Url",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "5a1bed88-107f-42e8-bb7b-ff5bfca3ca73",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "key": "8cc60da4-20a3-4b53-9b88-0c1751b0579e",
+          "name": "ValidityPeriod",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "440cf00a-927c-4649-9acc-f12c2b054db8",
+              "name": "Since",
+              "enabled": true,
+              "target_value_object_ref": "264d59be-bbd1-4806-9a51-7df644e2f2c2"
+            },
+            {
+              "key": "29e7fc65-562a-484c-9950-c616f717ae47",
+              "name": "Until",
+              "enabled": true,
+              "target_value_object_ref": "264d59be-bbd1-4806-9a51-7df644e2f2c2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "c252c417-2eba-43d5-8dfd-388e6ca8d4fa",
+      "name": "Banking",
+      "description": "Manage Banking information like\n- account\n- payment ",
+      "enabled": true,
+      "contexts": [
+        {
+          "key": "a9073851-a29e-4a13-ad39-6eb9e36fbbf6",
+          "name": "Bank",
+          "enabled": true,
+          "aggregates": [
+            {
+              "key": "3c0cae37-e74e-4aca-ba17-43e66c127f22",
+              "name": "Bank",
+              "enabled": true,
+              "root": {
+                "key": "27856928-0382-46c7-b87e-0db00b61734e",
+                "name": "Bank",
+                "enabled": true,
+                "properties": [
+                  {
+                    "key": "a9d1aaa6-0aa4-466f-96b5-e22545f9d6c0",
+                    "name": "Name",
+                    "description": "bank name",
+                    "enabled": true,
+                    "value_object_ref": "00b71014-422e-4657-ac9d-a65c58dfc1c7",
+                    "inputs": [
+                      {
+                        "key": "3f281f49-4888-4dd2-9e12-875f46954f6c",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "b9a7304b-5a27-4c28-b84a-c8e82111eacb"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "9f5804ed-3839-474a-aeb5-5d5db94171ab",
+                    "name": "Country",
+                    "description": "bank country",
+                    "enabled": true,
+                    "value_object_ref": "1790742e-dd12-45d6-afd3-c6b3fb1f7441",
+                    "inputs": [
+                      {
+                        "key": "bdd373a6-991d-4c41-8534-481e324a3eea",
+                        "name": "Code",
+                        "enabled": true,
+                        "valueObject_input_ref": "2d6b50fd-5b9c-439f-a3d7-160bc646822e"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "6fbfcc86-bf50-485e-ac55-e1d1e12ec32e",
+                    "name": "State",
+                    "description": "bank state",
+                    "enabled": true,
+                    "value_object_ref": "8c355604-e9d3-45d5-9c62-46a99873e357",
+                    "inputs": [
+                      {
+                        "key": "448b0abb-d3bf-44ba-945f-994c614763ab",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "27b767d8-d32b-4ebb-836d-50fa5b199185"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "ad7d677f-d25f-481c-a914-1f562774c755",
+                    "name": "ValidityPeriod",
+                    "enabled": true,
+                    "value_object_ref": "8cc60da4-20a3-4b53-9b88-0c1751b0579e",
+                    "inputs": [
+                      {
+                        "key": "da810b06-1fc2-47fb-9b19-02bc21d0dbef",
+                        "name": "Since",
+                        "enabled": true,
+                        "valueObject_input_ref": "440cf00a-927c-4649-9acc-f12c2b054db8"
+                      },
+                      {
+                        "key": "8e475f38-45b5-4f43-b50a-e016f9f34012",
+                        "name": "Until",
+                        "enabled": true,
+                        "valueObject_input_ref": "29e7fc65-562a-484c-9950-c616f717ae47"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "f0c5eb4d-469c-4356-b9f4-65fe7b5d11cd",
+                    "name": "Url",
+                    "enabled": true,
+                    "nullable": true,
+                    "value_object_ref": "43f22535-ffa1-46d0-992c-8c1d72e03099",
+                    "inputs": [
+                      {
+                        "key": "18594a97-b23d-49b2-8f46-080198280a99",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "5a1bed88-107f-42e8-bb7b-ff5bfca3ca73"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "dda9664e-3cb8-45f1-bb0a-815823dc389d",
+                    "name": "Bic",
+                    "enabled": true,
+                    "nullable": true,
+                    "value_object_ref": "e05d2e05-b623-469c-a21c-0bf10bef9aa0",
+                    "inputs": [
+                      {
+                        "key": "762bf377-37ef-4270-9c2e-e94da8c64963",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "52c51408-80bd-4164-b487-7aecc8cd0139"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "f9e2b184-9fbe-4999-b7ae-46986d1767b7",
+                    "name": "Image",
+                    "enabled": true,
+                    "nullable": true,
+                    "value_object_ref": "f975a5c7-23bb-40e5-8b21-12b537854b69",
+                    "inputs": [
+                      {
+                        "key": "0362d82e-20a8-4f1a-9b47-c888d380c0e2",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "ac1480b5-5415-4e04-b681-d043317b6009"
+                      }
+                    ]
+                  }
+                ],
+                "relations": [],
+                "actions": [
+                  {
+                    "key": "e8203bd0-a9f7-42c5-bd71-e6d6ee98ce2c",
+                    "name": "Register",
+                    "description": "Create a new bank",
+                    "enabled": true,
+                    "event_name": "BankRegistered",
+                    "role": "insert",
+                    "parameters": [
+                      {
+                        "key": "65d54614-05a1-46f4-879a-04375c750163",
+                        "name": "Name",
+                        "description": "bank name",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "a9d1aaa6-0aa4-466f-96b5-e22545f9d6c0",
+                        "target_property_input_ref": "3f281f49-4888-4dd2-9e12-875f46954f6c"
+                      },
+                      {
+                        "key": "9bc4e13e-80a3-4ea1-aa3e-99dac3055c00",
+                        "name": "State",
+                        "description": "bank initial state",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "6fbfcc86-bf50-485e-ac55-e1d1e12ec32e",
+                        "target_property_input_ref": "448b0abb-d3bf-44ba-945f-994c614763ab"
+                      },
+                      {
+                        "key": "397a5be6-057b-4fac-ab58-1d30ba943af0",
+                        "name": "Country",
+                        "description": "bank country",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "9f5804ed-3839-474a-aeb5-5d5db94171ab",
+                        "target_property_input_ref": "bdd373a6-991d-4c41-8534-481e324a3eea"
+                      },
+                      {
+                        "key": "90a3247c-8ddc-4cea-8a99-10deed114d33",
+                        "name": "Url",
+                        "description": "url of the bank",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "f0c5eb4d-469c-4356-b9f4-65fe7b5d11cd",
+                        "target_property_input_ref": "18594a97-b23d-49b2-8f46-080198280a99"
+                      },
+                      {
+                        "key": "9a29db72-cf62-41bf-bd53-e6c9a6d36c14",
+                        "name": "Bic",
+                        "description": "bic code of the bank",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "dda9664e-3cb8-45f1-bb0a-815823dc389d",
+                        "target_property_input_ref": "762bf377-37ef-4270-9c2e-e94da8c64963"
+                      },
+                      {
+                        "key": "0c82d167-1659-4e66-9fba-18064e26fd3c",
+                        "name": "Image",
+                        "description": "logo of the bank",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "f9e2b184-9fbe-4999-b7ae-46986d1767b7",
+                        "target_property_input_ref": "0362d82e-20a8-4f1a-9b47-c888d380c0e2"
+                      },
+                      {
+                        "key": "6955ed06-0b86-4283-a559-f81d22b480ba",
+                        "name": "ValidSince",
+                        "description": "bank validity start date, can be null",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "ad7d677f-d25f-481c-a914-1f562774c755",
+                        "target_property_input_ref": "da810b06-1fc2-47fb-9b19-02bc21d0dbef"
+                      },
+                      {
+                        "key": "0b9c30e1-0b40-4dce-95ee-5db1af538d17",
+                        "name": "ValidUntil",
+                        "description": "bank validity end date, can be null",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "ad7d677f-d25f-481c-a914-1f562774c755",
+                        "target_property_input_ref": "da810b06-1fc2-47fb-9b19-02bc21d0dbef"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "a410778e-c865-4e7c-a4a4-1c4dae177e1b",
+                    "name": "Enable",
+                    "description": "Change bank status to enabled",
+                    "enabled": true,
+                    "event_name": "BankEnabled",
+                    "role": "update",
+                    "parameters": []
+                  },
+                  {
+                    "key": "c9243290-0e4d-43a8-a23d-0e6a36c2891f",
+                    "name": "Disable",
+                    "description": "Change bank status to disabled",
+                    "enabled": true,
+                    "event_name": "BankDisabled",
+                    "role": "update",
+                    "parameters": []
+                  },
+                  {
+                    "key": "ec37541a-330a-4d72-934a-bed4f1213333",
+                    "name": "Change",
+                    "description": "Change bank simple properties",
+                    "enabled": true,
+                    "event_name": "BankChanged",
+                    "role": "update",
+                    "parameters": [
+                      {
+                        "key": "4b37c0ac-7fab-4e14-8fdf-e0ec8e8da954",
+                        "name": "Name",
+                        "description": "change bank name",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "a9d1aaa6-0aa4-466f-96b5-e22545f9d6c0",
+                        "target_property_input_ref": "3f281f49-4888-4dd2-9e12-875f46954f6c"
+                      },
+                      {
+                        "key": "280b1320-3984-4486-903b-1f260e6f347e",
+                        "name": "Url",
+                        "description": "change bank url",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "f0c5eb4d-469c-4356-b9f4-65fe7b5d11cd",
+                        "target_property_input_ref": "18594a97-b23d-49b2-8f46-080198280a99"
+                      },
+                      {
+                        "key": "c2dc03c3-957c-43af-b3cb-60f168f54204",
+                        "name": "Bic",
+                        "description": "change bank bic code",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "dda9664e-3cb8-45f1-bb0a-815823dc389d",
+                        "target_property_input_ref": "762bf377-37ef-4270-9c2e-e94da8c64963"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "01337d13-2af6-4a52-9525-876ff4ee8d59",
+                    "name": "Remove",
+                    "description": "Delete a bank",
+                    "enabled": true,
+                    "event_name": "BankRemoved",
+                    "role": "delete",
+                    "parameters": []
+                  }
+                ],
+                "entities": []
+              },
+              "commands": [
+                {
+                  "key": "87ad070e-8e57-478a-a635-1cd0473aebc2",
+                  "name": "RegisterBank",
+                  "description": "Create a new bank",
+                  "enabled": true,
+                  "target_action_ref": "e8203bd0-a9f7-42c5-bd71-e6d6ee98ce2c",
+                  "parameters": [
+                    {
+                      "key": "cedd88b2-58bd-453c-8754-61788d2d8df7",
+                      "name": "Name",
+                      "description": "bank name",
+                      "enabled": true,
+                      "target_parameter_ref": "65d54614-05a1-46f4-879a-04375c750163"
+                    },
+                    {
+                      "key": "7b8b543f-1f7a-4728-aa52-a72de2782718",
+                      "name": "Country",
+                      "description": "bank country",
+                      "enabled": true,
+                      "target_parameter_ref": "397a5be6-057b-4fac-ab58-1d30ba943af0"
+                    },
+                    {
+                      "key": "e38b48ad-146d-4b97-87f1-cc3e91c0f839",
+                      "name": "Url",
+                      "description": "url of the bank",
+                      "enabled": true,
+                      "target_parameter_ref": "90a3247c-8ddc-4cea-8a99-10deed114d33"
+                    },
+                    {
+                      "key": "f3b68d55-b054-4c70-bcc7-72bec9d7b2be",
+                      "name": "Bic",
+                      "description": "bic code of the bank",
+                      "enabled": true,
+                      "target_parameter_ref": "9a29db72-cf62-41bf-bd53-e6c9a6d36c14"
+                    },
+                    {
+                      "key": "b1dddb43-0218-444e-9ee0-25d239da44e9",
+                      "name": "ValidSince",
+                      "description": "bank validity start date, can be null",
+                      "enabled": false,
+                      "target_parameter_ref": "6955ed06-0b86-4283-a559-f81d22b480ba"
+                    },
+                    {
+                      "key": "5d8fbc46-f92f-4bf1-8e51-faa3be5fd49c",
+                      "name": "ValidUntil",
+                      "description": "bank validity end date, can be null",
+                      "enabled": false,
+                      "target_parameter_ref": "0b9c30e1-0b40-4dce-95ee-5db1af538d17"
+                    },
+                    {
+                      "key": "dbd2bd1f-8361-47cc-8385-152419feb39a",
+                      "name": "State",
+                      "description": "bank initial state",
+                      "enabled": false,
+                      "target_parameter_ref": "9bc4e13e-80a3-4ea1-aa3e-99dac3055c00"
+                    },
+                    {
+                      "key": "c8bd90c2-5444-4e53-8d3f-d94a3e4abe1a",
+                      "name": "Image",
+                      "description": "logo of the bank",
+                      "enabled": false,
+                      "target_parameter_ref": "0c82d167-1659-4e66-9fba-18064e26fd3c"
+                    }
+                  ]
+                },
+                {
+                  "key": "6cbe6a1b-d00b-4b3c-bc24-999a52c7e68e",
+                  "name": "EnableBank",
+                  "description": "Change bank status to enabled",
+                  "enabled": true,
+                  "target_action_ref": "a410778e-c865-4e7c-a4a4-1c4dae177e1b",
+                  "parameters": []
+                },
+                {
+                  "key": "abd521e9-91f5-4440-95c5-5cc8eb4ac962",
+                  "name": "DisableBank",
+                  "description": "Change bank status to disabled",
+                  "enabled": true,
+                  "target_action_ref": "c9243290-0e4d-43a8-a23d-0e6a36c2891f",
+                  "parameters": []
+                },
+                {
+                  "key": "1b384608-06ad-4056-a006-735a1c1c5507",
+                  "name": "RemoveBank",
+                  "description": "Delete a bank",
+                  "enabled": true,
+                  "target_action_ref": "01337d13-2af6-4a52-9525-876ff4ee8d59",
+                  "parameters": []
+                },
+                {
+                  "key": "037e9382-deb4-4b26-8dd1-053a41bc19ee",
+                  "name": "RenameBank",
+                  "description": "Change bank name",
+                  "enabled": true,
+                  "target_action_ref": "ec37541a-330a-4d72-934a-bed4f1213333",
+                  "parameters": [
+                    {
+                      "key": "31239d0d-fbec-492f-b620-fe6faf5af10e",
+                      "name": "Name",
+                      "description": "change bank name",
+                      "enabled": true,
+                      "target_parameter_ref": "4b37c0ac-7fab-4e14-8fdf-e0ec8e8da954"
+                    },
+                    {
+                      "key": "be48bfc3-1df7-48cc-987d-16909b95d25f",
+                      "name": "Url",
+                      "description": "change bank url",
+                      "enabled": true,
+                      "target_parameter_ref": "280b1320-3984-4486-903b-1f260e6f347e"
+                    },
+                    {
+                      "key": "8a21a712-c9c0-4d97-8491-96948352b8c4",
+                      "name": "Bic",
+                      "description": "change bank bic code",
+                      "enabled": true,
+                      "target_parameter_ref": "c2dc03c3-957c-43af-b3cb-60f168f54204"
+                    }
+                  ]
+                },
+                {
+                  "key": "6dd711a7-8b10-479b-9d99-ef909c76ff84",
+                  "name": "SetBankUrl",
+                  "description": "Change bank url",
+                  "enabled": true,
+                  "target_action_ref": "ec37541a-330a-4d72-934a-bed4f1213333",
+                  "parameters": [
+                    {
+                      "key": "4eb65706-b086-40cf-ab1d-3bb0fe92a003",
+                      "name": "Url",
+                      "description": "change bank url",
+                      "enabled": true,
+                      "target_parameter_ref": "280b1320-3984-4486-903b-1f260e6f347e"
+                    },
+                    {
+                      "key": "90b8942a-3a15-41ef-88da-51b522c84e02",
+                      "name": "Name",
+                      "description": "change bank name",
+                      "enabled": true,
+                      "target_parameter_ref": "4b37c0ac-7fab-4e14-8fdf-e0ec8e8da954"
+                    },
+                    {
+                      "key": "7f78f142-66ad-4ac8-88da-4a81580a2e69",
+                      "name": "Bic",
+                      "description": "change bank bic code",
+                      "enabled": true,
+                      "target_parameter_ref": "c2dc03c3-957c-43af-b3cb-60f168f54204"
+                    }
+                  ]
+                },
+                {
+                  "key": "bdb9c699-8c04-49e9-b807-c509117f5197",
+                  "name": "SetBankBic",
+                  "description": "Change bank bic",
+                  "enabled": true,
+                  "target_action_ref": "ec37541a-330a-4d72-934a-bed4f1213333",
+                  "parameters": [
+                    {
+                      "key": "b69e23a5-f005-496c-8809-bf5dbf46824e",
+                      "name": "Bic",
+                      "description": "change bank bic code",
+                      "enabled": true,
+                      "target_parameter_ref": "c2dc03c3-957c-43af-b3cb-60f168f54204"
+                    },
+                    {
+                      "key": "024c7560-ddb4-4e01-874f-4b3706f7622e",
+                      "name": "Name",
+                      "description": "change bank name",
+                      "enabled": true,
+                      "target_parameter_ref": "4b37c0ac-7fab-4e14-8fdf-e0ec8e8da954"
+                    },
+                    {
+                      "key": "4bd4740d-b073-4856-b003-1f8061fed1ab",
+                      "name": "Url",
+                      "description": "change bank url",
+                      "enabled": true,
+                      "target_parameter_ref": "280b1320-3984-4486-903b-1f260e6f347e"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "resources": [
+            {
+              "key": "8a0b2b9e-69bc-4a48-9de1-87dd40fc18b2",
+              "name": "Bank",
+              "enabled": true,
+              "table_name": "banking_bank",
+              "api_path": "banking-bank",
+              "target_entity_ref": "27856928-0382-46c7-b87e-0db00b61734e",
+              "fields": [
+                {
+                  "key": "e7d6f4cb-3afb-434b-a768-d9d3edeaac57",
+                  "name": "name",
+                  "description": "bank name Value",
+                  "enabled": true,
+                  "type": "string",
+                  "nullable": false,
+                  "target_property_ref": "a9d1aaa6-0aa4-466f-96b5-e22545f9d6c0",
+                  "target_property_input_ref": "3f281f49-4888-4dd2-9e12-875f46954f6c"
+                },
+                {
+                  "key": "2c32a22f-3abf-4977-a0ff-9d7a07911969",
+                  "name": "countrycode",
+                  "description": "bank country Code",
+                  "enabled": true,
+                  "type": "string",
+                  "length": 3,
+                  "nullable": false,
+                  "target_property_ref": "9f5804ed-3839-474a-aeb5-5d5db94171ab",
+                  "target_property_input_ref": "bdd373a6-991d-4c41-8534-481e324a3eea"
+                },
+                {
+                  "key": "a42dfd43-28a4-427f-b43d-80b7bbfd3917",
+                  "name": "state",
+                  "description": "bank state Value",
+                  "enabled": true,
+                  "type": "string",
+                  "length": 20,
+                  "nullable": false,
+                  "target_property_ref": "6fbfcc86-bf50-485e-ac55-e1d1e12ec32e",
+                  "target_property_input_ref": "448b0abb-d3bf-44ba-945f-994c614763ab"
+                },
+                {
+                  "key": "8680fd76-085f-4207-9640-4c86bfcb3601",
+                  "name": "validityperiodsince",
+                  "description": "ValidityPeriod Since",
+                  "enabled": true,
+                  "type": "\\DateTimeImmutable",
+                  "nullable": false,
+                  "target_property_ref": "ad7d677f-d25f-481c-a914-1f562774c755",
+                  "target_property_input_ref": "da810b06-1fc2-47fb-9b19-02bc21d0dbef"
+                },
+                {
+                  "key": "837250c7-7a7c-4b79-a234-ae16692af193",
+                  "name": "validityperioduntil",
+                  "description": "ValidityPeriod Until",
+                  "enabled": true,
+                  "type": "\\DateTimeImmutable",
+                  "nullable": false,
+                  "target_property_ref": "ad7d677f-d25f-481c-a914-1f562774c755",
+                  "target_property_input_ref": "8e475f38-45b5-4f43-b50a-e016f9f34012"
+                },
+                {
+                  "key": "fbd9d989-849e-4b89-b72e-0b5a55e28091",
+                  "name": "url",
+                  "description": "Url Value",
+                  "enabled": true,
+                  "type": "string",
+                  "nullable": true,
+                  "target_property_ref": "f0c5eb4d-469c-4356-b9f4-65fe7b5d11cd",
+                  "target_property_input_ref": "18594a97-b23d-49b2-8f46-080198280a99"
+                },
+                {
+                  "key": "2422e6c8-5668-4771-9263-56aebc204e10",
+                  "name": "bic",
+                  "description": "Bic Value",
+                  "enabled": true,
+                  "type": "string",
+                  "nullable": true,
+                  "target_property_ref": "dda9664e-3cb8-45f1-bb0a-815823dc389d",
+                  "target_property_input_ref": "762bf377-37ef-4270-9c2e-e94da8c64963"
+                },
+                {
+                  "key": "31c23747-68ca-4ebb-af02-a1187989c8c9",
+                  "name": "image",
+                  "description": "Image Value",
+                  "enabled": true,
+                  "type": "string",
+                  "columnType": "text",
+                  "nullable": true,
+                  "target_property_ref": "f9e2b184-9fbe-4999-b7ae-46986d1767b7",
+                  "target_property_input_ref": "0362d82e-20a8-4f1a-9b47-c888d380c0e2"
+                }
+              ],
+              "associations": [],
+              "parents": [],
+              "operations": [
+                {
+                  "key": "35136e37-72db-48e8-8e2d-025e36e48de0",
+                  "name": "Register",
+                  "description": "Create a new bank",
+                  "enabled": true,
+                  "method": "POST",
+                  "api_path": "register",
+                  "target_command_ref": "87ad070e-8e57-478a-a635-1cd0473aebc2"
+                },
+                {
+                  "key": "6f4656e3-b52b-4eab-9e14-5be0b9bd91df",
+                  "name": "Enable",
+                  "description": "Change bank status to enabled",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "enable",
+                  "target_command_ref": "6cbe6a1b-d00b-4b3c-bc24-999a52c7e68e"
+                },
+                {
+                  "key": "b477965e-684c-431d-9e2a-aef2493318dd",
+                  "name": "Disable",
+                  "description": "Change bank status to disabled",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "disable",
+                  "target_command_ref": "abd521e9-91f5-4440-95c5-5cc8eb4ac962"
+                },
+                {
+                  "key": "df764671-ff2f-4b92-8ea2-83dde8476a1d",
+                  "name": "Remove",
+                  "description": "Delete a bank",
+                  "enabled": true,
+                  "method": "DELETE",
+                  "api_path": "remove",
+                  "target_command_ref": "1b384608-06ad-4056-a006-735a1c1c5507"
+                },
+                {
+                  "key": "a3eee81e-626a-4e5c-9045-4a095852018c",
+                  "name": "Rename",
+                  "description": "Change bank name",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "rename",
+                  "target_command_ref": "037e9382-deb4-4b26-8dd1-053a41bc19ee"
+                },
+                {
+                  "key": "f14909ba-b940-4b7c-a71f-6d7840f671fe",
+                  "name": "SetUrl",
+                  "description": "Change bank url",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "set-url",
+                  "target_command_ref": "6dd711a7-8b10-479b-9d99-ef909c76ff84"
+                },
+                {
+                  "key": "237c9be5-7813-443f-961d-072392e2c575",
+                  "name": "SetBic",
+                  "description": "Change bank bic",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "set-bic",
+                  "target_command_ref": "bdb9c699-8c04-49e9-b807-c509117f5197"
+                }
+              ],
+              "queries": [
+                {
+                  "key": "74a78f09-c699-48ab-943c-3cb338519343",
+                  "name": "",
+                  "enabled": true,
+                  "method": "GET",
+                  "type": "item",
+                  "root": true,
+                  "api_path": "",
+                  "outputs": [
+                    {
+                      "key": "e6ef89d2-0b00-462a-a489-85f03ca3e934",
+                      "name": "Name",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "e7d6f4cb-3afb-434b-a768-d9d3edeaac57"
+                    },
+                    {
+                      "key": "6e196b7c-bf49-4d8f-9bb4-aa46f6f0b9ef",
+                      "name": "Countrycode",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "2c32a22f-3abf-4977-a0ff-9d7a07911969"
+                    },
+                    {
+                      "key": "2b16c04b-332d-475a-ad7c-0db66b7ffa3d",
+                      "name": "State",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "a42dfd43-28a4-427f-b43d-80b7bbfd3917"
+                    },
+                    {
+                      "key": "61321c19-7fe4-4645-8553-ffc1cc13dd6c",
+                      "name": "Validityperiodsince",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "8680fd76-085f-4207-9640-4c86bfcb3601"
+                    },
+                    {
+                      "key": "26317fab-3511-4d7b-8056-e5785507bfe5",
+                      "name": "Validityperioduntil",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "837250c7-7a7c-4b79-a234-ae16692af193"
+                    },
+                    {
+                      "key": "a667aa61-e58c-4245-b199-5eade99b6429",
+                      "name": "Url",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "fbd9d989-849e-4b89-b72e-0b5a55e28091"
+                    },
+                    {
+                      "key": "001685ed-8928-49b5-a751-96f0efc4827e",
+                      "name": "Bic",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "2422e6c8-5668-4771-9263-56aebc204e10"
+                    },
+                    {
+                      "key": "c9904be1-8138-44e7-8985-ab4efbaef0ba",
+                      "name": "Image",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "31c23747-68ca-4ebb-af02-a1187989c8c9"
+                    }
+                  ]
+                },
+                {
+                  "key": "ef3db412-b12a-4fa7-9ec8-c1fc85aa2693",
+                  "name": "",
+                  "enabled": true,
+                  "method": "GET",
+                  "type": "collection",
+                  "root": true,
+                  "api_path": "",
+                  "outputs": [
+                    {
+                      "key": "e3b87f3d-1331-44a2-b740-51e9dc2a13cc",
+                      "name": "Name",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "e7d6f4cb-3afb-434b-a768-d9d3edeaac57"
+                    },
+                    {
+                      "key": "22a3cac8-3c15-46cc-9433-2edee8db5d16",
+                      "name": "Countrycode",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "2c32a22f-3abf-4977-a0ff-9d7a07911969"
+                    },
+                    {
+                      "key": "9a4fa8f8-8be1-4b9f-8ce6-6aeea11868a5",
+                      "name": "State",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "a42dfd43-28a4-427f-b43d-80b7bbfd3917"
+                    },
+                    {
+                      "key": "28a078e0-3ae3-4147-ad35-d1118cdb67da",
+                      "name": "Validityperiodsince",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "8680fd76-085f-4207-9640-4c86bfcb3601"
+                    },
+                    {
+                      "key": "ca280acb-78c9-4f3c-9bd9-10151e3afeec",
+                      "name": "Validityperioduntil",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "837250c7-7a7c-4b79-a234-ae16692af193"
+                    },
+                    {
+                      "key": "8127395f-2ded-4626-b414-8c0a561ba617",
+                      "name": "Url",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "fbd9d989-849e-4b89-b72e-0b5a55e28091"
+                    },
+                    {
+                      "key": "4e55dd76-3b28-4cf6-91b9-4e4326267d0d",
+                      "name": "Bic",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "2422e6c8-5668-4771-9263-56aebc204e10"
+                    },
+                    {
+                      "key": "aeaae1cd-04a5-4ca8-88ff-42c44fc35381",
+                      "name": "Image",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "31c23747-68ca-4ebb-af02-a1187989c8c9"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "251eb11d-63f5-4665-973a-612c0ca8d257",
+          "name": "Account",
+          "enabled": true,
+          "aggregates": [
+            {
+              "key": "2c5f2331-61fe-4f9c-8481-90431ef81ae0",
+              "name": "Account",
+              "enabled": true,
+              "root": {
+                "key": "e51b39c7-1309-4bcb-b233-e8ce83eef71b",
+                "name": "Account",
+                "description": "An account, can be a cash or bank account",
+                "enabled": true,
+                "properties": [
+                  {
+                    "key": "09244bd9-ee5d-4bc9-831d-143c64138a7a",
+                    "name": "Name",
+                    "description": "the account name",
+                    "enabled": true,
+                    "value_object_ref": "00b71014-422e-4657-ac9d-a65c58dfc1c7",
+                    "inputs": [
+                      {
+                        "key": "27bae6ed-d6cb-4fb7-9f7a-7a4604a06826",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "b9a7304b-5a27-4c28-b84a-c8e82111eacb"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "7a421624-967f-44f0-81bd-3810029f52bc",
+                    "name": "State",
+                    "description": "the state of the accoun (draft, opened, closed)",
+                    "enabled": true,
+                    "value_object_ref": "95dced96-45e5-4ce7-9748-9c2deff4248e",
+                    "inputs": [
+                      {
+                        "key": "8cf6325d-7220-4802-a467-acdb3acc93be",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "27b767d8-d32b-4ebb-836d-50fa5b199185"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "54c2c02e-a62c-47d7-9302-3df7822c4dae",
+                    "name": "Category",
+                    "description": "the account category (bank account or cash account)",
+                    "enabled": true,
+                    "value_object_ref": "912408d4-0b29-49a8-b4dc-0d9c27c61ea6",
+                    "inputs": [
+                      {
+                        "key": "9acbd8a2-5222-4ec9-8cf8-ee2287694e58",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "2039fc00-5f9a-4468-8692-1e0149586383"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "0186eeb1-7def-4c24-8d42-15b926bb730e",
+                    "name": "Currency",
+                    "description": "currency code",
+                    "enabled": true,
+                    "value_object_ref": "7bb988ce-d74f-4989-aa1b-122c9505ae3d",
+                    "inputs": [
+                      {
+                        "key": "3039d58c-3e3f-4228-864b-0983ce7a406b",
+                        "name": "Code",
+                        "enabled": true,
+                        "valueObject_input_ref": "c2b049dd-bf59-4625-8fb4-54cc2806150e"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "e93a8ad5-3ff2-4262-866b-2b7204a77e0e",
+                    "name": "Balance",
+                    "description": "the actual amount of the account",
+                    "enabled": true,
+                    "value_object_ref": "c735c9e9-4051-47be-a462-d3ece360828e",
+                    "inputs": [
+                      {
+                        "key": "16ce8799-e821-4d40-a15e-1c1796d0d608",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "c2061b14-6520-4f5f-97c8-b302445a61da"
+                      },
+                      {
+                        "key": "01458531-ea35-4f64-9f76-862244024129",
+                        "name": "Currency",
+                        "enabled": true,
+                        "valueObject_input_ref": "f64dd8e0-27bd-4126-a384-6fd1b276214a",
+                        "linked_property_ref": "0186eeb1-7def-4c24-8d42-15b926bb730e"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "1937de78-8c52-4ea4-bbc2-b1ca05df5338",
+                    "name": "InitialBalance",
+                    "description": "the balance of the account before adding any operation",
+                    "enabled": true,
+                    "nullable": true,
+                    "value_object_ref": "c735c9e9-4051-47be-a462-d3ece360828e",
+                    "inputs": [
+                      {
+                        "key": "b24d9314-6436-41b8-9ac4-568c952b7629",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "c2061b14-6520-4f5f-97c8-b302445a61da"
+                      },
+                      {
+                        "key": "0f1b7ac2-cd35-45ab-a14f-8a948f50e517",
+                        "name": "Currency",
+                        "enabled": true,
+                        "valueObject_input_ref": "f64dd8e0-27bd-4126-a384-6fd1b276214a",
+                        "linked_property_ref": "0186eeb1-7def-4c24-8d42-15b926bb730e"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "0ed987d2-0d6d-4ad6-b394-cb7cf2f5fc87",
+                    "name": "MinimumBalance",
+                    "description": "the minimum balance allowed in the account",
+                    "enabled": true,
+                    "nullable": true,
+                    "value_object_ref": "c735c9e9-4051-47be-a462-d3ece360828e",
+                    "inputs": [
+                      {
+                        "key": "4978738d-b921-4554-93aa-a2af0bf287d5",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "c2061b14-6520-4f5f-97c8-b302445a61da"
+                      },
+                      {
+                        "key": "098795c9-522d-4f77-8a68-aa55b0263c7b",
+                        "name": "Currency",
+                        "enabled": true,
+                        "valueObject_input_ref": "f64dd8e0-27bd-4126-a384-6fd1b276214a",
+                        "linked_property_ref": "0186eeb1-7def-4c24-8d42-15b926bb730e"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "52b4bb55-430b-486c-b1e4-964125d41733",
+                    "name": "MaximumBalance",
+                    "description": "the maximum balance allowed in the account",
+                    "enabled": true,
+                    "nullable": true,
+                    "value_object_ref": "c735c9e9-4051-47be-a462-d3ece360828e",
+                    "inputs": [
+                      {
+                        "key": "6fc119cb-04fe-4079-9086-3c0cb582c596",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "c2061b14-6520-4f5f-97c8-b302445a61da"
+                      },
+                      {
+                        "key": "efd6f7c0-592e-4c9c-bec9-3d6f0c9d5eef",
+                        "name": "Currency",
+                        "enabled": true,
+                        "valueObject_input_ref": "f64dd8e0-27bd-4126-a384-6fd1b276214a",
+                        "linked_property_ref": "0186eeb1-7def-4c24-8d42-15b926bb730e"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "e5954cf5-270f-4db5-9446-d0ba0c7fa9ee",
+                    "name": "ValidityPeriod",
+                    "description": "the start and the end date of validity",
+                    "enabled": true,
+                    "value_object_ref": "8cc60da4-20a3-4b53-9b88-0c1751b0579e",
+                    "inputs": [
+                      {
+                        "key": "0ef15af6-88c7-4771-b49d-f6c95207f843",
+                        "name": "Since",
+                        "enabled": true,
+                        "valueObject_input_ref": "440cf00a-927c-4649-9acc-f12c2b054db8"
+                      },
+                      {
+                        "key": "b82ec58a-8536-41fb-aed9-658a86f55d05",
+                        "name": "Until",
+                        "enabled": true,
+                        "valueObject_input_ref": "29e7fc65-562a-484c-9950-c616f717ae47"
+                      }
+                    ]
+                  }
+                ],
+                "relations": [
+                  {
+                    "key": "608dd87e-9d1e-4f99-85ff-e7b05ec31552",
+                    "name": "BankId",
+                    "description": "the related bank id in case of bank account",
+                    "enabled": true,
+                    "nullable": true,
+                    "target_entity_ref": "27856928-0382-46c7-b87e-0db00b61734e"
+                  },
+                  {
+                    "key": "70c25ffc-fea9-40c1-91d6-a9d29db7c1e7",
+                    "name": "PartyId",
+                    "description": "relation to Party",
+                    "enabled": true,
+                    "nullable": false,
+                    "target_entity_ref": "f6db3e71-ae5c-46b2-b5b4-3e9f00dae5af"
+                  }
+                ],
+                "actions": [
+                  {
+                    "key": "cc0cce48-8b2f-49b6-8cc0-adf22ba0268b",
+                    "name": "Register",
+                    "description": "Create a new account",
+                    "enabled": true,
+                    "event_name": "AccountRegistered",
+                    "role": "insert",
+                    "parameters": [
+                      {
+                        "key": "c450ee3a-535b-4830-ae9c-a0a4dd4be604",
+                        "name": "Name",
+                        "description": "account name",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "09244bd9-ee5d-4bc9-831d-143c64138a7a",
+                        "target_property_input_ref": "27bae6ed-d6cb-4fb7-9f7a-7a4604a06826"
+                      },
+                      {
+                        "key": "24412024-fb79-4e33-9a68-9d891d5bdf37",
+                        "name": "State",
+                        "description": "account initial state",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "7a421624-967f-44f0-81bd-3810029f52bc",
+                        "target_property_input_ref": "8cf6325d-7220-4802-a467-acdb3acc93be"
+                      },
+                      {
+                        "key": "bbd83b1f-1fc5-45dc-a10a-fd7759c23235",
+                        "name": "Category",
+                        "description": "account category",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "54c2c02e-a62c-47d7-9302-3df7822c4dae",
+                        "target_property_input_ref": "9acbd8a2-5222-4ec9-8cf8-ee2287694e58"
+                      },
+                      {
+                        "key": "1dc2ba17-0a87-4279-a9a0-cca40e49afe6",
+                        "name": "Currency",
+                        "description": "account currency",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "0186eeb1-7def-4c24-8d42-15b926bb730e",
+                        "target_property_input_ref": "3039d58c-3e3f-4228-864b-0983ce7a406b"
+                      },
+                      {
+                        "key": "a8f3cd2d-0f0a-4955-b591-4b11b7155e5e",
+                        "name": "ValidSince",
+                        "description": "account validity start date, can be null",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "e5954cf5-270f-4db5-9446-d0ba0c7fa9ee",
+                        "target_property_input_ref": "0ef15af6-88c7-4771-b49d-f6c95207f843"
+                      },
+                      {
+                        "key": "db9b489a-e9e0-47ca-abfa-f45f677bb7a8",
+                        "name": "ValidUntil",
+                        "description": "account validity end date, can be null",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "e5954cf5-270f-4db5-9446-d0ba0c7fa9ee",
+                        "target_property_input_ref": "b82ec58a-8536-41fb-aed9-658a86f55d05"
+                      },
+                      {
+                        "key": "59d4b633-9a9c-4b03-8974-931b35ce7d6f",
+                        "name": "BankId",
+                        "description": "id of the related bank",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_relation_ref": "608dd87e-9d1e-4f99-85ff-e7b05ec31552"
+                      },
+                      {
+                        "key": "b7c1f720-1147-459c-bcb2-2ad33324bb2b",
+                        "name": "PartyId",
+                        "description": "relation to Party",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": false,
+                        "target_relation_ref": "70c25ffc-fea9-40c1-91d6-a9d29db7c1e7"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "a93f4f65-aa37-429c-92bd-588f6388e84a",
+                    "name": "Open",
+                    "description": "Change account state to opened",
+                    "enabled": true,
+                    "event_name": "AccountOpened",
+                    "role": "update",
+                    "parameters": []
+                  },
+                  {
+                    "key": "a15bf84f-0ff0-4a55-bff2-26efec49c56b",
+                    "name": "Close",
+                    "description": "Change account state to closed",
+                    "enabled": true,
+                    "event_name": "AccountClosed",
+                    "role": "update",
+                    "parameters": []
+                  },
+                  {
+                    "key": "177def90-a5a5-4fd9-9191-05eddb56a93e",
+                    "name": "Change",
+                    "description": "Change account simple properties",
+                    "enabled": true,
+                    "event_name": "AccountChanged",
+                    "role": "update",
+                    "parameters": [
+                      {
+                        "key": "9b4221c6-dc89-4c29-a562-d568635277b3",
+                        "name": "Name",
+                        "description": "change account name",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "09244bd9-ee5d-4bc9-831d-143c64138a7a",
+                        "target_property_input_ref": "27bae6ed-d6cb-4fb7-9f7a-7a4604a06826"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "f820691d-4fc4-4e48-8e97-98545c95d824",
+                    "name": "SetInitialBalance",
+                    "description": "Set initial account balance when account is in draft status",
+                    "enabled": true,
+                    "event_name": "AccountInitialBalanceSet",
+                    "role": "update",
+                    "parameters": [
+                      {
+                        "key": "36a7b6f6-3065-4f98-bd9f-8b0955cb2187",
+                        "name": "Balance",
+                        "description": "set account initial balance",
+                        "enabled": true,
+                        "type": "float",
+                        "target_property_ref": "1937de78-8c52-4ea4-bbc2-b1ca05df5338",
+                        "target_property_input_ref": "b24d9314-6436-41b8-9ac4-568c952b7629"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "e6d309f7-efb7-459f-b81c-5c71e15116ae",
+                    "name": "SetBalanceLimits",
+                    "description": "Set min and max balance amount",
+                    "enabled": true,
+                    "event_name": "AccountBalanceLimitSet",
+                    "role": "update",
+                    "parameters": [
+                      {
+                        "key": "45a8504d-562d-4b38-82af-daf92901ad9e",
+                        "name": "Minimum",
+                        "description": "set account min balance allowed",
+                        "enabled": true,
+                        "type": "float",
+                        "target_property_ref": "0ed987d2-0d6d-4ad6-b394-cb7cf2f5fc87",
+                        "target_property_input_ref": "4978738d-b921-4554-93aa-a2af0bf287d5"
+                      },
+                      {
+                        "key": "a41c0d03-3be9-404d-b3d9-fdaa40be2d54",
+                        "name": "Maximum",
+                        "description": "set account max balance allowed",
+                        "enabled": true,
+                        "type": "float",
+                        "target_property_ref": "52b4bb55-430b-486c-b1e4-964125d41733",
+                        "target_property_input_ref": "6fc119cb-04fe-4079-9086-3c0cb582c596"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "7b82230d-6462-4a6f-9d56-0cbd35ea9e33",
+                    "name": "Remove",
+                    "description": "remove a closed account",
+                    "enabled": true,
+                    "event_name": "AccountRemoved",
+                    "role": "delete",
+                    "parameters": []
+                  }
+                ],
+                "entities": [
+                  {
+                    "key": "912f14c6-9edd-4e29-a24d-96ea4abd5cdd",
+                    "name": "Operation",
+                    "description": "Account operation detail (items)",
+                    "enabled": true,
+                    "properties": [
+                      {
+                        "key": "b5f6ed4a-7189-462a-8ce8-4772fc6278b5",
+                        "name": "Label",
+                        "enabled": true,
+                        "value_object_ref": "3fc06557-e89d-4037-8684-01ce47fe71f8",
+                        "inputs": [
+                          {
+                            "key": "15fd00f3-7960-4aac-8634-a8e2f0e65072",
+                            "name": "Value",
+                            "enabled": true,
+                            "valueObject_input_ref": "2372a4a2-79e3-43cf-bfeb-252a36b3bd5d"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "26f04d22-5dda-4031-a737-73d850da4e14",
+                        "name": "State",
+                        "description": "account operation state",
+                        "enabled": true,
+                        "value_object_ref": "6436f280-228d-481f-8422-e78a40ba9ed7",
+                        "inputs": [
+                          {
+                            "key": "cfb217c7-9fa2-4bd8-931f-88e2a5506615",
+                            "name": "Value",
+                            "enabled": true,
+                            "valueObject_input_ref": "27b767d8-d32b-4ebb-836d-50fa5b199185"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "bd0a89f2-3ec9-4a5f-a482-2c661b74b392",
+                        "name": "Category",
+                        "description": "account operation category",
+                        "enabled": true,
+                        "value_object_ref": "4294a9bc-e2ee-4dd0-9bc1-ac278e017b7d",
+                        "inputs": [
+                          {
+                            "key": "ccf88ba4-ee92-4194-b4ab-32d7d773621e",
+                            "name": "Value",
+                            "enabled": true,
+                            "valueObject_input_ref": "2039fc00-5f9a-4468-8692-1e0149586383"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "8256a0bc-a0ce-4819-aeb7-a6c1a7088bcd",
+                        "name": "Amount",
+                        "enabled": true,
+                        "value_object_ref": "c735c9e9-4051-47be-a462-d3ece360828e",
+                        "inputs": [
+                          {
+                            "key": "81d0c0db-27c2-4012-9134-58bf09012117",
+                            "name": "Value",
+                            "enabled": true,
+                            "valueObject_input_ref": "c2061b14-6520-4f5f-97c8-b302445a61da"
+                          },
+                          {
+                            "key": "ee7239c2-98ad-453c-aeef-9467052bccc7",
+                            "name": "Currency",
+                            "enabled": true,
+                            "valueObject_input_ref": "f64dd8e0-27bd-4126-a384-6fd1b276214a",
+                            "linked_property_ref": "0186eeb1-7def-4c24-8d42-15b926bb730e"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "4b19247b-1c6e-42c4-be47-32e2599bd66e",
+                        "name": "ValueDate",
+                        "enabled": true,
+                        "value_object_ref": "264d59be-bbd1-4806-9a51-7df644e2f2c2",
+                        "inputs": [
+                          {
+                            "key": "1b19a4bd-71c8-453c-a827-cd3dc7621f01",
+                            "name": "Value",
+                            "enabled": true,
+                            "valueObject_input_ref": "97501307-8b20-4165-a62c-ff1a0ef8aa7f"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "2ee0218e-82c9-4cd3-977e-c6edaf625750",
+                        "name": "OperationDate",
+                        "enabled": true,
+                        "value_object_ref": "264d59be-bbd1-4806-9a51-7df644e2f2c2",
+                        "inputs": [
+                          {
+                            "key": "6c4ee3de-81de-4340-9379-27f58cd9a923",
+                            "name": "Value",
+                            "enabled": true,
+                            "valueObject_input_ref": "97501307-8b20-4165-a62c-ff1a0ef8aa7f"
+                          }
+                        ]
+                      }
+                    ],
+                    "relations": [],
+                    "actions": [
+                      {
+                        "key": "a293e2ef-c125-4fbc-917b-cd8ef9810147",
+                        "name": "AddOperation",
+                        "description": "add a new operation in account",
+                        "enabled": true,
+                        "event_name": "OperationAdded",
+                        "role": "insert",
+                        "parameters": [
+                          {
+                            "key": "f6a46d4d-66ea-4c8c-bbc2-47bfd8092ec6",
+                            "name": "Label",
+                            "description": "set operation label",
+                            "enabled": true,
+                            "type": "string",
+                            "target_property_ref": "b5f6ed4a-7189-462a-8ce8-4772fc6278b5",
+                            "target_property_input_ref": "15fd00f3-7960-4aac-8634-a8e2f0e65072"
+                          },
+                          {
+                            "key": "6b49389f-fe7f-4cda-8e82-162c5b08895d",
+                            "name": "Amount",
+                            "enabled": true,
+                            "type": "float",
+                            "target_property_ref": "8256a0bc-a0ce-4819-aeb7-a6c1a7088bcd",
+                            "target_property_input_ref": "81d0c0db-27c2-4012-9134-58bf09012117"
+                          },
+                          {
+                            "key": "0f97d3a1-8510-477b-b751-5ae9c673f28b",
+                            "name": "ValueDate",
+                            "enabled": true,
+                            "type": "string",
+                            "target_property_ref": "4b19247b-1c6e-42c4-be47-32e2599bd66e",
+                            "target_property_input_ref": "1b19a4bd-71c8-453c-a827-cd3dc7621f01"
+                          },
+                          {
+                            "key": "1db12805-a82a-4628-b743-cf0bf69859d1",
+                            "name": "OperationDate",
+                            "enabled": true,
+                            "type": "string",
+                            "target_property_ref": "2ee0218e-82c9-4cd3-977e-c6edaf625750",
+                            "target_property_input_ref": "6c4ee3de-81de-4340-9379-27f58cd9a923"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "d3e2fec3-9ecc-4fda-9650-de2a918b916c",
+                        "name": "RemoveOperation",
+                        "description": "remove an operation in account",
+                        "enabled": true,
+                        "event_name": "OperationRemoved",
+                        "role": "delete",
+                        "parameters": []
+                      }
+                    ],
+                    "entities": [],
+                    "property_name": "operations",
+                    "property_name_singular": "operation",
+                    "cardinality": "many"
+                  }
+                ]
+              },
+              "commands": [
+                {
+                  "key": "400eeed2-5bf7-4330-8081-acd7e93e1f60",
+                  "name": "RegisterBankAccount",
+                  "description": "Create a new bank account",
+                  "enabled": true,
+                  "target_action_ref": "cc0cce48-8b2f-49b6-8cc0-adf22ba0268b",
+                  "parameters": [
+                    {
+                      "key": "91f06d8a-17fb-4655-a3c2-89d172e170ea",
+                      "name": "Name",
+                      "description": "account name",
+                      "enabled": true,
+                      "target_parameter_ref": "c450ee3a-535b-4830-ae9c-a0a4dd4be604"
+                    },
+                    {
+                      "key": "c4f65f89-a6b6-47e3-9134-c0974736c246",
+                      "name": "Currency",
+                      "description": "account currency",
+                      "enabled": true,
+                      "target_parameter_ref": "1dc2ba17-0a87-4279-a9a0-cca40e49afe6"
+                    },
+                    {
+                      "key": "967d65e5-cb7d-4a61-861e-af80e85ff630",
+                      "name": "PartyId",
+                      "description": "relation to Party",
+                      "enabled": true,
+                      "target_parameter_ref": "b7c1f720-1147-459c-bcb2-2ad33324bb2b"
+                    },
+                    {
+                      "key": "75cad2a8-5b42-441f-8024-98bc99ead769",
+                      "name": "BankId",
+                      "description": "id of the related bank",
+                      "enabled": true,
+                      "nullable": false,
+                      "target_parameter_ref": "59d4b633-9a9c-4b03-8974-931b35ce7d6f"
+                    },
+                    {
+                      "key": "5c17c42d-f83c-402d-b61d-81295c4ad532",
+                      "name": "State",
+                      "description": "account initial state",
+                      "enabled": false,
+                      "target_parameter_ref": "24412024-fb79-4e33-9a68-9d891d5bdf37"
+                    },
+                    {
+                      "key": "ae8453ba-452e-4faa-a692-59e801f71158",
+                      "name": "Category",
+                      "description": "account category",
+                      "enabled": false,
+                      "target_parameter_ref": "bbd83b1f-1fc5-45dc-a10a-fd7759c23235"
+                    },
+                    {
+                      "key": "c0e5c654-008f-4e3b-ab42-72594629e037",
+                      "name": "ValidSince",
+                      "description": "account validity start date, can be null",
+                      "enabled": false,
+                      "target_parameter_ref": "a8f3cd2d-0f0a-4955-b591-4b11b7155e5e"
+                    },
+                    {
+                      "key": "92a68978-2fe4-4ed3-bd6a-7de8215235e8",
+                      "name": "ValidUntil",
+                      "description": "account validity end date, can be null",
+                      "enabled": false,
+                      "target_parameter_ref": "db9b489a-e9e0-47ca-abfa-f45f677bb7a8"
+                    }
+                  ]
+                },
+                {
+                  "key": "63aa4074-75f4-4cea-ba3d-712d1f10f922",
+                  "name": "RegisterCashAccount",
+                  "description": "Create a new cash account",
+                  "enabled": true,
+                  "target_action_ref": "cc0cce48-8b2f-49b6-8cc0-adf22ba0268b",
+                  "parameters": [
+                    {
+                      "key": "ba1cbb42-70a1-41ac-b1ec-cc36ec40d152",
+                      "name": "name",
+                      "description": "account name",
+                      "enabled": true,
+                      "target_parameter_ref": "c450ee3a-535b-4830-ae9c-a0a4dd4be604"
+                    },
+                    {
+                      "key": "29e846c9-2aee-4269-9a7c-f1cf3c8c7d53",
+                      "name": "currency",
+                      "description": "account currency",
+                      "enabled": true,
+                      "target_parameter_ref": "1dc2ba17-0a87-4279-a9a0-cca40e49afe6"
+                    },
+                    {
+                      "key": "7fb84f18-6895-4e6a-b800-dad51b7232f5",
+                      "name": "PartyId",
+                      "description": "relation to Party",
+                      "enabled": true,
+                      "target_parameter_ref": "b7c1f720-1147-459c-bcb2-2ad33324bb2b"
+                    },
+                    {
+                      "key": "870d4967-50a2-47da-8268-7260ab16fa6c",
+                      "name": "validSince",
+                      "description": "account validity start date, can be null",
+                      "enabled": false,
+                      "target_parameter_ref": "a8f3cd2d-0f0a-4955-b591-4b11b7155e5e"
+                    },
+                    {
+                      "key": "9e56b6e9-d44e-4d63-8f28-5835696f128c",
+                      "name": "validUntil",
+                      "description": "account validity end date, can be null",
+                      "enabled": false,
+                      "target_parameter_ref": "db9b489a-e9e0-47ca-abfa-f45f677bb7a8"
+                    },
+                    {
+                      "key": "e9a4eded-cffd-44ff-9388-c6496175a676",
+                      "name": "State",
+                      "description": "account initial state",
+                      "enabled": false,
+                      "target_parameter_ref": "24412024-fb79-4e33-9a68-9d891d5bdf37"
+                    },
+                    {
+                      "key": "6e3db01f-9b52-4056-a48c-f4696c4c0198",
+                      "name": "Category",
+                      "description": "account category",
+                      "enabled": false,
+                      "target_parameter_ref": "bbd83b1f-1fc5-45dc-a10a-fd7759c23235"
+                    },
+                    {
+                      "key": "b23cc9b0-38c9-4428-84f2-dadbe3d70541",
+                      "name": "BankId",
+                      "description": "id of the related bank",
+                      "enabled": false,
+                      "target_parameter_ref": "59d4b633-9a9c-4b03-8974-931b35ce7d6f"
+                    }
+                  ]
+                },
+                {
+                  "key": "0c2c2d65-7b7b-44aa-abf8-27d30f142148",
+                  "name": "OpenAccount",
+                  "enabled": true,
+                  "target_action_ref": "a93f4f65-aa37-429c-92bd-588f6388e84a",
+                  "parameters": []
+                },
+                {
+                  "key": "3cc6e07f-36a7-4239-800a-68bf01c18e78",
+                  "name": "CloseAccount",
+                  "enabled": true,
+                  "target_action_ref": "a15bf84f-0ff0-4a55-bff2-26efec49c56b",
+                  "parameters": []
+                },
+                {
+                  "key": "676b490d-4ff3-4e0d-bb00-051e00efc38e",
+                  "name": "RenameAccount",
+                  "enabled": true,
+                  "target_action_ref": "177def90-a5a5-4fd9-9191-05eddb56a93e",
+                  "parameters": [
+                    {
+                      "key": "369f9ab3-8624-449c-b623-4bf5e7545451",
+                      "name": "name",
+                      "description": "change account name",
+                      "enabled": true,
+                      "target_parameter_ref": "9b4221c6-dc89-4c29-a562-d568635277b3"
+                    }
+                  ]
+                },
+                {
+                  "key": "ac376b70-ea3a-43de-911c-bdc50c7f5479",
+                  "name": "SetAccountInitialBalance",
+                  "enabled": true,
+                  "target_action_ref": "f820691d-4fc4-4e48-8e97-98545c95d824",
+                  "parameters": [
+                    {
+                      "key": "7538430d-c5d4-4c4c-9569-dad708797b18",
+                      "name": "balance",
+                      "description": "set account initial balance",
+                      "enabled": true,
+                      "target_parameter_ref": "36a7b6f6-3065-4f98-bd9f-8b0955cb2187"
+                    }
+                  ]
+                },
+                {
+                  "key": "f2658798-9921-4340-8153-af5a18af3373",
+                  "name": "SetAccountBalanceLimits",
+                  "enabled": true,
+                  "target_action_ref": "e6d309f7-efb7-459f-b81c-5c71e15116ae",
+                  "parameters": [
+                    {
+                      "key": "39fd5a3d-cbee-4c64-8832-9b51b23ad01f",
+                      "name": "minimum",
+                      "description": "set account min balance allowed",
+                      "enabled": true,
+                      "target_parameter_ref": "45a8504d-562d-4b38-82af-daf92901ad9e"
+                    },
+                    {
+                      "key": "0095c0ed-d744-45b1-a5ba-5c3d3da610e9",
+                      "name": "maximum",
+                      "description": "set account max balance allowed",
+                      "enabled": true,
+                      "target_parameter_ref": "a41c0d03-3be9-404d-b3d9-fdaa40be2d54"
+                    }
+                  ]
+                },
+                {
+                  "key": "40bf32f1-c36c-4f01-8032-7376fbf961b7",
+                  "name": "RemoveAccount",
+                  "enabled": true,
+                  "target_action_ref": "7b82230d-6462-4a6f-9d56-0cbd35ea9e33",
+                  "parameters": []
+                },
+                {
+                  "key": "7f5710c0-21f9-4192-90b9-2326994545c0",
+                  "name": "AddAccountOperation",
+                  "enabled": true,
+                  "target_action_ref": "a293e2ef-c125-4fbc-917b-cd8ef9810147",
+                  "parameters": [
+                    {
+                      "key": "58e75f3e-b545-4811-ae8b-7cef77b12485",
+                      "name": "OperationDate",
+                      "description": "Operation date",
+                      "enabled": true,
+                      "target_parameter_ref": "1db12805-a82a-4628-b743-cf0bf69859d1"
+                    },
+                    {
+                      "key": "ecabbd2a-b636-471a-b04c-c6954d65ed24",
+                      "name": "ValueDate",
+                      "description": "Value Date",
+                      "enabled": true,
+                      "target_parameter_ref": "0f97d3a1-8510-477b-b751-5ae9c673f28b"
+                    },
+                    {
+                      "key": "4d57b129-3ca3-4d85-9e4e-368ceeac9adf",
+                      "name": "Amount",
+                      "description": "Operation amount",
+                      "enabled": true,
+                      "target_parameter_ref": "6b49389f-fe7f-4cda-8e82-162c5b08895d"
+                    },
+                    {
+                      "key": "c034b5c5-32c9-4494-8e6c-eb11cba2dce1",
+                      "name": "Label",
+                      "description": "Operation label",
+                      "enabled": true,
+                      "target_parameter_ref": "f6a46d4d-66ea-4c8c-bbc2-47bfd8092ec6"
+                    }
+                  ]
+                },
+                {
+                  "key": "40740555-055d-4849-b383-e9403a4eb71f",
+                  "name": "RemoveAccountOperation",
+                  "enabled": true,
+                  "target_action_ref": "d3e2fec3-9ecc-4fda-9650-de2a918b916c",
+                  "parameters": []
+                }
+              ]
+            }
+          ],
+          "resources": [
+            {
+              "key": "b1b85f1f-17c9-458e-b540-ef51b80a8e67",
+              "name": "Account",
+              "description": "An account, can be a cash or bank account",
+              "enabled": true,
+              "table_name": "banking_account",
+              "api_path": "banking-account",
+              "target_entity_ref": "e51b39c7-1309-4bcb-b233-e8ce83eef71b",
+              "fields": [
+                {
+                  "key": "64bd4f2a-6b79-4201-be0c-c6601914e331",
+                  "name": "name",
+                  "description": "the account name Value",
+                  "enabled": true,
+                  "type": "string",
+                  "nullable": false,
+                  "target_property_ref": "09244bd9-ee5d-4bc9-831d-143c64138a7a",
+                  "target_property_input_ref": "27bae6ed-d6cb-4fb7-9f7a-7a4604a06826"
+                },
+                {
+                  "key": "5bbc3bba-7eb9-48d5-bad4-ef26a34970c3",
+                  "name": "state",
+                  "description": "the state of the accoun (draft, opened, closed) Value",
+                  "enabled": true,
+                  "type": "string",
+                  "length": 20,
+                  "nullable": false,
+                  "target_property_ref": "7a421624-967f-44f0-81bd-3810029f52bc",
+                  "target_property_input_ref": "8cf6325d-7220-4802-a467-acdb3acc93be"
+                },
+                {
+                  "key": "a49574d0-8480-49bf-8b8e-3e5a5e0e6295",
+                  "name": "category",
+                  "description": "the account category (bank account or cash account) Value",
+                  "enabled": true,
+                  "type": "string",
+                  "length": 20,
+                  "nullable": false,
+                  "target_property_ref": "54c2c02e-a62c-47d7-9302-3df7822c4dae",
+                  "target_property_input_ref": "9acbd8a2-5222-4ec9-8cf8-ee2287694e58"
+                },
+                {
+                  "key": "01a33679-5bf4-4872-b02b-09b4752b0b0e",
+                  "name": "currencycode",
+                  "description": "currency code Code",
+                  "enabled": true,
+                  "type": "string",
+                  "length": 3,
+                  "nullable": false,
+                  "target_property_ref": "0186eeb1-7def-4c24-8d42-15b926bb730e",
+                  "target_property_input_ref": "3039d58c-3e3f-4228-864b-0983ce7a406b"
+                },
+                {
+                  "key": "8de34fdf-95be-4c7b-aadf-a956a93e7dfe",
+                  "name": "balance",
+                  "description": "the actual amount of the account Value",
+                  "enabled": true,
+                  "type": "float",
+                  "nullable": false,
+                  "target_property_ref": "e93a8ad5-3ff2-4262-866b-2b7204a77e0e",
+                  "target_property_input_ref": "16ce8799-e821-4d40-a15e-1c1796d0d608"
+                },
+                {
+                  "key": "8cfd1730-9b75-4507-93cf-68bda4cd2be0",
+                  "name": "initialbalance",
+                  "description": "the balance of the account before adding any operation Value",
+                  "enabled": true,
+                  "type": "float",
+                  "nullable": true,
+                  "target_property_ref": "1937de78-8c52-4ea4-bbc2-b1ca05df5338",
+                  "target_property_input_ref": "b24d9314-6436-41b8-9ac4-568c952b7629"
+                },
+                {
+                  "key": "900c1f28-2cad-4c8a-b324-8b6045248d26",
+                  "name": "minimumbalance",
+                  "description": "the minimum balance allowed in the account Value",
+                  "enabled": true,
+                  "type": "float",
+                  "nullable": true,
+                  "target_property_ref": "0ed987d2-0d6d-4ad6-b394-cb7cf2f5fc87",
+                  "target_property_input_ref": "4978738d-b921-4554-93aa-a2af0bf287d5"
+                },
+                {
+                  "key": "1eed8ca7-8914-47c9-b126-83d8843f2cbd",
+                  "name": "maximumbalance",
+                  "description": "the maximum balance allowed in the account Value",
+                  "enabled": true,
+                  "type": "float",
+                  "nullable": true,
+                  "target_property_ref": "52b4bb55-430b-486c-b1e4-964125d41733",
+                  "target_property_input_ref": "6fc119cb-04fe-4079-9086-3c0cb582c596"
+                },
+                {
+                  "key": "cf01b080-c28d-4cd3-ab95-605fe2fcb5d5",
+                  "name": "validityperiodsince",
+                  "description": "the start and the end date of validity Since",
+                  "enabled": true,
+                  "type": "\\DateTimeImmutable",
+                  "nullable": false,
+                  "target_property_ref": "e5954cf5-270f-4db5-9446-d0ba0c7fa9ee",
+                  "target_property_input_ref": "0ef15af6-88c7-4771-b49d-f6c95207f843"
+                },
+                {
+                  "key": "fa522719-fb84-4d07-8832-ad72ba3f1efc",
+                  "name": "validityperioduntil",
+                  "description": "the start and the end date of validity Until",
+                  "enabled": true,
+                  "type": "\\DateTimeImmutable",
+                  "nullable": false,
+                  "target_property_ref": "e5954cf5-270f-4db5-9446-d0ba0c7fa9ee",
+                  "target_property_input_ref": "b82ec58a-8536-41fb-aed9-658a86f55d05"
+                }
+              ],
+              "associations": [
+                {
+                  "key": "8e8d5bfc-5b87-453c-8aaf-bc40107f6c01",
+                  "name": "bankid",
+                  "description": "the related bank id in case of bank account key ",
+                  "enabled": true,
+                  "nullable": true,
+                  "target_relation_ref": "608dd87e-9d1e-4f99-85ff-e7b05ec31552",
+                  "target_resource_ref": "8a0b2b9e-69bc-4a48-9de1-87dd40fc18b2"
+                },
+                {
+                  "key": "6e809d2b-ea52-401d-94e3-60d8b33f906d",
+                  "name": "partyid",
+                  "description": "relation to Party key ",
+                  "enabled": true,
+                  "nullable": false,
+                  "target_relation_ref": "70c25ffc-fea9-40c1-91d6-a9d29db7c1e7",
+                  "target_resource_ref": "e23a6282-b30b-4ab0-94e4-ad8cf69c3065"
+                }
+              ],
+              "parents": [],
+              "operations": [
+                {
+                  "key": "b7f3cc7e-4993-4ebf-9d33-37f4203d9766",
+                  "name": "RegisterBankAccount",
+                  "description": "Create a new bank account",
+                  "enabled": true,
+                  "method": "POST",
+                  "api_path": "register-bank-account",
+                  "target_command_ref": "400eeed2-5bf7-4330-8081-acd7e93e1f60"
+                },
+                {
+                  "key": "64f01746-d735-4923-848b-699788001d0d",
+                  "name": "RegisterCashAccount",
+                  "description": "Create a new cash account",
+                  "enabled": true,
+                  "method": "POST",
+                  "api_path": "register-cash-account",
+                  "target_command_ref": "63aa4074-75f4-4cea-ba3d-712d1f10f922"
+                },
+                {
+                  "key": "d0e5bc39-e722-4127-a50d-e698b509c328",
+                  "name": "OpenAccoun",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "open-accoun",
+                  "target_command_ref": "0c2c2d65-7b7b-44aa-abf8-27d30f142148"
+                },
+                {
+                  "key": "e7478d19-c484-4892-9f29-4d66cc025d73",
+                  "name": "CloseAccount",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "close-account",
+                  "target_command_ref": "3cc6e07f-36a7-4239-800a-68bf01c18e78"
+                },
+                {
+                  "key": "94f6aa69-d38d-41fb-9d7e-7553ba533e0c",
+                  "name": "RenameAccount",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "rename-account",
+                  "target_command_ref": "676b490d-4ff3-4e0d-bb00-051e00efc38e"
+                },
+                {
+                  "key": "64016e13-ec2c-4cdb-b585-ab6ad7e43324",
+                  "name": "SetAccountInitialBalance",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "set-account-initial-balance",
+                  "target_command_ref": "ac376b70-ea3a-43de-911c-bdc50c7f5479"
+                },
+                {
+                  "key": "4a2e5aa1-655e-4e17-a8a1-e878d7c25826",
+                  "name": "SetAccountBalanceLimits",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "set-account-balance-limits",
+                  "target_command_ref": "f2658798-9921-4340-8153-af5a18af3373"
+                },
+                {
+                  "key": "bfbec0ff-e6d1-4fef-bcf7-be5a822ff9cc",
+                  "name": "RemoveAccount",
+                  "enabled": true,
+                  "method": "DELETE",
+                  "api_path": "remove-account",
+                  "target_command_ref": "40bf32f1-c36c-4f01-8032-7376fbf961b7"
+                }
+              ],
+              "queries": [
+                {
+                  "key": "9807f6a7-2998-40ed-945e-67e8114e65da",
+                  "name": "",
+                  "enabled": true,
+                  "method": "GET",
+                  "type": "item",
+                  "root": true,
+                  "api_path": "",
+                  "outputs": [
+                    {
+                      "key": "9175ae51-8700-43ae-b5d1-fbd6063319e2",
+                      "name": "Name",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "64bd4f2a-6b79-4201-be0c-c6601914e331"
+                    },
+                    {
+                      "key": "4fb90601-7c9f-4784-9a28-3ecb7267913a",
+                      "name": "State",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "5bbc3bba-7eb9-48d5-bad4-ef26a34970c3"
+                    },
+                    {
+                      "key": "1992b291-64d7-454c-809a-da0a9ecf1f4c",
+                      "name": "Category",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "a49574d0-8480-49bf-8b8e-3e5a5e0e6295"
+                    },
+                    {
+                      "key": "80a9fe2a-a6d4-4c4a-95ed-7de4221c2a72",
+                      "name": "Currencycode",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "01a33679-5bf4-4872-b02b-09b4752b0b0e"
+                    },
+                    {
+                      "key": "accb44ec-8e1c-437f-b1aa-e90d69d7a2df",
+                      "name": "Balance",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "8de34fdf-95be-4c7b-aadf-a956a93e7dfe"
+                    },
+                    {
+                      "key": "a99e62ed-7aab-4fe6-865e-b6a9680e69af",
+                      "name": "Initialbalance",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "8cfd1730-9b75-4507-93cf-68bda4cd2be0"
+                    },
+                    {
+                      "key": "b564d3b7-14ba-4b16-9b06-33047a4727de",
+                      "name": "Minimumbalance",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "900c1f28-2cad-4c8a-b324-8b6045248d26"
+                    },
+                    {
+                      "key": "480de2f9-3c57-4bc9-8490-eaf3547ea2cd",
+                      "name": "Maximumbalance",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "1eed8ca7-8914-47c9-b126-83d8843f2cbd"
+                    },
+                    {
+                      "key": "bd6f7bc8-a8e3-465e-a554-8a2c530630e7",
+                      "name": "Validityperiodsince",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "cf01b080-c28d-4cd3-ab95-605fe2fcb5d5"
+                    },
+                    {
+                      "key": "b7bf2c49-529d-4630-9439-0a49867b9a84",
+                      "name": "Validityperioduntil",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "fa522719-fb84-4d07-8832-ad72ba3f1efc"
+                    },
+                    {
+                      "key": "ae3e05a1-bdd7-4f0e-b824-05e24065dcb2",
+                      "name": "Bankid",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "association",
+                      "target_association_ref": "8e8d5bfc-5b87-453c-8aaf-bc40107f6c01"
+                    },
+                    {
+                      "key": "b1dfb568-572d-410d-9c91-c630d0bfad1a",
+                      "name": "Partyid",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "association",
+                      "target_association_ref": "6e809d2b-ea52-401d-94e3-60d8b33f906d"
+                    }
+                  ]
+                },
+                {
+                  "key": "59e6d07b-1c17-41d4-8758-09a6ad15f637",
+                  "name": "",
+                  "enabled": true,
+                  "method": "GET",
+                  "type": "collection",
+                  "root": true,
+                  "api_path": "",
+                  "outputs": [
+                    {
+                      "key": "36b37728-ff57-4803-8b45-bb992903d71a",
+                      "name": "Name",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "64bd4f2a-6b79-4201-be0c-c6601914e331"
+                    },
+                    {
+                      "key": "9ab5e540-8818-49c2-ba79-bab972ed1601",
+                      "name": "State",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "5bbc3bba-7eb9-48d5-bad4-ef26a34970c3"
+                    },
+                    {
+                      "key": "a8f37ff4-2cee-406e-8ad1-1ff6c26831f6",
+                      "name": "Category",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "a49574d0-8480-49bf-8b8e-3e5a5e0e6295"
+                    },
+                    {
+                      "key": "d44f8b23-a66f-4714-9867-fee3573e6186",
+                      "name": "Currencycode",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "01a33679-5bf4-4872-b02b-09b4752b0b0e"
+                    },
+                    {
+                      "key": "626d089b-7ffd-416b-8bca-8314ded73142",
+                      "name": "Balance",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "8de34fdf-95be-4c7b-aadf-a956a93e7dfe"
+                    },
+                    {
+                      "key": "e72eedbc-4c32-4bcb-997e-e37b6605bc4b",
+                      "name": "Initialbalance",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "8cfd1730-9b75-4507-93cf-68bda4cd2be0"
+                    },
+                    {
+                      "key": "456d4fff-2ac3-48d6-97bc-0d025e0a5a1f",
+                      "name": "Minimumbalance",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "900c1f28-2cad-4c8a-b324-8b6045248d26"
+                    },
+                    {
+                      "key": "4a8b9ee0-906f-424f-837d-0e2de15f1961",
+                      "name": "Maximumbalance",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "1eed8ca7-8914-47c9-b126-83d8843f2cbd"
+                    },
+                    {
+                      "key": "5c846d01-65cc-4463-b357-f492ab1e36af",
+                      "name": "Validityperiodsince",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "cf01b080-c28d-4cd3-ab95-605fe2fcb5d5"
+                    },
+                    {
+                      "key": "e1bc1789-c33d-4c28-be2d-86332d80be62",
+                      "name": "Validityperioduntil",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "fa522719-fb84-4d07-8832-ad72ba3f1efc"
+                    },
+                    {
+                      "key": "94730ef2-0720-47f4-a5c0-95956ab7a9ee",
+                      "name": "Bankid",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "association",
+                      "target_association_ref": "8e8d5bfc-5b87-453c-8aaf-bc40107f6c01"
+                    },
+                    {
+                      "key": "aeeabf0c-726b-4969-86e2-d9d481910a98",
+                      "name": "Partyid",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "association",
+                      "target_association_ref": "6e809d2b-ea52-401d-94e3-60d8b33f906d"
+                    }
+                  ]
+                },
+                {
+                  "key": "b5e3a156-44de-49d8-a2bb-21c31322e049",
+                  "name": "List",
+                  "enabled": true,
+                  "method": "GET",
+                  "type": "collection",
+                  "root": false,
+                  "api_path": "list",
+                  "outputs": [
+                    {
+                      "key": "c5811706-1f54-4391-8f51-0f5a64ffe88b",
+                      "name": "Name",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "64bd4f2a-6b79-4201-be0c-c6601914e331"
+                    },
+                    {
+                      "key": "59da06af-bd0f-413e-816f-d5c1d3977d1f",
+                      "name": "Category",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "a49574d0-8480-49bf-8b8e-3e5a5e0e6295"
+                    },
+                    {
+                      "key": "dd880792-781c-4439-b5e4-d18b5cea8121",
+                      "name": "Balance",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "8de34fdf-95be-4c7b-aadf-a956a93e7dfe"
+                    },
+                    {
+                      "key": "f36d434d-ddfd-4f2b-95d0-ba5dacf5b26a",
+                      "name": "Currencycode",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "01a33679-5bf4-4872-b02b-09b4752b0b0e"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "738d7003-30ea-4d61-a720-f7b264eeda00",
+              "name": "Operation",
+              "description": "Account operation detail (items)",
+              "enabled": true,
+              "table_name": "banking_operation",
+              "api_path": "banking-operation",
+              "target_entity_ref": "912f14c6-9edd-4e29-a24d-96ea4abd5cdd",
+              "fields": [
+                {
+                  "key": "0805b557-4fdf-43fe-b7dd-9f485c6d291b",
+                  "name": "label",
+                  "description": "Label Value",
+                  "enabled": true,
+                  "type": "string",
+                  "nullable": false,
+                  "target_property_ref": "b5f6ed4a-7189-462a-8ce8-4772fc6278b5",
+                  "target_property_input_ref": "15fd00f3-7960-4aac-8634-a8e2f0e65072"
+                },
+                {
+                  "key": "ba9a70d1-0395-4e72-8505-66d89146dbad",
+                  "name": "state",
+                  "description": "account operation state Value",
+                  "enabled": true,
+                  "type": "string",
+                  "length": 20,
+                  "nullable": false,
+                  "target_property_ref": "26f04d22-5dda-4031-a737-73d850da4e14",
+                  "target_property_input_ref": "cfb217c7-9fa2-4bd8-931f-88e2a5506615"
+                },
+                {
+                  "key": "af6d9b66-f1fe-4f9d-be86-b6f64ea08a88",
+                  "name": "category",
+                  "description": "account operation category Value",
+                  "enabled": true,
+                  "type": "string",
+                  "length": 20,
+                  "nullable": false,
+                  "target_property_ref": "bd0a89f2-3ec9-4a5f-a482-2c661b74b392",
+                  "target_property_input_ref": "ccf88ba4-ee92-4194-b4ab-32d7d773621e"
+                },
+                {
+                  "key": "a6490409-2302-42ab-9df9-d3ec4579584d",
+                  "name": "amount",
+                  "description": "Amount Value",
+                  "enabled": true,
+                  "type": "float",
+                  "nullable": false,
+                  "target_property_ref": "8256a0bc-a0ce-4819-aeb7-a6c1a7088bcd",
+                  "target_property_input_ref": "81d0c0db-27c2-4012-9134-58bf09012117"
+                },
+                {
+                  "key": "e0ccbce8-2ef6-4e2c-8fc0-76d7c55e250d",
+                  "name": "valuedate",
+                  "description": "ValueDate Value",
+                  "enabled": true,
+                  "type": "\\DateTimeImmutable",
+                  "nullable": false,
+                  "target_property_ref": "4b19247b-1c6e-42c4-be47-32e2599bd66e",
+                  "target_property_input_ref": "1b19a4bd-71c8-453c-a827-cd3dc7621f01"
+                },
+                {
+                  "key": "bed90809-1d68-400b-9dac-c789d1a8a476",
+                  "name": "operationdate",
+                  "description": "OperationDate Value",
+                  "enabled": true,
+                  "type": "\\DateTimeImmutable",
+                  "nullable": false,
+                  "target_property_ref": "2ee0218e-82c9-4cd3-977e-c6edaf625750",
+                  "target_property_input_ref": "6c4ee3de-81de-4340-9379-27f58cd9a923"
+                }
+              ],
+              "associations": [],
+              "parents": [
+                {
+                  "key": "b9c86fb3-f385-484f-9f49-771964cdd2fc",
+                  "name": "account",
+                  "description": "An account, can be a cash or bank account key ",
+                  "enabled": true,
+                  "target_entity_ref": "e51b39c7-1309-4bcb-b233-e8ce83eef71b",
+                  "target_resource_ref": "b1b85f1f-17c9-458e-b540-ef51b80a8e67"
+                }
+              ],
+              "operations": [
+                {
+                  "key": "5f360b08-33f9-4af4-9153-1027f8635076",
+                  "name": "AddAccountOperation",
+                  "enabled": true,
+                  "method": "POST",
+                  "api_path": "add-account-operation",
+                  "target_command_ref": "7f5710c0-21f9-4192-90b9-2326994545c0"
+                },
+                {
+                  "key": "6f849136-6426-4b30-b106-f752b2a15a0e",
+                  "name": "RemoveAccountOperation",
+                  "enabled": true,
+                  "method": "DELETE",
+                  "api_path": "remove-account-operation",
+                  "target_command_ref": "40740555-055d-4849-b383-e9403a4eb71f"
+                }
+              ],
+              "queries": [
+                {
+                  "key": "2d514d2e-ddbb-475d-826f-03f2619982a0",
+                  "name": "",
+                  "enabled": true,
+                  "method": "GET",
+                  "type": "item",
+                  "root": true,
+                  "api_path": "",
+                  "outputs": [
+                    {
+                      "key": "645b2525-f663-4d97-8566-9c11aaa1ca5c",
+                      "name": "Label",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "0805b557-4fdf-43fe-b7dd-9f485c6d291b"
+                    },
+                    {
+                      "key": "b923c934-c327-45a7-a27a-b9baf5159737",
+                      "name": "State",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "ba9a70d1-0395-4e72-8505-66d89146dbad"
+                    },
+                    {
+                      "key": "87b1d695-4453-4f17-b7ce-dc4d436123a2",
+                      "name": "Category",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "af6d9b66-f1fe-4f9d-be86-b6f64ea08a88"
+                    },
+                    {
+                      "key": "6b527c94-04bb-4095-a6db-ff183748c01e",
+                      "name": "Amount",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "a6490409-2302-42ab-9df9-d3ec4579584d"
+                    },
+                    {
+                      "key": "0fc83b71-dce0-434a-bc02-beada5b97597",
+                      "name": "Valuedate",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "e0ccbce8-2ef6-4e2c-8fc0-76d7c55e250d"
+                    },
+                    {
+                      "key": "5a3681c6-6460-43af-96ec-13922b37c24e",
+                      "name": "Operationdate",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "bed90809-1d68-400b-9dac-c789d1a8a476"
+                    },
+                    {
+                      "key": "ad32c5c1-bb73-40f8-972f-bf387d710909",
+                      "name": "Account",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "parent",
+                      "target_parent_ref": "b9c86fb3-f385-484f-9f49-771964cdd2fc"
+                    }
+                  ]
+                },
+                {
+                  "key": "8761507c-f330-43f9-b00b-d1ddf5486fce",
+                  "name": "",
+                  "enabled": true,
+                  "method": "GET",
+                  "type": "collection",
+                  "root": true,
+                  "api_path": "",
+                  "outputs": [
+                    {
+                      "key": "c057f557-c73a-4842-bc66-5fbc1f4b2119",
+                      "name": "Label",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "0805b557-4fdf-43fe-b7dd-9f485c6d291b"
+                    },
+                    {
+                      "key": "ba4491c5-3916-42fe-bfd1-7efd9d42d814",
+                      "name": "State",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "ba9a70d1-0395-4e72-8505-66d89146dbad"
+                    },
+                    {
+                      "key": "efec9d57-bece-4ff0-a84d-c1e08ad032c7",
+                      "name": "Category",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "af6d9b66-f1fe-4f9d-be86-b6f64ea08a88"
+                    },
+                    {
+                      "key": "dd3927f6-d82a-4b0f-b041-d4b8090a1d38",
+                      "name": "Amount",
+                      "enabled": true,
+                      "type": "float",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "a6490409-2302-42ab-9df9-d3ec4579584d"
+                    },
+                    {
+                      "key": "2d077080-da2f-48dd-862d-8873aa9704de",
+                      "name": "Valuedate",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "e0ccbce8-2ef6-4e2c-8fc0-76d7c55e250d"
+                    },
+                    {
+                      "key": "796dd899-9653-48e7-bd81-3504723d90cc",
+                      "name": "Operationdate",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "bed90809-1d68-400b-9dac-c789d1a8a476"
+                    },
+                    {
+                      "key": "5dc5e11c-f417-42a6-baab-6972332910be",
+                      "name": "Account",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "parent",
+                      "target_parent_ref": "b9c86fb3-f385-484f-9f49-771964cdd2fc"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "value_objects": [
+        {
+          "key": "912408d4-0b29-49a8-b4dc-0d9c27c61ea6",
+          "name": "AccountCategory",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "a1e47232-1ab9-4210-b4b4-4192bd37fd22",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ],
+          "extend_ref": "core>category",
+          "values": [
+            {
+              "key": "040ff317-5dbb-4bda-9c4a-573f904ab40f",
+              "name": "Cash",
+              "enabled": true,
+              "value": "cash"
+            },
+            {
+              "key": "7fec9344-9ffa-4a38-b2e8-b4f477eaaa72",
+              "name": "Livret",
+              "enabled": true,
+              "value": "livret"
+            },
+            {
+              "key": "6d460ec9-a595-436c-b701-759c685ba47f",
+              "name": "Compte a terme",
+              "enabled": true,
+              "value": "compte_a_terme"
+            },
+            {
+              "key": "af423edc-4cc3-47f8-9eac-15b695d6be0e",
+              "name": "Assurance vie",
+              "enabled": true,
+              "value": "assurance_vie"
+            },
+            {
+              "key": "40791f99-fb42-4a67-b68a-0e9bf911c446",
+              "name": "Per",
+              "enabled": true,
+              "value": "per"
+            },
+            {
+              "key": "c111ed15-2fad-4bdd-9cc0-b53e197a4713",
+              "name": "Pel",
+              "enabled": true,
+              "value": "pel"
+            },
+            {
+              "key": "7fa2f600-c578-4c66-a41e-3ae44040e083",
+              "name": "Cel",
+              "enabled": true,
+              "value": "cel"
+            },
+            {
+              "key": "b9e91fb1-d5c0-42c0-9b38-e5256f91a91c",
+              "name": "Epargne",
+              "enabled": true,
+              "value": "epargne"
+            },
+            {
+              "key": "5a69def8-7d45-4028-955e-4d680cea6cbf",
+              "name": "Courant",
+              "enabled": true,
+              "value": "cb"
+            }
+          ]
+        },
+        {
+          "key": "95dced96-45e5-4ce7-9748-9c2deff4248e",
+          "name": "AccountState",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "373c5989-4c9f-44e1-8b73-9e517cf2b619",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ],
+          "extend_ref": "core>state",
+          "values": [
+            {
+              "key": "79bf0ba1-754b-469d-b8e2-466b8705fef6",
+              "name": "Draft",
+              "enabled": true,
+              "value": "draft"
+            },
+            {
+              "key": "34f20eca-8b80-42eb-b4dd-e827e75d407d",
+              "name": "Opened",
+              "enabled": true,
+              "value": "opened"
+            },
+            {
+              "key": "2562b850-693d-42d7-8e97-7063d622d3e7",
+              "name": "Closed",
+              "enabled": true,
+              "value": "closed"
+            }
+          ]
+        },
+        {
+          "key": "8c355604-e9d3-45d5-9c62-46a99873e357",
+          "name": "BankState",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "cb9107ce-aac8-44fd-b026-66c20f40e5a3",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ],
+          "extend_ref": "core>state",
+          "values": [
+            {
+              "key": "734a6456-cf25-4ba8-bcd1-999b2957208e",
+              "name": "Enabled",
+              "enabled": true,
+              "value": "enabled"
+            },
+            {
+              "key": "2d33c48e-23ab-41b2-9acf-8d049f593d18",
+              "name": "Disabled",
+              "enabled": true,
+              "value": "disabled"
+            }
+          ]
+        },
+        {
+          "key": "e05d2e05-b623-469c-a21c-0bf10bef9aa0",
+          "name": "Bic",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "4082e42f-aaa8-4a56-b42b-d6f240464187",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ],
+          "extend_ref": "core>simpleValueObject"
+        },
+        {
+          "key": "4294a9bc-e2ee-4dd0-9bc1-ac278e017b7d",
+          "name": "OperationCategory",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "37a7e53e-945e-4b71-839e-f666d9a7b1fb",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ],
+          "extend_ref": "core>category",
+          "values": [
+            {
+              "key": "075160a9-bebb-4fb1-9ef3-7bc1be130e62",
+              "name": "Coming",
+              "enabled": true,
+              "value": "coming"
+            },
+            {
+              "key": "2516fc7a-950a-4ed8-a673-fed4e3e48803",
+              "name": "Saved",
+              "enabled": true,
+              "value": "saved"
+            }
+          ]
+        },
+        {
+          "key": "6436f280-228d-481f-8422-e78a40ba9ed7",
+          "name": "OperationState",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "74c70b40-464f-44e3-a81d-6b5a6c0404a8",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ],
+          "extend_ref": "core>state",
+          "values": [
+            {
+              "key": "eddd5800-e263-4673-ae7f-02a78719acdc",
+              "name": "Ticked",
+              "enabled": true,
+              "value": "ticked"
+            },
+            {
+              "key": "47e9e7cb-28f4-4e4b-8d72-69e70824562e",
+              "name": "None",
+              "enabled": true,
+              "value": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "8bb81ad1-556c-4e77-8c21-2ea5ee5b91d3",
+      "name": "Cluster",
+      "description": "Manage parties (natural,legal)",
+      "enabled": true,
+      "contexts": [
+        {
+          "key": "22a2d9cb-e32f-4537-9ce5-f9466fd643c9",
+          "name": "Party",
+          "description": "parties (natural,legal)",
+          "enabled": true,
+          "aggregates": [
+            {
+              "key": "1d309a03-5eaa-46a8-867a-4bc9466e50be",
+              "name": "Party",
+              "enabled": true,
+              "root": {
+                "key": "f6db3e71-ae5c-46b2-b5b4-3e9f00dae5af",
+                "name": "Party",
+                "description": "legal or natural party",
+                "enabled": true,
+                "properties": [
+                  {
+                    "key": "51d2576c-ea8c-44fd-a650-9dffbffdd48c",
+                    "name": "Name",
+                    "description": "Party Name",
+                    "enabled": true,
+                    "nullable": false,
+                    "value_object_ref": "00b71014-422e-4657-ac9d-a65c58dfc1c7",
+                    "inputs": [
+                      {
+                        "key": "83828cb7-1a22-4890-9a86-3e29534c7b65",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "b9a7304b-5a27-4c28-b84a-c8e82111eacb"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "9b7d11d3-ace0-4135-b117-58ca5046aeea",
+                    "name": "State",
+                    "description": "Party State",
+                    "enabled": true,
+                    "nullable": false,
+                    "value_object_ref": "a7bae533-bfb5-4425-ae4d-d2043749af65",
+                    "inputs": [
+                      {
+                        "key": "034533c9-224d-4fd6-9f99-1bc13c58e360",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "27b767d8-d32b-4ebb-836d-50fa5b199185"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "3002a21f-abb1-41b7-ab44-888509e5d189",
+                    "name": "Category",
+                    "description": "Party Category",
+                    "enabled": true,
+                    "nullable": false,
+                    "value_object_ref": "56e47e57-c4a5-43ed-82df-0a3c91487ee4",
+                    "inputs": [
+                      {
+                        "key": "fff59918-48fe-4e92-b440-6b28979228bf",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "2039fc00-5f9a-4468-8692-1e0149586383"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "f16fc16c-eceb-402f-88e6-08c0704aa3a3",
+                    "name": "ValidityPeriod",
+                    "description": "Party Validity dates",
+                    "enabled": true,
+                    "nullable": false,
+                    "value_object_ref": "8cc60da4-20a3-4b53-9b88-0c1751b0579e",
+                    "inputs": [
+                      {
+                        "key": "492bfea2-2110-4ef5-8c75-5749ade3fa41",
+                        "name": "Since",
+                        "enabled": true,
+                        "valueObject_input_ref": "440cf00a-927c-4649-9acc-f12c2b054db8"
+                      },
+                      {
+                        "key": "6df20961-4c7d-42f7-bde2-2231da73071d",
+                        "name": "Until",
+                        "enabled": true,
+                        "valueObject_input_ref": "29e7fc65-562a-484c-9950-c616f717ae47"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "9dbc24e4-b3bf-44f6-8f2d-1d477145c828",
+                    "name": "Url",
+                    "enabled": true,
+                    "nullable": true,
+                    "value_object_ref": "43f22535-ffa1-46d0-992c-8c1d72e03099",
+                    "inputs": [
+                      {
+                        "key": "e77ddce3-2203-4f2b-a48c-0cd70bf89c33",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "5a1bed88-107f-42e8-bb7b-ff5bfca3ca73"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "f3f91a0b-2eb9-496e-8ea7-d5ad9c1beb2c",
+                    "name": "Address",
+                    "enabled": true,
+                    "nullable": true,
+                    "value_object_ref": "b369caf7-2b8f-428e-9333-b66aecee81a4",
+                    "inputs": [
+                      {
+                        "key": "733f17ca-e435-4131-9cc3-68c3205acd27",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "27135afb-7e4e-411b-8459-59c895f48f39"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "476fe771-7e5a-44a4-9688-6ff3ab60fb3b",
+                    "name": "Image",
+                    "enabled": true,
+                    "nullable": true,
+                    "value_object_ref": "f975a5c7-23bb-40e5-8b21-12b537854b69",
+                    "inputs": [
+                      {
+                        "key": "8b8d50f6-e735-4863-81c3-f94a3cf635c3",
+                        "name": "Value",
+                        "enabled": true,
+                        "valueObject_input_ref": "ac1480b5-5415-4e04-b681-d043317b6009"
+                      }
+                    ]
+                  }
+                ],
+                "relations": [],
+                "actions": [
+                  {
+                    "key": "9d9a5fd7-56f8-4731-b32c-62f5fdc6056b",
+                    "name": "Register",
+                    "description": "Register a new Party",
+                    "enabled": true,
+                    "event_name": "PartyRegistered",
+                    "role": "insert",
+                    "parameters": [
+                      {
+                        "key": "dd6a224d-ccbf-4e79-b15d-f57c7569b086",
+                        "name": "Name",
+                        "description": "Party Name",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": false,
+                        "target_property_ref": "51d2576c-ea8c-44fd-a650-9dffbffdd48c",
+                        "target_property_input_ref": "83828cb7-1a22-4890-9a86-3e29534c7b65"
+                      },
+                      {
+                        "key": "77a32aca-5294-4cd7-96ce-9e00a0eb464a",
+                        "name": "State",
+                        "description": "Party State",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": false,
+                        "target_property_ref": "9b7d11d3-ace0-4135-b117-58ca5046aeea",
+                        "target_property_input_ref": "034533c9-224d-4fd6-9f99-1bc13c58e360"
+                      },
+                      {
+                        "key": "192406ce-15b3-421b-a737-1c10bdd6c4ae",
+                        "name": "Category",
+                        "description": "Party Category",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": false,
+                        "target_property_ref": "3002a21f-abb1-41b7-ab44-888509e5d189",
+                        "target_property_input_ref": "fff59918-48fe-4e92-b440-6b28979228bf"
+                      },
+                      {
+                        "key": "03f0690e-7ae6-4a95-9f96-dd3429e50c65",
+                        "name": "Url",
+                        "description": "Party url",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "9dbc24e4-b3bf-44f6-8f2d-1d477145c828",
+                        "target_property_input_ref": "e77ddce3-2203-4f2b-a48c-0cd70bf89c33"
+                      },
+                      {
+                        "key": "b56ea3f3-df0c-4a59-9d1b-a1d120bd7722",
+                        "name": "Address",
+                        "description": "Party Address",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "f3f91a0b-2eb9-496e-8ea7-d5ad9c1beb2c",
+                        "target_property_input_ref": "733f17ca-e435-4131-9cc3-68c3205acd27"
+                      },
+                      {
+                        "key": "72d86972-525a-44f4-931f-578f228d1abf",
+                        "name": "Image",
+                        "description": "Party Picture",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": true,
+                        "target_property_ref": "476fe771-7e5a-44a4-9688-6ff3ab60fb3b",
+                        "target_property_input_ref": "8b8d50f6-e735-4863-81c3-f94a3cf635c3"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "66566d8e-8414-46fd-90eb-641b2d3e1dfc",
+                    "name": "Enable",
+                    "description": "Enable party",
+                    "enabled": true,
+                    "event_name": "PartyEnabled",
+                    "role": "update",
+                    "parameters": []
+                  },
+                  {
+                    "key": "ba03ad1a-489d-41dd-b55f-2d63c3995fbc",
+                    "name": "Disable",
+                    "description": "Disable party",
+                    "enabled": true,
+                    "event_name": "PartyDisabled",
+                    "role": "update",
+                    "parameters": []
+                  },
+                  {
+                    "key": "0aeaf87a-9a15-4155-b815-062016ddf2c1",
+                    "name": "Rename",
+                    "description": "Change name",
+                    "enabled": true,
+                    "event_name": "PartyRenamed",
+                    "role": "update",
+                    "parameters": [
+                      {
+                        "key": "088113b5-36f0-465c-8f00-29bf8c14679a",
+                        "name": "Name",
+                        "description": "Party Name",
+                        "enabled": true,
+                        "type": "string",
+                        "nullable": false,
+                        "target_property_ref": "51d2576c-ea8c-44fd-a650-9dffbffdd48c",
+                        "target_property_input_ref": "83828cb7-1a22-4890-9a86-3e29534c7b65"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "58f4695b-3759-499a-9b7a-0d33548bf514",
+                    "name": "Remove",
+                    "description": "Remove Party",
+                    "enabled": true,
+                    "event_name": "PartyRemoved",
+                    "role": "delete",
+                    "parameters": []
+                  }
+                ],
+                "entities": []
+              },
+              "commands": [
+                {
+                  "key": "3adcfa63-d466-4fde-bf32-152b9cea86e6",
+                  "name": "RegisterNatural",
+                  "description": "Register a new Person",
+                  "enabled": true,
+                  "target_action_ref": "9d9a5fd7-56f8-4731-b32c-62f5fdc6056b",
+                  "parameters": [
+                    {
+                      "key": "f5eeb20b-1ebb-4f19-a43e-29d267a2884c",
+                      "name": "Name",
+                      "description": "Party Name",
+                      "enabled": true,
+                      "target_parameter_ref": "dd6a224d-ccbf-4e79-b15d-f57c7569b086"
+                    },
+                    {
+                      "key": "7a9c60cc-11da-4430-aa22-b598926b8fee",
+                      "name": "Address",
+                      "description": "Party Address",
+                      "enabled": true,
+                      "target_parameter_ref": "b56ea3f3-df0c-4a59-9d1b-a1d120bd7722"
+                    },
+                    {
+                      "key": "310d4bba-7103-4af3-9b62-8d529a3ff3d2",
+                      "name": "Image",
+                      "description": "Party Picture",
+                      "enabled": false,
+                      "target_parameter_ref": "72d86972-525a-44f4-931f-578f228d1abf"
+                    },
+                    {
+                      "key": "552d830f-7fcc-4d2a-be15-271a0ab6a439",
+                      "name": "State",
+                      "description": "Party State",
+                      "enabled": false,
+                      "target_parameter_ref": "77a32aca-5294-4cd7-96ce-9e00a0eb464a"
+                    },
+                    {
+                      "key": "181cd978-affb-4057-8e93-a67b07b87175",
+                      "name": "Category",
+                      "description": "Party Category",
+                      "enabled": false,
+                      "target_parameter_ref": "192406ce-15b3-421b-a737-1c10bdd6c4ae"
+                    },
+                    {
+                      "key": "28f32756-2b77-448e-9bad-ab8ff48c758c",
+                      "name": "Url",
+                      "description": "Party url",
+                      "enabled": false,
+                      "target_parameter_ref": "03f0690e-7ae6-4a95-9f96-dd3429e50c65"
+                    }
+                  ]
+                },
+                {
+                  "key": "a2419014-3b8b-4634-adc0-5e524f5e37b4",
+                  "name": "RegisterLegal",
+                  "description": "Register a new Company",
+                  "enabled": true,
+                  "target_action_ref": "9d9a5fd7-56f8-4731-b32c-62f5fdc6056b",
+                  "parameters": [
+                    {
+                      "key": "454e174c-387a-4bb3-b924-30378df92eb0",
+                      "name": "Name",
+                      "description": "Party Name",
+                      "enabled": true,
+                      "target_parameter_ref": "dd6a224d-ccbf-4e79-b15d-f57c7569b086"
+                    },
+                    {
+                      "key": "81eb071d-2bab-4305-8039-0569740cd56f",
+                      "name": "Address",
+                      "description": "Party Address",
+                      "enabled": true,
+                      "target_parameter_ref": "b56ea3f3-df0c-4a59-9d1b-a1d120bd7722"
+                    },
+                    {
+                      "key": "bbda6692-03fa-4554-9204-9f3720276057",
+                      "name": "Url",
+                      "description": "Party url",
+                      "enabled": true,
+                      "target_parameter_ref": "03f0690e-7ae6-4a95-9f96-dd3429e50c65"
+                    },
+                    {
+                      "key": "daa817a4-cdaf-4905-a9f6-6cd377cb3e4b",
+                      "name": "Image",
+                      "description": "Party Picture",
+                      "enabled": false,
+                      "target_parameter_ref": "72d86972-525a-44f4-931f-578f228d1abf"
+                    },
+                    {
+                      "key": "0ec79e5c-bc1d-4f43-a1c5-3aa2e0c10bd0",
+                      "name": "State",
+                      "description": "Party State",
+                      "enabled": false,
+                      "target_parameter_ref": "77a32aca-5294-4cd7-96ce-9e00a0eb464a"
+                    },
+                    {
+                      "key": "cfe8b98b-f4c1-4f42-aefb-3f2e5cd24e0e",
+                      "name": "Category",
+                      "description": "Party Category",
+                      "enabled": false,
+                      "target_parameter_ref": "192406ce-15b3-421b-a737-1c10bdd6c4ae"
+                    }
+                  ]
+                },
+                {
+                  "key": "efb6fd8f-402f-4fdd-ae2c-63d50fbf3bf9",
+                  "name": "Enable",
+                  "description": "Enable party",
+                  "enabled": true,
+                  "target_action_ref": "66566d8e-8414-46fd-90eb-641b2d3e1dfc",
+                  "parameters": []
+                },
+                {
+                  "key": "9ace38a2-759b-4681-9d74-ffac5a65975e",
+                  "name": "Disable",
+                  "description": "Disable party",
+                  "enabled": true,
+                  "target_action_ref": "ba03ad1a-489d-41dd-b55f-2d63c3995fbc",
+                  "parameters": []
+                },
+                {
+                  "key": "1681654d-e88c-4930-a73e-0c17f50a32bc",
+                  "name": "Rename",
+                  "description": "Change name",
+                  "enabled": true,
+                  "target_action_ref": "0aeaf87a-9a15-4155-b815-062016ddf2c1",
+                  "parameters": [
+                    {
+                      "key": "20939cc9-2ad9-43d5-9387-2e4a340e622d",
+                      "name": "Name",
+                      "description": "Party Name",
+                      "enabled": true,
+                      "target_parameter_ref": "088113b5-36f0-465c-8f00-29bf8c14679a"
+                    }
+                  ]
+                },
+                {
+                  "key": "b6978ca0-55e7-4f71-93f1-8e893b6e0d45",
+                  "name": "Remove",
+                  "description": "Remove Party",
+                  "enabled": true,
+                  "target_action_ref": "58f4695b-3759-499a-9b7a-0d33548bf514",
+                  "parameters": []
+                }
+              ]
+            }
+          ],
+          "resources": [
+            {
+              "key": "e23a6282-b30b-4ab0-94e4-ad8cf69c3065",
+              "name": "Party",
+              "description": "legal or natural party",
+              "enabled": true,
+              "table_name": "cluster_party",
+              "api_path": "cluster-party",
+              "target_entity_ref": "f6db3e71-ae5c-46b2-b5b4-3e9f00dae5af",
+              "fields": [
+                {
+                  "key": "0d386690-ffd7-4534-bc33-33a5fead4f7a",
+                  "name": "name",
+                  "description": "Party Name Value",
+                  "enabled": true,
+                  "type": "string",
+                  "nullable": false,
+                  "target_property_ref": "51d2576c-ea8c-44fd-a650-9dffbffdd48c",
+                  "target_property_input_ref": "83828cb7-1a22-4890-9a86-3e29534c7b65"
+                },
+                {
+                  "key": "9f84bf25-8da5-4554-b4c7-698049d724fa",
+                  "name": "state",
+                  "description": "Party State Value",
+                  "enabled": true,
+                  "type": "string",
+                  "length": 20,
+                  "nullable": false,
+                  "target_property_ref": "9b7d11d3-ace0-4135-b117-58ca5046aeea",
+                  "target_property_input_ref": "034533c9-224d-4fd6-9f99-1bc13c58e360"
+                },
+                {
+                  "key": "8a49a4ae-c966-4963-8cb9-275a17e4f7ad",
+                  "name": "category",
+                  "description": "Party Category Value",
+                  "enabled": true,
+                  "type": "string",
+                  "length": 20,
+                  "nullable": false,
+                  "target_property_ref": "3002a21f-abb1-41b7-ab44-888509e5d189",
+                  "target_property_input_ref": "fff59918-48fe-4e92-b440-6b28979228bf"
+                },
+                {
+                  "key": "65833ec7-835a-4774-8655-ed394bfd8a09",
+                  "name": "validityperiodsince",
+                  "description": "Party Validity dates Since",
+                  "enabled": true,
+                  "type": "\\DateTimeImmutable",
+                  "nullable": false,
+                  "target_property_ref": "f16fc16c-eceb-402f-88e6-08c0704aa3a3",
+                  "target_property_input_ref": "492bfea2-2110-4ef5-8c75-5749ade3fa41"
+                },
+                {
+                  "key": "c8fc6c1d-b829-4276-bd8a-8ed64fcd9f61",
+                  "name": "validityperioduntil",
+                  "description": "Party Validity dates Until",
+                  "enabled": true,
+                  "type": "\\DateTimeImmutable",
+                  "nullable": false,
+                  "target_property_ref": "f16fc16c-eceb-402f-88e6-08c0704aa3a3",
+                  "target_property_input_ref": "6df20961-4c7d-42f7-bde2-2231da73071d"
+                },
+                {
+                  "key": "1f612f6a-a6cc-4b4b-aadf-334ae1a644dd",
+                  "name": "url",
+                  "description": "Url Value",
+                  "enabled": true,
+                  "type": "string",
+                  "nullable": true,
+                  "target_property_ref": "9dbc24e4-b3bf-44f6-8f2d-1d477145c828",
+                  "target_property_input_ref": "e77ddce3-2203-4f2b-a48c-0cd70bf89c33"
+                },
+                {
+                  "key": "3c3338d0-76d2-4cdb-98c4-9dbd79c07805",
+                  "name": "address",
+                  "description": "Address Value",
+                  "enabled": true,
+                  "type": "string",
+                  "nullable": true,
+                  "target_property_ref": "f3f91a0b-2eb9-496e-8ea7-d5ad9c1beb2c",
+                  "target_property_input_ref": "733f17ca-e435-4131-9cc3-68c3205acd27"
+                },
+                {
+                  "key": "9a39de3e-676d-4275-be1a-5e6ccff522f6",
+                  "name": "image",
+                  "description": "Image Value",
+                  "enabled": true,
+                  "type": "string",
+                  "columnType": "text",
+                  "nullable": true,
+                  "target_property_ref": "476fe771-7e5a-44a4-9688-6ff3ab60fb3b",
+                  "target_property_input_ref": "8b8d50f6-e735-4863-81c3-f94a3cf635c3"
+                }
+              ],
+              "associations": [],
+              "parents": [],
+              "operations": [
+                {
+                  "key": "754465d7-2cd0-4678-acec-a5a0a01448b7",
+                  "name": "RegisterNatural",
+                  "description": "Register a new Person",
+                  "enabled": true,
+                  "method": "POST",
+                  "api_path": "register-natural",
+                  "target_command_ref": "3adcfa63-d466-4fde-bf32-152b9cea86e6"
+                },
+                {
+                  "key": "281d24f8-643b-427f-ac2e-9dcade85349c",
+                  "name": "RegisterLegal",
+                  "description": "Register a new Company",
+                  "enabled": true,
+                  "method": "POST",
+                  "api_path": "register-legal",
+                  "target_command_ref": "a2419014-3b8b-4634-adc0-5e524f5e37b4"
+                },
+                {
+                  "key": "86dfa214-6e95-42fb-8b39-11228cf33ebe",
+                  "name": "Enable",
+                  "description": "Enable party",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "enable",
+                  "target_command_ref": "efb6fd8f-402f-4fdd-ae2c-63d50fbf3bf9"
+                },
+                {
+                  "key": "7b949cad-0db6-4963-8ca6-ec7d129dd96f",
+                  "name": "Disable",
+                  "description": "Disable party",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "disable",
+                  "target_command_ref": "9ace38a2-759b-4681-9d74-ffac5a65975e"
+                },
+                {
+                  "key": "201ce5f5-6306-4f13-9648-e6ae7351b2fb",
+                  "name": "Rename",
+                  "description": "Change name",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "rename",
+                  "target_command_ref": "1681654d-e88c-4930-a73e-0c17f50a32bc"
+                },
+                {
+                  "key": "61e56162-5d80-4a46-a7f2-95cd13f95a81",
+                  "name": "Remove",
+                  "description": "Remove Party",
+                  "enabled": true,
+                  "method": "DELETE",
+                  "api_path": "remove",
+                  "target_command_ref": "b6978ca0-55e7-4f71-93f1-8e893b6e0d45"
+                }
+              ],
+              "queries": [
+                {
+                  "key": "5b487576-b535-4d43-8a3b-9c29abaa02fd",
+                  "name": "",
+                  "enabled": true,
+                  "method": "GET",
+                  "type": "item",
+                  "root": true,
+                  "api_path": "",
+                  "outputs": [
+                    {
+                      "key": "57035829-7803-4826-8f09-606de7c71478",
+                      "name": "Name",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "0d386690-ffd7-4534-bc33-33a5fead4f7a"
+                    },
+                    {
+                      "key": "0e52ab68-4308-4d5a-a1f1-6fabe4f7ee72",
+                      "name": "State",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "9f84bf25-8da5-4554-b4c7-698049d724fa"
+                    },
+                    {
+                      "key": "9cb44374-86f6-4214-9370-b995885cedea",
+                      "name": "Category",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "8a49a4ae-c966-4963-8cb9-275a17e4f7ad"
+                    },
+                    {
+                      "key": "823f201a-54ff-4419-9d2c-5ca3fac82611",
+                      "name": "Validityperiodsince",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "65833ec7-835a-4774-8655-ed394bfd8a09"
+                    },
+                    {
+                      "key": "8f987efd-d574-4c06-9196-7905f95739e6",
+                      "name": "Validityperioduntil",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "c8fc6c1d-b829-4276-bd8a-8ed64fcd9f61"
+                    },
+                    {
+                      "key": "0d594055-f5f9-49c6-ac05-324ad4697072",
+                      "name": "Url",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "1f612f6a-a6cc-4b4b-aadf-334ae1a644dd"
+                    },
+                    {
+                      "key": "1b250555-ba56-4970-9b48-fc075979f2ef",
+                      "name": "Address",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "3c3338d0-76d2-4cdb-98c4-9dbd79c07805"
+                    },
+                    {
+                      "key": "419f82ae-c307-410a-9edb-6f90adfd30ef",
+                      "name": "Image",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "9a39de3e-676d-4275-be1a-5e6ccff522f6"
+                    }
+                  ]
+                },
+                {
+                  "key": "cffd521e-d475-426c-94c8-288656795c85",
+                  "name": "",
+                  "enabled": true,
+                  "method": "GET",
+                  "type": "collection",
+                  "root": true,
+                  "api_path": "",
+                  "outputs": [
+                    {
+                      "key": "fdc4158b-6b09-4f93-be25-dff7de0c04bd",
+                      "name": "Name",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "0d386690-ffd7-4534-bc33-33a5fead4f7a"
+                    },
+                    {
+                      "key": "404136b0-89d2-448a-bdd9-cf57b12f7c4d",
+                      "name": "State",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "9f84bf25-8da5-4554-b4c7-698049d724fa"
+                    },
+                    {
+                      "key": "ee3829b0-372c-46bd-95cd-6ba249599f3e",
+                      "name": "Category",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "8a49a4ae-c966-4963-8cb9-275a17e4f7ad"
+                    },
+                    {
+                      "key": "f0ef6651-06ca-40cd-884e-7f6266fb32f7",
+                      "name": "Validityperiodsince",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "65833ec7-835a-4774-8655-ed394bfd8a09"
+                    },
+                    {
+                      "key": "da8cb149-8430-4fc2-b9d0-5578daac9bf7",
+                      "name": "Validityperioduntil",
+                      "enabled": true,
+                      "type": "\\DateTimeImmutable",
+                      "nullable": false,
+                      "kind": "field",
+                      "target_field_ref": "c8fc6c1d-b829-4276-bd8a-8ed64fcd9f61"
+                    },
+                    {
+                      "key": "ba1546c1-cec2-4f80-9d36-1cdf98a79337",
+                      "name": "Url",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "1f612f6a-a6cc-4b4b-aadf-334ae1a644dd"
+                    },
+                    {
+                      "key": "d8a19408-40d7-4500-9d9c-09a856ab01c0",
+                      "name": "Address",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "3c3338d0-76d2-4cdb-98c4-9dbd79c07805"
+                    },
+                    {
+                      "key": "4255c098-a912-4418-b9e2-9434c418f22c",
+                      "name": "Image",
+                      "enabled": true,
+                      "type": "string",
+                      "nullable": true,
+                      "kind": "field",
+                      "target_field_ref": "9a39de3e-676d-4275-be1a-5e6ccff522f6"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "value_objects": [
+        {
+          "key": "56e47e57-c4a5-43ed-82df-0a3c91487ee4",
+          "name": "PartyCategory",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "a2f454c6-d1eb-49ba-abce-71ac43dcf584",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ],
+          "extend_ref": "core>category",
+          "values": [
+            {
+              "key": "47e46e27-9dcc-4c95-b92d-0f49a98d092b",
+              "name": "Natural",
+              "description": "A person",
+              "enabled": true,
+              "value": "natural"
+            },
+            {
+              "key": "77aa247d-2b41-4496-ba9f-a7f1053110a1",
+              "name": "Legal",
+              "description": "A company",
+              "enabled": true,
+              "value": "legal"
+            }
+          ]
+        },
+        {
+          "key": "a7bae533-bfb5-4425-ae4d-d2043749af65",
+          "name": "PartyState",
+          "enabled": true,
+          "inputs": [
+            {
+              "key": "7e06ea3e-38d5-4633-b942-bf29d2621965",
+              "name": "Value",
+              "enabled": true,
+              "type": "string"
+            }
+          ],
+          "extend_ref": "core>state",
+          "values": [
+            {
+              "key": "3d682b73-45aa-4755-913e-93ab0e2f8c03",
+              "name": "Draft",
+              "enabled": true,
+              "value": "draft"
+            },
+            {
+              "key": "b22b74df-43a1-42d4-ad48-9789ab54ae15",
+              "name": "Enabled",
+              "enabled": true,
+              "value": "enabled"
+            },
+            {
+              "key": "d2545ee8-faf8-4d42-9179-a4b41aa9fe05",
+              "name": "Disabled",
+              "enabled": true,
+              "value": "disabled"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
