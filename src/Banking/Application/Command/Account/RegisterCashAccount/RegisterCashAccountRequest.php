@@ -1,0 +1,22 @@
+<?php
+/**
+ *===========================================
+ *===== GENERATED class NEVER CHANGE IT  ====
+ *===========================================.
+ */
+
+namespace Banking\Application\Command\Account\RegisterCashAccount;
+
+use Core\Application\Command\CommandRequest;
+
+final class RegisterCashAccountRequest implements CommandRequest
+{
+    public function __construct(
+        public string $id,
+        public string $entity_id,
+        public string $name,
+        public string $currency,
+        public string $partyId,
+    ) {
+    }
+}

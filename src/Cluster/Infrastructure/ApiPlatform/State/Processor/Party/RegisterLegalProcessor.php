@@ -1,0 +1,34 @@
+<?php
+
+namespace Cluster\Infrastructure\ApiPlatform\State\Processor\Party;
+
+use ApiPlatform\Metadata\Operation;
+use Cluster\Application\Command\Party\RegisterLegal\RegisterLegalRequest;
+use Core\Infrastructure\ApiPlatform\State\Processor\CommandProcessor;
+
+final class RegisterLegalProcessor extends CommandProcessor
+{
+    public static function usedCommandRequests(): array
+    {
+        return [RegisterLegalRequest::class];
+    }
+
+    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = [])
+    {
+        /** @var registerLegalOperationDto */
+        $input = $data;
+        $id = $this->idGen->next();
+
+        $command = new RegisterLegalRequest(
+            id: $id,
+            entity_id: $input->entity_id,
+            name: $input->name,
+            address: $input->address,
+            url: $input->url,
+        );
+
+        $this->dispatch($command);
+
+        return $id;
+    }
+}

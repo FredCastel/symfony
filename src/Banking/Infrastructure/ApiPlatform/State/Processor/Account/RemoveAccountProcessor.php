@@ -1,0 +1,36 @@
+<?php
+
+namespace Banking\Infrastructure\ApiPlatform\State\Processor\Account;
+
+use ApiPlatform\Metadata\Operation;
+use Banking\Application\Command\Account\RemoveAccount\RemoveAccountRequest;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\AccountResource;
+use Core\Infrastructure\ApiPlatform\State\Processor\CommandProcessor;
+use Webmozart\Assert\Assert;
+
+final class RemoveAccountProcessor extends CommandProcessor
+{
+    public static function usedCommandRequests(): array
+    {
+        return [RemoveAccountRequest::class];
+    }
+
+    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = [])
+    {
+        Assert::isInstanceOf($context['previous_data'], AccountResource::class);
+
+        /** @var removeAccountOperationDto */
+        $input = $data;
+
+        /** @var AccountResource */
+        $current = $context['previous_data'];
+        $id = $current->id;
+
+        $command = new RemoveAccountRequest(
+            id: $id,
+            entity_id: $input->entity_id,
+        );
+
+        $this->dispatch($command);
+    }
+}
