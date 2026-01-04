@@ -17,45 +17,45 @@ final class Party extends AbstractParty
 {
     /************* Events Applier */
 
-    public function applyPartyRegistered(PartyRegisteredEvent $event): self
+    public function applyPartyRegisteredEvent(PartyRegisteredEvent $event): self
     {
-        $instance = parent::applyPartyRegistered($event);
+        $instance = parent::applyPartyRegisteredEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyPartyEnabled(PartyEnabledEvent $event): self
+    public function applyPartyEnabledEvent(PartyEnabledEvent $event): self
     {
-        $instance = parent::applyPartyEnabled($event);
+        $instance = parent::applyPartyEnabledEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyPartyDisabled(PartyDisabledEvent $event): self
+    public function applyPartyDisabledEvent(PartyDisabledEvent $event): self
     {
-        $instance = parent::applyPartyDisabled($event);
+        $instance = parent::applyPartyDisabledEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyPartyRenamed(PartyRenamedEvent $event): self
+    public function applyPartyRenamedEvent(PartyRenamedEvent $event): self
     {
-        $instance = parent::applyPartyRenamed($event);
+        $instance = parent::applyPartyRenamedEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyPartyRemoved(PartyRemovedEvent $event): self
+    public function applyPartyRemovedEvent(PartyRemovedEvent $event): self
     {
-        $instance = parent::applyPartyRemoved($event);
+        $instance = parent::applyPartyRemovedEvent($event);
 
         // TODO manage custom rules when necessary
 

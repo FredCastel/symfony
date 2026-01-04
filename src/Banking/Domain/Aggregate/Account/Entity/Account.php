@@ -21,63 +21,63 @@ final class Account extends AbstractAccount
 {
     /************* Events Applier */
 
-    public function applyAccountRegistered(AccountRegisteredEvent $event): self
+    public function applyAccountRegisteredEvent(AccountRegisteredEvent $event): self
     {
-        $instance = parent::applyAccountRegistered($event);
+        $instance = parent::applyAccountRegisteredEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyAccountOpened(AccountOpenedEvent $event): self
+    public function applyAccountOpenedEvent(AccountOpenedEvent $event): self
     {
-        $instance = parent::applyAccountOpened($event);
+        $instance = parent::applyAccountOpenedEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyAccountClosed(AccountClosedEvent $event): self
+    public function applyAccountClosedEvent(AccountClosedEvent $event): self
     {
-        $instance = parent::applyAccountClosed($event);
+        $instance = parent::applyAccountClosedEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyAccountChanged(AccountChangedEvent $event): self
+    public function applyAccountChangedEvent(AccountChangedEvent $event): self
     {
-        $instance = parent::applyAccountChanged($event);
+        $instance = parent::applyAccountChangedEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyAccountInitialBalanceSet(AccountInitialBalanceSetEvent $event): self
+    public function applyAccountInitialBalanceSetEvent(AccountInitialBalanceSetEvent $event): self
     {
-        $instance = parent::applyAccountInitialBalanceSet($event);
+        $instance = parent::applyAccountInitialBalanceSetEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyAccountBalanceLimitSet(AccountBalanceLimitSetEvent $event): self
+    public function applyAccountBalanceLimitSetEvent(AccountBalanceLimitSetEvent $event): self
     {
-        $instance = parent::applyAccountBalanceLimitSet($event);
+        $instance = parent::applyAccountBalanceLimitSetEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyAccountRemoved(AccountRemovedEvent $event): self
+    public function applyAccountRemovedEvent(AccountRemovedEvent $event): self
     {
-        $instance = parent::applyAccountRemoved($event);
+        $instance = parent::applyAccountRemovedEvent($event);
 
         // TODO manage custom rules when necessary
 
@@ -86,18 +86,18 @@ final class Account extends AbstractAccount
 
     /************* Children Entities Events Applier */
 
-    public function applyOperationAdded(OperationAddedEvent $event): self
+    public function applyOperationAddedEvent(OperationAddedEvent $event): self
     {
-        $instance = parent::applyOperationAdded($event);
+        $instance = parent::applyOperationAddedEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyOperationRemoved(OperationRemovedEvent $event): self
+    public function applyOperationRemovedEvent(OperationRemovedEvent $event): self
     {
-        $instance = parent::applyOperationRemoved($event);
+        $instance = parent::applyOperationRemovedEvent($event);
 
         // TODO manage custom rules when necessary
 

@@ -26,7 +26,7 @@ namespace <?= $ns ?>;
         yield <?= $makers->domainEventMaker::getName($action) ?>::class; 
         <?php endforeach; ?>
         <?php else: ?>
-        yield [];
+        return [];
         <?php endif; ?>
     }
 }

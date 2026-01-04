@@ -54,7 +54,7 @@ class ApiResourceOperationDtoMaker extends AbstractMaker
      */
     static public function getName(object $object, string $prefix = '', string $suffix = ''): string
     {
-            return $object->name . 'OperationDto';
+            return ucfirst($object->name) . 'OperationDto';
     }
 
     public function runGenerate(ApplicationElement $def, Generator $generator): void

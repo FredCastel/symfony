@@ -19,7 +19,7 @@ final class SetAccountInitialBalanceProcessor extends CommandProcessor
     {
         Assert::isInstanceOf($context['previous_data'], AccountResource::class);
 
-        /** @var setAccountInitialBalanceOperationDto */
+        /** @var SetAccountInitialBalanceOperationDto */
         $input = $data;
 
         /** @var AccountResource */

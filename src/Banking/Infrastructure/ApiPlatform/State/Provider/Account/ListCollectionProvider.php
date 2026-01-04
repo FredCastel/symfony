@@ -25,7 +25,7 @@ final class ListCollectionProvider implements ProviderInterface
         $dtos = [];
 
         foreach ($entities as $entity) {
-            $dtos[] = listQueryDto::mapEntityToDto($entity);
+            $dtos[] = ListQueryDto::mapEntityToDto($entity);
         }
 
         return new TraversablePaginator(

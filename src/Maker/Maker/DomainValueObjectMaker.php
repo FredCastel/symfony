@@ -64,7 +64,7 @@ class DomainValueObjectMaker extends AbstractMaker
         echo "Generating Domain Value Objects...\n";
         
         foreach ($app->namespaces as $namespace) {
-            if ($namespace->name == 'CORE') {
+            if ($namespace->name == 'Core') {
                 continue;
             }
             foreach ($namespace->valueObjects as $valueObject) {

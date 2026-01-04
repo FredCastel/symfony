@@ -18,7 +18,7 @@ abstract class Entity
         $method = 'apply' . substr(strrchr(get_class($event), '\\'), 1);
 
         if (!method_exists($this, $method)) {
-            throw new \RuntimeException("Missing apply method for " . get_class($event) . " on " . get_class($this), 1  );
+            throw new \RuntimeException("Missing $method method for " . get_class($event) . " on " . get_class($this), 1  );
         }
 
         //call Entity's apply method

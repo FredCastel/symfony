@@ -66,7 +66,7 @@ abstract class AbstractOperation extends EntityChild
      *
      * @param OperationAddedEvent $event add a new operation in account
      */
-    protected function applyOperationAdded(OperationAddedEvent $event): self
+    protected function applyOperationAddedEvent(OperationAddedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -101,7 +101,7 @@ abstract class AbstractOperation extends EntityChild
      *
      * @param OperationRemovedEvent $event remove an operation in account
      */
-    protected function applyOperationRemoved(OperationRemovedEvent $event): self
+    protected function applyOperationRemovedEvent(OperationRemovedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;

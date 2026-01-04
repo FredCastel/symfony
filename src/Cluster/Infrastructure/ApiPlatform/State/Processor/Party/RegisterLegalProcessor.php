@@ -15,7 +15,7 @@ final class RegisterLegalProcessor extends CommandProcessor
 
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = [])
     {
-        /** @var registerLegalOperationDto */
+        /** @var RegisterLegalOperationDto */
         $input = $data;
         $entity_id = $this->idGen->next();
         $id = $entity_id;     // todo subentity manageement id

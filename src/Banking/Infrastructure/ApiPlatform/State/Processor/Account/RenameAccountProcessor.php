@@ -19,7 +19,7 @@ final class RenameAccountProcessor extends CommandProcessor
     {
         Assert::isInstanceOf($context['previous_data'], AccountResource::class);
 
-        /** @var renameAccountOperationDto */
+        /** @var RenameAccountOperationDto */
         $input = $data;
 
         /** @var AccountResource */

@@ -9,14 +9,14 @@ use Banking\Domain\Repository\Account\OperationEntityRepository;
 use Banking\Domain\Repository\Bank\BankAggregateRepository;
 use Banking\Domain\Repository\Bank\BankEntityRepository;
 use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineAccountAggregateRepository;
+use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineAccountEntityRepository;
+use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineOperationEntityRepository;
 use Banking\Infrastructure\Doctrine\Repository\Bank\DoctrineBankAggregateRepository;
-use Banking\Infrastructure\Doctrine\Repository\DoctrineAccountOperationRepository;
-use Banking\Infrastructure\Doctrine\Repository\DoctrineAccountRepository;
-use Banking\Infrastructure\Doctrine\Repository\DoctrineBankRepository;
+use Banking\Infrastructure\Doctrine\Repository\Bank\DoctrineBankEntityRepository;
 use Cluster\Domain\Repository\Party\PartyAggregateRepository;
 use Cluster\Domain\Repository\Party\PartyEntityRepository;
-use Cluster\Infrastructure\Doctrine\Repository\DoctrinePartyRepository;
 use Cluster\Infrastructure\Doctrine\Repository\Party\DoctrinePartyAggregateRepository;
+use Cluster\Infrastructure\Doctrine\Repository\Party\DoctrinePartyEntityRepository;
 use Core\Application\Command\CommandHandler;
 use Core\Application\Command\CommandValidator;
 use Core\Application\Command\CommandVoter;
@@ -257,22 +257,22 @@ return function (ContainerConfigurator $containerConfigurator, string $env) {
      * Application
      **************************************
      */
-    //command
-    // $services->load('Banking\\Application\\Command\\', "$path/src/Banking/Application/Command/")
-    //     ->exclude([
-    //         "$path/src/Banking/Application/Command/*/_Tools/",
-    //         "$path/src/Banking/Application/Command/*/*/*Request.php",
-    //         "$path/src/Banking/Application/Command/*/*/Abstract*.php",
-    //         "$path/src/Banking/Application/Command/*/*/_Tools/",
-    //     ])
-    //     ->public();
-    // $services->load('Cluster\\Application\\Command\\', "$path/src/Cluster/Application/Command/")
-    //     ->exclude([
-    //         "$path/src/Cluster/Application/Command/*/_Tools/",
-    //         "$path/src/Cluster/Application/Command/*/*/*Request.php",
-    //         "$path/src/Cluster/Application/Command/*/*/_Tools/",
-    //     ])
-    //     ->public();
+    // command
+    $services->load('Banking\\Application\\Command\\', "$path/src/Banking/Application/Command/")
+        ->exclude([
+            "$path/src/Banking/Application/Command/*/_Tools/",
+            "$path/src/Banking/Application/Command/*/*/*Request.php",
+            "$path/src/Banking/Application/Command/*/*/Abstract*.php",
+            "$path/src/Banking/Application/Command/*/*/_Tools/",
+        ])
+        ->public();
+    $services->load('Cluster\\Application\\Command\\', "$path/src/Cluster/Application/Command/")
+        ->exclude([
+            "$path/src/Cluster/Application/Command/*/_Tools/",
+            "$path/src/Cluster/Application/Command/*/*/*Request.php",
+            "$path/src/Cluster/Application/Command/*/*/_Tools/",
+        ])
+        ->public();
 
 
     //  If you're using PHP configuration, you need to call instanceof before any service registration to make sure tags are correctly applied.
@@ -295,23 +295,23 @@ return function (ContainerConfigurator $containerConfigurator, string $env) {
      *                 --------------    DOCTRINE        -------------- 
      */
 
-    // // banking
-    // $services->load('Banking\\Infrastructure\\Doctrine\\Mapper\\', "$path/src/Banking/Infrastructure/Doctrine/Mapper/");
-    // $services->load('Banking\\Infrastructure\\Doctrine\\Repository\\', "$path/src/Banking/Infrastructure/Doctrine/Repository/")
-    //     ->public();
-    // $services->set(AccountAggregateRepository::class)->class(DoctrineAccountAggregateRepository::class);
-    // $services->set(AccountEntityRepository::class)->class(DoctrineAccountRepository::class);
-    // $services->set(OperationEntityRepository::class)->class(DoctrineAccountOperationRepository::class);
+    // banking
+    $services->load('Banking\\Infrastructure\\Doctrine\\Mapper\\', "$path/src/Banking/Infrastructure/Doctrine/Mapper/");
+    $services->load('Banking\\Infrastructure\\Doctrine\\Repository\\', "$path/src/Banking/Infrastructure/Doctrine/Repository/")
+        ->public();
+    $services->set(AccountAggregateRepository::class)->class(DoctrineAccountAggregateRepository::class);
+    $services->set(AccountEntityRepository::class)->class(DoctrineAccountEntityRepository::class);
+    $services->set(OperationEntityRepository::class)->class(DoctrineOperationEntityRepository::class);
 
-    // $services->set(BankAggregateRepository::class)->class(DoctrineBankAggregateRepository::class);
-    // $services->set(BankEntityRepository::class)->class(DoctrineBankRepository::class);
+    $services->set(BankAggregateRepository::class)->class(DoctrineBankAggregateRepository::class);
+    $services->set(BankEntityRepository::class)->class(DoctrineBankEntityRepository::class);
 
-    // // Cluster
-    // $services->load('Cluster\\Infrastructure\\Doctrine\\Mapper\\', "$path/src/Cluster/Infrastructure/Doctrine/Mapper/");
-    // $services->load('Cluster\\Infrastructure\\Doctrine\\Repository\\', "$path/src/Cluster/Infrastructure/Doctrine/Repository/")
-    //     ->public();
-    // $services->set(PartyAggregateRepository::class)->class(DoctrinePartyAggregateRepository::class);
-    // $services->set(PartyEntityRepository::class)->class(DoctrinePartyRepository::class);
+    // Cluster
+    $services->load('Cluster\\Infrastructure\\Doctrine\\Mapper\\', "$path/src/Cluster/Infrastructure/Doctrine/Mapper/");
+    $services->load('Cluster\\Infrastructure\\Doctrine\\Repository\\', "$path/src/Cluster/Infrastructure/Doctrine/Repository/")
+        ->public();
+    $services->set(PartyAggregateRepository::class)->class(DoctrinePartyAggregateRepository::class);
+    $services->set(PartyEntityRepository::class)->class(DoctrinePartyEntityRepository::class);
     
 
     //repositories
@@ -319,11 +319,11 @@ return function (ContainerConfigurator $containerConfigurator, string $env) {
         ->autowire(false)
         ->arg('$dependencies', tagged_iterator('ddd.dependency'));
 
-    // //events handlers    
-    // $services->load('Banking\\Infrastructure\\Doctrine\\EventHandler\\', "$path/src/Banking/Infrastructure/Doctrine/EventHandler/")
-    //     ->public();
-    // $services->load('Cluster\\Infrastructure\\Doctrine\\EventHandler\\', "$path/src/Cluster/Infrastructure/Doctrine/EventHandler/")
-    //     ->public();
+    //events handlers    
+    $services->load('Banking\\Infrastructure\\Doctrine\\EventHandler\\', "$path/src/Banking/Infrastructure/Doctrine/EventHandler/")
+        ->public();
+    $services->load('Cluster\\Infrastructure\\Doctrine\\EventHandler\\', "$path/src/Cluster/Infrastructure/Doctrine/EventHandler/")
+        ->public();
 
     //the id Generator to used is the doctrine one
     $services->set(DoctrineIdGenerator::class)->public();
@@ -351,9 +351,9 @@ return function (ContainerConfigurator $containerConfigurator, string $env) {
     /**
      *                 --------------    API-PLATFORM        -------------- 
      */
-    // $services->load('Core\\Infrastructure\\ApiPlatform\\', "$path/src/Core/Infrastructure/ApiPlatform/");
-    // $services->load('Banking\\Infrastructure\\ApiPlatform\\', "$path/src/Banking/Infrastructure/ApiPlatform/");
-    // $services->load('Cluster\\Infrastructure\\ApiPlatform\\', "$path/src/Cluster/Infrastructure/ApiPlatform/");
+    $services->load('Core\\Infrastructure\\ApiPlatform\\', "$path/src/Core/Infrastructure/ApiPlatform/");
+    $services->load('Banking\\Infrastructure\\ApiPlatform\\', "$path/src/Banking/Infrastructure/ApiPlatform/");
+    $services->load('Cluster\\Infrastructure\\ApiPlatform\\', "$path/src/Cluster/Infrastructure/ApiPlatform/");
  
 
     /**

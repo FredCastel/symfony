@@ -14,18 +14,18 @@ final class Operation extends AbstractOperation
 {
     /************* Events Applier */
 
-    public function applyOperationAdded(OperationAddedEvent $event): self
+    public function applyOperationAddedEvent(OperationAddedEvent $event): self
     {
-        $instance = parent::applyOperationAdded($event);
+        $instance = parent::applyOperationAddedEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyOperationRemoved(OperationRemovedEvent $event): self
+    public function applyOperationRemovedEvent(OperationRemovedEvent $event): self
     {
-        $instance = parent::applyOperationRemoved($event);
+        $instance = parent::applyOperationRemovedEvent($event);
 
         // TODO manage custom rules when necessary
 

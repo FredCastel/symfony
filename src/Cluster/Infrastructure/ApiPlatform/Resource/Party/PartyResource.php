@@ -10,18 +10,18 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
-use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\disableOperationDto;
-use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\enableOperationDto;
-use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\registerLegalOperationDto;
-use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\registerNaturalOperationDto;
-use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\removeOperationDto;
-use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\renameOperationDto;
-use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\disableProcessor;
-use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\enableProcessor;
-use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\registerLegalProcessor;
-use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\registerNaturalProcessor;
-use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\removeProcessor;
-use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\renameProcessor;
+use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\DisableOperationDto;
+use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\EnableOperationDto;
+use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\RegisterLegalOperationDto;
+use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\RegisterNaturalOperationDto;
+use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\RemoveOperationDto;
+use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\RenameOperationDto;
+use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\DisableProcessor;
+use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\EnableProcessor;
+use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RegisterLegalProcessor;
+use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RegisterNaturalProcessor;
+use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RemoveProcessor;
+use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RenameProcessor;
 use Cluster\Infrastructure\ApiPlatform\State\Provider\Party\RootCollectionProvider;
 use Cluster\Infrastructure\ApiPlatform\State\Provider\Party\RootItemProvider;
 use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
@@ -53,47 +53,47 @@ use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
             uriTemplate: 'cluster-party/registerNatural',
             normalizationContext: ['iri_only' => true],
             provider: RootItemProvider::class,
-            processor: registerNaturalProcessor::class,
-            input: registerNaturalOperationDto::class,
+            processor: RegisterNaturalProcessor::class,
+            input: RegisterNaturalOperationDto::class,
         ),
         new Post(
             name: '_api_/cluster-party/registerLegal',
             uriTemplate: 'cluster-party/registerLegal',
             normalizationContext: ['iri_only' => true],
             provider: RootItemProvider::class,
-            processor: registerLegalProcessor::class,
-            input: registerLegalOperationDto::class,
+            processor: RegisterLegalProcessor::class,
+            input: RegisterLegalOperationDto::class,
         ),
         new Patch(
             name: '_api_/cluster-party/{id}/enable',
             uriTemplate: 'cluster-party/{id}/enable',
             provider: RootItemProvider::class,
-            processor: enableProcessor::class,
-            input: enableOperationDto::class,
+            processor: EnableProcessor::class,
+            input: EnableOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/cluster-party/{id}/disable',
             uriTemplate: 'cluster-party/{id}/disable',
             provider: RootItemProvider::class,
-            processor: disableProcessor::class,
-            input: disableOperationDto::class,
+            processor: DisableProcessor::class,
+            input: DisableOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/cluster-party/{id}/rename',
             uriTemplate: 'cluster-party/{id}/rename',
             provider: RootItemProvider::class,
-            processor: renameProcessor::class,
-            input: renameOperationDto::class,
+            processor: RenameProcessor::class,
+            input: RenameOperationDto::class,
             output: false,
         ),
         new Delete(
             name: '_api_/cluster-party/{id}/remove',
             uriTemplate: 'cluster-party/{id}/remove',
             provider: RootItemProvider::class,
-            processor: removeProcessor::class,
-            input: removeOperationDto::class,
+            processor: RemoveProcessor::class,
+            input: RemoveOperationDto::class,
             output: false,
         ),
     ]

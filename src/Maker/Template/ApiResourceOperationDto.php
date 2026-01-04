@@ -10,6 +10,6 @@ namespace <?= $ns ?>;
     <?php if(!$parameter->nullable): ?>
     #[NotNull()]
     <?php endif; ?>
-    public <?= $parameter->nullable ? '?' : '' ?><?= $parameter->type ?> $<?= $parameter->name ?>;
+    public <?= $parameter->nullable ? '?' : '' ?><?= $parameter->type ?> $<?= $parameter->name ?><?= $parameter->nullable ? ' = null' : '' ?>;
     <?php endforeach; ?>
 }

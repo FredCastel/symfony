@@ -19,7 +19,7 @@ final class SetAccountBalanceLimitsProcessor extends CommandProcessor
     {
         Assert::isInstanceOf($context['previous_data'], AccountResource::class);
 
-        /** @var setAccountBalanceLimitsOperationDto */
+        /** @var SetAccountBalanceLimitsOperationDto */
         $input = $data;
 
         /** @var AccountResource */

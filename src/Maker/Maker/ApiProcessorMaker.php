@@ -62,7 +62,7 @@ class ApiProcessorMaker extends AbstractMaker
      */
     static public function getName(object $object, string $prefix = '', string $suffix = ''): string
     {
-        return $object->name . $prefix . $suffix . 'Processor';
+        return ucfirst($object->name) . $prefix . $suffix . 'Processor';
     }
 
     public function runGenerate(object $def, Generator $generator): void

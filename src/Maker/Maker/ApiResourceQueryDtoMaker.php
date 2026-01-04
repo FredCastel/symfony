@@ -53,7 +53,7 @@ class ApiResourceQueryDtoMaker extends AbstractMaker
      */
     static public function getName(object $object, string $prefix = '', string $suffix = ''): string
     {
-        return $object->name . 'QueryDto';
+        return ucfirst($object->name) . 'QueryDto';
 
     }
 

@@ -6,8 +6,8 @@ use Symfony\Component\Validator\Constraints\NotNull;
 
 final class SetUrlOperationDto
 {
-    public ?string $url;
+    public ?string $url = null;
     #[NotNull()]
     public string $name;
-    public ?string $bic;
+    public ?string $bic = null;
 }

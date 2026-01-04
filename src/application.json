@@ -5,7 +5,7 @@
   "namespaces": [
     {
       "key": "core",
-      "name": "CORE",
+      "name": "Core",
       "enabled": true,
       "contexts": [],
       "value_objects": [

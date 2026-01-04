@@ -10,6 +10,6 @@ final class RegisterOperationDto
     public string $name;
     #[NotNull()]
     public string $country;
-    public ?string $url;
-    public ?string $bic;
+    public ?string $url = null;
+    public ?string $bic = null;
 }

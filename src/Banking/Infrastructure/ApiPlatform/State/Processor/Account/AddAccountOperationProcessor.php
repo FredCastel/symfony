@@ -15,7 +15,7 @@ final class AddAccountOperationProcessor extends CommandProcessor
 
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = [])
     {
-        /** @var addAccountOperationOperationDto */
+        /** @var AddAccountOperationOperationDto */
         $input = $data;
         $entity_id = $this->idGen->next();
         $id = $entity_id;     // todo subentity manageement id

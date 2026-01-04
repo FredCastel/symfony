@@ -28,4 +28,15 @@ namespace <?= $ns ?>;
     public function getRoot(): EntityRoot{
         return $this->root;
     }    
+
+    
+    /**
+     * get all aggregate entities
+     * 
+     * used in get() method in entity repository
+     * @return Entity[] array of entities with id as table key
+     */
+    public function getEntities(): array{
+        return $this->root->getChildEntities();
+    }
 }

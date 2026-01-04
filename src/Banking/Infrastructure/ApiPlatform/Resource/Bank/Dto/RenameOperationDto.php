@@ -8,6 +8,6 @@ final class RenameOperationDto
 {
     #[NotNull()]
     public string $name;
-    public ?string $url;
-    public ?string $bic;
+    public ?string $url = null;
+    public ?string $bic = null;
 }

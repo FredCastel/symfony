@@ -15,7 +15,7 @@ final class RegisterCashAccountProcessor extends CommandProcessor
 
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = [])
     {
-        /** @var registerCashAccountOperationDto */
+        /** @var RegisterCashAccountOperationDto */
         $input = $data;
         $entity_id = $this->idGen->next();
         $id = $entity_id;     // todo subentity manageement id

@@ -8,6 +8,6 @@ final class RegisterLegalOperationDto
 {
     #[NotNull()]
     public string $name;
-    public ?string $address;
-    public ?string $url;
+    public ?string $address = null;
+    public ?string $url = null;
 }

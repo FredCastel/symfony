@@ -9,10 +9,10 @@ use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Post;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\addAccountOperationOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\removeAccountOperationOperationDto;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\addAccountOperationProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\removeAccountOperationProcessor;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\AddAccountOperationOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\RemoveAccountOperationOperationDto;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\AddAccountOperationProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\RemoveAccountOperationProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootCollectionProvider;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootItemProvider;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineOperation;
@@ -44,15 +44,15 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineOperation;
             uriTemplate: 'banking-operation/addAccountOperation',
             normalizationContext: ['iri_only' => true],
             provider: RootItemProvider::class,
-            processor: addAccountOperationProcessor::class,
-            input: addAccountOperationOperationDto::class,
+            processor: AddAccountOperationProcessor::class,
+            input: AddAccountOperationOperationDto::class,
         ),
         new Delete(
             name: '_api_/banking-operation/{id}/removeAccountOperation',
             uriTemplate: 'banking-operation/{id}/removeAccountOperation',
             provider: RootItemProvider::class,
-            processor: removeAccountOperationProcessor::class,
-            input: removeAccountOperationOperationDto::class,
+            processor: RemoveAccountOperationProcessor::class,
+            input: RemoveAccountOperationOperationDto::class,
             output: false,
         ),
     ]

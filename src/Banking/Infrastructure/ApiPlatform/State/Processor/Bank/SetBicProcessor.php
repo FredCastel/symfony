@@ -19,7 +19,7 @@ final class SetBicProcessor extends CommandProcessor
     {
         Assert::isInstanceOf($context['previous_data'], BankResource::class);
 
-        /** @var setBicOperationDto */
+        /** @var SetBicOperationDto */
         $input = $data;
 
         /** @var BankResource */

@@ -74,7 +74,7 @@ abstract class AbstractParty extends EntityRoot
      *
      * @param PartyRegisteredEvent $event Register a new Party
      */
-    protected function applyPartyRegistered(PartyRegisteredEvent $event): self
+    protected function applyPartyRegisteredEvent(PartyRegisteredEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -116,7 +116,7 @@ abstract class AbstractParty extends EntityRoot
      *
      * @param PartyEnabledEvent $event Enable party
      */
-    protected function applyPartyEnabled(PartyEnabledEvent $event): self
+    protected function applyPartyEnabledEvent(PartyEnabledEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -133,7 +133,7 @@ abstract class AbstractParty extends EntityRoot
      *
      * @param PartyDisabledEvent $event Disable party
      */
-    protected function applyPartyDisabled(PartyDisabledEvent $event): self
+    protected function applyPartyDisabledEvent(PartyDisabledEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -150,7 +150,7 @@ abstract class AbstractParty extends EntityRoot
      *
      * @param PartyRenamedEvent $event Change name
      */
-    protected function applyPartyRenamed(PartyRenamedEvent $event): self
+    protected function applyPartyRenamedEvent(PartyRenamedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -172,7 +172,7 @@ abstract class AbstractParty extends EntityRoot
      *
      * @param PartyRemovedEvent $event Remove Party
      */
-    protected function applyPartyRemoved(PartyRemovedEvent $event): self
+    protected function applyPartyRemovedEvent(PartyRemovedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;

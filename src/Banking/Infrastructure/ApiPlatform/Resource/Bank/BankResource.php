@@ -10,20 +10,20 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\disableOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\enableOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\registerOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\removeOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\renameOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\setBicOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\setUrlOperationDto;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\disableProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\enableProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\registerProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\removeProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\renameProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\setBicProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\setUrlProcessor;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\DisableOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\EnableOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RegisterOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RemoveOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RenameOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\SetBicOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\SetUrlOperationDto;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\DisableProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\EnableProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RegisterProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RemoveProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RenameProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetBicProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetUrlProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Bank\RootCollectionProvider;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Bank\RootItemProvider;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
@@ -55,55 +55,55 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
             uriTemplate: 'banking-bank/register',
             normalizationContext: ['iri_only' => true],
             provider: RootItemProvider::class,
-            processor: registerProcessor::class,
-            input: registerOperationDto::class,
+            processor: RegisterProcessor::class,
+            input: RegisterOperationDto::class,
         ),
         new Patch(
             name: '_api_/banking-bank/{id}/enable',
             uriTemplate: 'banking-bank/{id}/enable',
             provider: RootItemProvider::class,
-            processor: enableProcessor::class,
-            input: enableOperationDto::class,
+            processor: EnableProcessor::class,
+            input: EnableOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/banking-bank/{id}/disable',
             uriTemplate: 'banking-bank/{id}/disable',
             provider: RootItemProvider::class,
-            processor: disableProcessor::class,
-            input: disableOperationDto::class,
+            processor: DisableProcessor::class,
+            input: DisableOperationDto::class,
             output: false,
         ),
         new Delete(
             name: '_api_/banking-bank/{id}/remove',
             uriTemplate: 'banking-bank/{id}/remove',
             provider: RootItemProvider::class,
-            processor: removeProcessor::class,
-            input: removeOperationDto::class,
+            processor: RemoveProcessor::class,
+            input: RemoveOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/banking-bank/{id}/rename',
             uriTemplate: 'banking-bank/{id}/rename',
             provider: RootItemProvider::class,
-            processor: renameProcessor::class,
-            input: renameOperationDto::class,
+            processor: RenameProcessor::class,
+            input: RenameOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/banking-bank/{id}/setUrl',
             uriTemplate: 'banking-bank/{id}/setUrl',
             provider: RootItemProvider::class,
-            processor: setUrlProcessor::class,
-            input: setUrlOperationDto::class,
+            processor: SetUrlProcessor::class,
+            input: SetUrlOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/banking-bank/{id}/setBic',
             uriTemplate: 'banking-bank/{id}/setBic',
             provider: RootItemProvider::class,
-            processor: setBicProcessor::class,
-            input: setBicOperationDto::class,
+            processor: SetBicProcessor::class,
+            input: SetBicOperationDto::class,
             output: false,
         ),
     ]

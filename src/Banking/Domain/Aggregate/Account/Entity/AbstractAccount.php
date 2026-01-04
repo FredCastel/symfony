@@ -109,7 +109,7 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @param AccountRegisteredEvent $event Create a new account
      */
-    protected function applyAccountRegistered(AccountRegisteredEvent $event): self
+    protected function applyAccountRegisteredEvent(AccountRegisteredEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -152,7 +152,7 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @param AccountOpenedEvent $event Change account state to opened
      */
-    protected function applyAccountOpened(AccountOpenedEvent $event): self
+    protected function applyAccountOpenedEvent(AccountOpenedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -169,7 +169,7 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @param AccountClosedEvent $event Change account state to closed
      */
-    protected function applyAccountClosed(AccountClosedEvent $event): self
+    protected function applyAccountClosedEvent(AccountClosedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -186,7 +186,7 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @param AccountChangedEvent $event Change account simple properties
      */
-    protected function applyAccountChanged(AccountChangedEvent $event): self
+    protected function applyAccountChangedEvent(AccountChangedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -208,7 +208,7 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @param AccountInitialBalanceSetEvent $event Set initial account balance when account is in draft status
      */
-    protected function applyAccountInitialBalanceSet(AccountInitialBalanceSetEvent $event): self
+    protected function applyAccountInitialBalanceSetEvent(AccountInitialBalanceSetEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -231,7 +231,7 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @param AccountBalanceLimitSetEvent $event Set min and max balance amount
      */
-    protected function applyAccountBalanceLimitSet(AccountBalanceLimitSetEvent $event): self
+    protected function applyAccountBalanceLimitSetEvent(AccountBalanceLimitSetEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -259,7 +259,7 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @param AccountRemovedEvent $event remove a closed account
      */
-    protected function applyAccountRemoved(AccountRemovedEvent $event): self
+    protected function applyAccountRemovedEvent(AccountRemovedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -277,7 +277,7 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @param OperationAddedEvent $event add a new operation in account
      */
-    protected function applyOperationAdded(OperationAddedEvent $event): self
+    protected function applyOperationAddedEvent(OperationAddedEvent $event): self
     {
         // this is a change action, clone the existing instance, and apply changes
         $instance = clone $this;
@@ -300,7 +300,7 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @param OperationRemovedEvent $event remove an operation in account
      */
-    protected function applyOperationRemoved(OperationRemovedEvent $event): self
+    protected function applyOperationRemovedEvent(OperationRemovedEvent $event): self
     {
         // this is a change action, clone the existing instance, and apply changes
         $instance = clone $this;

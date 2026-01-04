@@ -19,7 +19,7 @@ final class RenameProcessor extends CommandProcessor
     {
         Assert::isInstanceOf($context['previous_data'], PartyResource::class);
 
-        /** @var renameOperationDto */
+        /** @var RenameOperationDto */
         $input = $data;
 
         /** @var PartyResource */

@@ -71,7 +71,7 @@ abstract class AbstractBank extends EntityRoot
      *
      * @param BankRegisteredEvent $event Create a new bank
      */
-    protected function applyBankRegistered(BankRegisteredEvent $event): self
+    protected function applyBankRegisteredEvent(BankRegisteredEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -118,7 +118,7 @@ abstract class AbstractBank extends EntityRoot
      *
      * @param BankEnabledEvent $event Change bank status to enabled
      */
-    protected function applyBankEnabled(BankEnabledEvent $event): self
+    protected function applyBankEnabledEvent(BankEnabledEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -135,7 +135,7 @@ abstract class AbstractBank extends EntityRoot
      *
      * @param BankDisabledEvent $event Change bank status to disabled
      */
-    protected function applyBankDisabled(BankDisabledEvent $event): self
+    protected function applyBankDisabledEvent(BankDisabledEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -152,7 +152,7 @@ abstract class AbstractBank extends EntityRoot
      *
      * @param BankChangedEvent $event Change bank simple properties
      */
-    protected function applyBankChanged(BankChangedEvent $event): self
+    protected function applyBankChangedEvent(BankChangedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -182,7 +182,7 @@ abstract class AbstractBank extends EntityRoot
      *
      * @param BankRemovedEvent $event Delete a bank
      */
-    protected function applyBankRemoved(BankRemovedEvent $event): self
+    protected function applyBankRemovedEvent(BankRemovedEvent $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;

@@ -65,7 +65,7 @@ abstract <?= str_replace('final', '', $class_data->getClassDeclaration()) ?>
     * @see <?= $makers->domainEventMaker::getFullName($action) ?> 
     * @param <?= $makers->domainEventMaker::getName($action) ?> $event <?= $action->description ?>      
     */
-    protected function apply<?= $action->eventName ?>(<?= $makers->domainEventMaker::getName($action) ?> $event): self
+    protected function apply<?= $makers->domainEventMaker::getName($action) ?>(<?= $makers->domainEventMaker::getName($action) ?> $event): self
     {
         // clone the existing instance, and apply changes
         $instance = clone $this;
@@ -132,7 +132,7 @@ abstract <?= str_replace('final', '', $class_data->getClassDeclaration()) ?>
     * @see <?= $makers->domainEventMaker::getFullName($action) ?> 
     * @param <?= $makers->domainEventMaker::getName($action) ?> $event <?= $action->description ?> 
     */
-    protected function apply<?= $action->eventName ?>(<?= $makers->domainEventMaker::getName($action) ?> $event): self
+    protected function apply<?= $makers->domainEventMaker::getName($action) ?>(<?= $makers->domainEventMaker::getName($action) ?> $event): self
     {
         // this is a change action, clone the existing instance, and apply changes
         $instance = clone $this;

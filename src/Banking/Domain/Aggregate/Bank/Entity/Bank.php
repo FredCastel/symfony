@@ -17,45 +17,45 @@ final class Bank extends AbstractBank
 {
     /************* Events Applier */
 
-    public function applyBankRegistered(BankRegisteredEvent $event): self
+    public function applyBankRegisteredEvent(BankRegisteredEvent $event): self
     {
-        $instance = parent::applyBankRegistered($event);
+        $instance = parent::applyBankRegisteredEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyBankEnabled(BankEnabledEvent $event): self
+    public function applyBankEnabledEvent(BankEnabledEvent $event): self
     {
-        $instance = parent::applyBankEnabled($event);
+        $instance = parent::applyBankEnabledEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyBankDisabled(BankDisabledEvent $event): self
+    public function applyBankDisabledEvent(BankDisabledEvent $event): self
     {
-        $instance = parent::applyBankDisabled($event);
+        $instance = parent::applyBankDisabledEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyBankChanged(BankChangedEvent $event): self
+    public function applyBankChangedEvent(BankChangedEvent $event): self
     {
-        $instance = parent::applyBankChanged($event);
+        $instance = parent::applyBankChangedEvent($event);
 
         // TODO manage custom rules when necessary
 
         return $instance;
     }
 
-    public function applyBankRemoved(BankRemovedEvent $event): self
+    public function applyBankRemovedEvent(BankRemovedEvent $event): self
     {
-        $instance = parent::applyBankRemoved($event);
+        $instance = parent::applyBankRemovedEvent($event);
 
         // TODO manage custom rules when necessary
 

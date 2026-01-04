@@ -19,7 +19,7 @@ final class SetUrlProcessor extends CommandProcessor
     {
         Assert::isInstanceOf($context['previous_data'], BankResource::class);
 
-        /** @var setUrlOperationDto */
+        /** @var SetUrlOperationDto */
         $input = $data;
 
         /** @var BankResource */

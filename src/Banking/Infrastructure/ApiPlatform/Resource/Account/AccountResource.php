@@ -10,23 +10,23 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\closeAccountOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\openAccounOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\registerBankAccountOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\registerCashAccountOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\removeAccountOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\renameAccountOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\setAccountBalanceLimitsOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\setAccountInitialBalanceOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\CloseAccountOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\OpenAccounOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\RegisterBankAccountOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\RegisterCashAccountOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\RemoveAccountOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\RenameAccountOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\SetAccountBalanceLimitsOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\SetAccountInitialBalanceOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\BankResource;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\closeAccountProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\openAccounProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\registerBankAccountProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\registerCashAccountProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\removeAccountProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\renameAccountProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\setAccountBalanceLimitsProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Account\setAccountInitialBalanceProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\CloseAccountProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\OpenAccounProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\RegisterBankAccountProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\RegisterCashAccountProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\RemoveAccountProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\RenameAccountProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\SetAccountBalanceLimitsProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\SetAccountInitialBalanceProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Account\listCollectionProvider;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootCollectionProvider;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootItemProvider;
@@ -68,63 +68,63 @@ use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
             uriTemplate: 'banking-account/registerBankAccount',
             normalizationContext: ['iri_only' => true],
             provider: RootItemProvider::class,
-            processor: registerBankAccountProcessor::class,
-            input: registerBankAccountOperationDto::class,
+            processor: RegisterBankAccountProcessor::class,
+            input: RegisterBankAccountOperationDto::class,
         ),
         new Post(
             name: '_api_/banking-account/registerCashAccount',
             uriTemplate: 'banking-account/registerCashAccount',
             normalizationContext: ['iri_only' => true],
             provider: RootItemProvider::class,
-            processor: registerCashAccountProcessor::class,
-            input: registerCashAccountOperationDto::class,
+            processor: RegisterCashAccountProcessor::class,
+            input: RegisterCashAccountOperationDto::class,
         ),
         new Patch(
             name: '_api_/banking-account/{id}/openAccoun',
             uriTemplate: 'banking-account/{id}/openAccoun',
             provider: RootItemProvider::class,
-            processor: openAccounProcessor::class,
-            input: openAccounOperationDto::class,
+            processor: OpenAccounProcessor::class,
+            input: OpenAccounOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/banking-account/{id}/closeAccount',
             uriTemplate: 'banking-account/{id}/closeAccount',
             provider: RootItemProvider::class,
-            processor: closeAccountProcessor::class,
-            input: closeAccountOperationDto::class,
+            processor: CloseAccountProcessor::class,
+            input: CloseAccountOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/banking-account/{id}/renameAccount',
             uriTemplate: 'banking-account/{id}/renameAccount',
             provider: RootItemProvider::class,
-            processor: renameAccountProcessor::class,
-            input: renameAccountOperationDto::class,
+            processor: RenameAccountProcessor::class,
+            input: RenameAccountOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/banking-account/{id}/setAccountInitialBalance',
             uriTemplate: 'banking-account/{id}/setAccountInitialBalance',
             provider: RootItemProvider::class,
-            processor: setAccountInitialBalanceProcessor::class,
-            input: setAccountInitialBalanceOperationDto::class,
+            processor: SetAccountInitialBalanceProcessor::class,
+            input: SetAccountInitialBalanceOperationDto::class,
             output: false,
         ),
         new Patch(
             name: '_api_/banking-account/{id}/setAccountBalanceLimits',
             uriTemplate: 'banking-account/{id}/setAccountBalanceLimits',
             provider: RootItemProvider::class,
-            processor: setAccountBalanceLimitsProcessor::class,
-            input: setAccountBalanceLimitsOperationDto::class,
+            processor: SetAccountBalanceLimitsProcessor::class,
+            input: SetAccountBalanceLimitsOperationDto::class,
             output: false,
         ),
         new Delete(
             name: '_api_/banking-account/{id}/removeAccount',
             uriTemplate: 'banking-account/{id}/removeAccount',
             provider: RootItemProvider::class,
-            processor: removeAccountProcessor::class,
-            input: removeAccountOperationDto::class,
+            processor: RemoveAccountProcessor::class,
+            input: RemoveAccountOperationDto::class,
             output: false,
         ),
     ]

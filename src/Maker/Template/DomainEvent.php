@@ -29,8 +29,8 @@ readonly <?= $class_data->getClassDeclaration() ?>
      <?php endforeach; ?>
      */
     public function __construct(
-        public string $id,
-        public string $entity_id,
+        string $id,
+        string $entity_id,
         <?php foreach ($action->parameters as $parameter): ?>
         public <?= $parameter->nullable ? '?' : '' ?><?= $parameter->type ?> $<?= $parameter->name ?>,
         <?php endforeach; ?>

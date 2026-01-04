@@ -14,9 +14,9 @@ namespace <?= $ns ?>;
     /************* Events Applier */
 
     <?php foreach ($entity->actions as $action): ?>
-    public function apply<?= $action->eventName ?>(<?= $makers->domainEventMaker::getName($action) ?> $event): <?= $makers->domainEntityMaker::getName($entity) ?>
+    public function apply<?= $makers->domainEventMaker::getName($action) ?>(<?= $makers->domainEventMaker::getName($action) ?> $event): <?= $makers->domainEntityMaker::getName($entity) ?>
     {
-        $instance = parent::apply<?= $action->eventName ?>($event);
+        $instance = parent::apply<?= $makers->domainEventMaker::getName($action) ?>($event);
 
         //TODO manage custom rules when necessary
 
@@ -28,9 +28,9 @@ namespace <?= $ns ?>;
 
     <?php foreach ($entity->entities as $child): ?>
     <?php foreach ($child->actions as $action): ?>
-    public function apply<?= $action->eventName ?>(<?= $makers->domainEventMaker::getName($action) ?> $event): <?= $makers->domainEntityMaker::getName($entity) ?>
+    public function apply<?= $makers->domainEventMaker::getName($action) ?>(<?= $makers->domainEventMaker::getName($action) ?> $event): <?= $makers->domainEntityMaker::getName($entity) ?>
     {
-        $instance = parent::apply<?= $action->eventName ?>($event);
+        $instance = parent::apply<?= $makers->domainEventMaker::getName($action) ?>($event);
 
         //TODO manage custom rules when necessary
 

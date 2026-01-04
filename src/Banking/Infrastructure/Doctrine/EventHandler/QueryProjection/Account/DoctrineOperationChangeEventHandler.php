@@ -24,6 +24,6 @@ final class DoctrineOperationChangeEventHandler extends AbstractPersistEventHand
 
     public function listenTo(): iterable
     {
-        yield [];
+        return [];
     }
 }
