@@ -17,11 +17,12 @@ final class RegisterProcessor extends CommandProcessor
     {
         /** @var registerOperationDto */
         $input = $data;
-        $id = $this->idGen->next();
+        $entity_id = $this->idGen->next();
+        $id = $entity_id;     // todo subentity manageement id
 
         $command = new RegisterBankRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
             name: $input->name,
             country: $input->country,
             url: $input->url,

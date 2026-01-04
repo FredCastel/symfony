@@ -19,16 +19,14 @@ final class RemoveProcessor extends CommandProcessor
     {
         Assert::isInstanceOf($context['previous_data'], BankResource::class);
 
-        /** @var removeOperationDto */
-        $input = $data;
-
         /** @var BankResource */
         $current = $context['previous_data'];
         $id = $current->id;
+        $entity_id = $current->id;
 
         $command = new RemoveBankRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
         );
 
         $this->dispatch($command);

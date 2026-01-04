@@ -25,10 +25,11 @@ final class SetAccountBalanceLimitsProcessor extends CommandProcessor
         /** @var AccountResource */
         $current = $context['previous_data'];
         $id = $current->id;
+        $entity_id = $current->id;
 
         $command = new SetAccountBalanceLimitsRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
             minimum: $input->minimum,
             maximum: $input->maximum,
         );

@@ -25,10 +25,11 @@ final class SetUrlProcessor extends CommandProcessor
         /** @var BankResource */
         $current = $context['previous_data'];
         $id = $current->id;
+        $entity_id = $current->id;
 
         $command = new SetBankUrlRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
             url: $input->url,
             name: $input->name,
             bic: $input->bic,

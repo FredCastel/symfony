@@ -7,7 +7,5 @@ use Symfony\Component\Validator\Constraints\NotNull;
 final class SetAccountInitialBalanceOperationDto
 {
     #[NotNull()]
-    public string $entity_id;
-    #[NotNull()]
     public float $balance;
 }

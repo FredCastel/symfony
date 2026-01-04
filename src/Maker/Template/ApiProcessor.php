@@ -19,22 +19,25 @@ namespace <?= $ns ?>;
         /** @var <?= $makers->apiResourceOperationDtoMaker::getName($operation) ?> */
         $input = $data;
         <?php endif; ?>
-        $id = $this->idGen->next();        
+        $entity_id = $this->idGen->next(); 
+        $id = $entity_id;     //todo subentity manageement id    
         <?php else: ?>        
         Assert::isInstanceOf($context['previous_data'], <?= $makers->apiResourceMaker::getName($resource) ?>::class);
         
-        <?php if($command->parameters): ?>
+        <?php if($operation->hasParameters()): ?>
         /** @var <?= $makers->apiResourceOperationDtoMaker::getName($operation) ?> */
         $input = $data;
         <?php endif; ?>
         /** @var <?= $makers->apiResourceMaker::getName($resource) ?> */
         $current = $context['previous_data'];
         $id = $current->id; 
+        $entity_id = $current->id; 
         <?php endif; ?>
 
         $command = new <?= $makers->applicationCommandRequestMaker::getName($command) ?>(
             id: $id,            
-            <?php foreach ($command->parameters as $parameter): ?>
+            entity_id: $entity_id,            
+            <?php foreach ($operation->getParameters() as $parameter): ?>
             <?= $parameter->name ?>: $input-><?= $parameter->name ?>,
             <?php endforeach; ?>
         );

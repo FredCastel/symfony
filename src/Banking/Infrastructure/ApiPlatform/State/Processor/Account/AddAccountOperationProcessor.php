@@ -17,11 +17,12 @@ final class AddAccountOperationProcessor extends CommandProcessor
     {
         /** @var addAccountOperationOperationDto */
         $input = $data;
-        $id = $this->idGen->next();
+        $entity_id = $this->idGen->next();
+        $id = $entity_id;     // todo subentity manageement id
 
         $command = new AddAccountOperationRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
             operationDate: $input->operationDate,
             valueDate: $input->valueDate,
             amount: $input->amount,

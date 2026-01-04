@@ -34,4 +34,44 @@ class ResourceOperationElement extends AbstractElement
     {
         return self::get($this->target_command_ref);
     }
+
+    /**
+     * @return CommandParameterElement[]
+     */
+    public function getParameters(): array
+    {
+        $list = [];
+        foreach($this->getTargetCommand()->parameters as $parameter) {
+            if(!$parameter->isId())
+            $list[] = $parameter;   
+        }
+        return $list;
+    }
+    public function hasParameters(): bool
+    {
+        return $this->getParameters() !== [];
+    }
+
+    public function getMethod(): string
+    {
+        switch ($this->method) {
+            case 'POST':
+                return 'Post';
+            case 'PUT':
+                return 'Put';
+            case 'PATCH':
+                return 'Patch';
+            case 'DELETE':
+                return 'Delete';
+        }
+    }
+    public function isInsert(): bool
+    {
+        switch ($this->method) {
+            case 'POST':
+                return true;
+            default:
+                return false;
+        }
+    }
 }

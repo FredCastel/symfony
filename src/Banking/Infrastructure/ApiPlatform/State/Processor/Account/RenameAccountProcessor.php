@@ -25,10 +25,11 @@ final class RenameAccountProcessor extends CommandProcessor
         /** @var AccountResource */
         $current = $context['previous_data'];
         $id = $current->id;
+        $entity_id = $current->id;
 
         $command = new RenameAccountRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
             name: $input->name,
         );
 

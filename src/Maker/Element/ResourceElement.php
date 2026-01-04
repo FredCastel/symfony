@@ -170,6 +170,19 @@ class ResourceElement extends AbstractElement
         return $this->queries[$key];
     }
 
+    public function getRootItemQuery(): ResourceQueryElement
+    {
+        return array_find($this->queries, function ( ResourceQueryElement $query) {
+            return $query->isItemQuery() && $query->isRoot();
+            });       
+    }
+    public function getRootCollectionQuery(): ResourceQueryElement
+    {
+        return array_find($this->queries, function (ResourceQueryElement $query) {
+            return $query->isCollectionQuery() && $query->isRoot();
+            });      
+    }
+
     /**
      * Summary of addSubResource
      * @return ResourceElement[] 

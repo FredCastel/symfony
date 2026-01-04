@@ -48,7 +48,7 @@ https://bjdash.github.io/JSON-Schema-Builder/
 générer à partir du fichier application.json
 toutes les classes necessaires à paritr des modèles
 ```console
-php bin/console make:ddd:all
+php bin/console make:ddd:full
 php bin/console make:ddd:domain
 php bin/console make:ddd:application
 php bin/console make:ddd:doctrine

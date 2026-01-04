@@ -7,8 +7,6 @@ use Symfony\Component\Validator\Constraints\NotNull;
 final class SetAccountBalanceLimitsOperationDto
 {
     #[NotNull()]
-    public string $entity_id;
-    #[NotNull()]
     public float $minimum;
     #[NotNull()]
     public float $maximum;

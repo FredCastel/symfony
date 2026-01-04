@@ -33,7 +33,7 @@ namespace <?= $ns ?>;
         new Get(
             name: '_api_/<?= $resource->apiPath ?>/{id}',
             uriTemplate: '/<?= $resource->apiPath ?>/{id}',
-            provider: <?= $makers->apiItemProviderMaker::getName($query) ?>::class,
+            provider: <?= $makers->apiItemProviderMaker::getName($resource->getRootItemQuery()) ?>::class,
             output: <?= $class_data->getClassName() ?>::class,
         ),
         <?php else: ?>
@@ -41,11 +41,27 @@ namespace <?= $ns ?>;
             name: '_api_/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
             uriTemplate: '/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
             input: false,
-            provider: <?= $apiQueryProviderMaker::getName($query) ?>::class,
-            output: <?= $apiResourceDtoMaker::getName($query) ?>::class,
+            provider: <?= $makers->apiQueryProviderMaker::getName($resource->getRootCollectionQuery()) ?>::class,
+            output: <?= $makers->apiResourceDtoMaker::getName($query) ?>::class,
         ),         
         <?php endif; ?>      
         <?php endif; ?>           
+        <?php endforeach; ?>
+        //commands
+        <?php foreach ($resource->operations as $operation): ?>
+        new <?= $operation->getMethod() ?>(
+            name: '_api_/<?= $resource->apiPath ?>/<?= !$operation->isInsert() ? '{id}/' : '' ?><?= $operation->name ?>',
+            uriTemplate: '<?= $resource->apiPath ?>/<?= !$operation->isInsert() ? '{id}/' : '' ?><?= $operation->name ?>',
+            <?php if($operation->isInsert()): ?>
+            normalizationContext: ['iri_only' => true],
+            <?php endif; ?>
+            provider: <?= $makers->apiItemProviderMaker::getName($resource->getRootItemQuery()) ?>::class,
+            processor: <?= $makers->apiProcessorMaker::getName($operation) ?>::class,
+            input: <?= $operation->getTargetCommand()->parameters ? $makers->apiResourceOperationDtoMaker::getName($operation).'::class' : 'false' ?>,
+            <?php if(!$operation->isInsert()): ?>
+            output: false,            
+            <?php endif; ?>
+        ),  
         <?php endforeach; ?>
     ]
 )]   

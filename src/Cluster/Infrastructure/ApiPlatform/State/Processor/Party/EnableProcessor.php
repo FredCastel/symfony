@@ -19,16 +19,14 @@ final class EnableProcessor extends CommandProcessor
     {
         Assert::isInstanceOf($context['previous_data'], PartyResource::class);
 
-        /** @var enableOperationDto */
-        $input = $data;
-
         /** @var PartyResource */
         $current = $context['previous_data'];
         $id = $current->id;
+        $entity_id = $current->id;
 
         $command = new EnableRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
         );
 
         $this->dispatch($command);

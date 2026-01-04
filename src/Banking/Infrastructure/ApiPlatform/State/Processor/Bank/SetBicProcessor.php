@@ -25,10 +25,11 @@ final class SetBicProcessor extends CommandProcessor
         /** @var BankResource */
         $current = $context['previous_data'];
         $id = $current->id;
+        $entity_id = $current->id;
 
         $command = new SetBankBicRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
             bic: $input->bic,
             name: $input->name,
             url: $input->url,

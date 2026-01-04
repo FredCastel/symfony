@@ -40,4 +40,9 @@ class CommandParameterElement extends AbstractElement
     {
         return self::get($this->target_parameter_ref);
     }
+
+    public function isId(): bool
+    {
+        return $this->name === 'entity_id';
+    }
 }

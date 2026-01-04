@@ -7,11 +7,7 @@ use Symfony\Component\Validator\Constraints\NotNull;
 final class RenameOperationDto
 {
     #[NotNull()]
-    public string $entity_id;
-    #[NotNull()]
     public string $name;
-    #[NotNull()]
-    public string $url;
-    #[NotNull()]
-    public string $bic;
+    public ?string $url;
+    public ?string $bic;
 }

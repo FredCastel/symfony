@@ -6,7 +6,7 @@ namespace <?= $ns ?>;
 
 <?= $class_data->getClassDeclaration() ?>
 {    
-    <?php foreach ($operation->getTargetCommand()->parameters as $parameter): ?>
+    <?php foreach ($operation->getParameters() as $parameter): ?>
     <?php if(!$parameter->nullable): ?>
     #[NotNull()]
     <?php endif; ?>

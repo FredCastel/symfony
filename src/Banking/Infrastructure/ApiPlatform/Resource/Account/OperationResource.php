@@ -5,8 +5,14 @@ namespace Banking\Infrastructure\ApiPlatform\Resource\Account;
 use ApiPlatform\Doctrine\Orm\State\Options;
 use ApiPlatform\Metadata\ApiProperty;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Post;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\addAccountOperationOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\removeAccountOperationOperationDto;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\addAccountOperationProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Account\removeAccountOperationProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootCollectionProvider;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootItemProvider;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineOperation;
@@ -30,6 +36,24 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineOperation;
             normalizationContext: ['iri_only' => true],
             itemUriTemplate: '/banking-operation/{id}',
             provider: RootCollectionProvider::class,
+        ),
+
+        // commands
+        new Post(
+            name: '_api_/banking-operation/addAccountOperation',
+            uriTemplate: 'banking-operation/addAccountOperation',
+            normalizationContext: ['iri_only' => true],
+            provider: RootItemProvider::class,
+            processor: addAccountOperationProcessor::class,
+            input: addAccountOperationOperationDto::class,
+        ),
+        new Delete(
+            name: '_api_/banking-operation/{id}/removeAccountOperation',
+            uriTemplate: 'banking-operation/{id}/removeAccountOperation',
+            provider: RootItemProvider::class,
+            processor: removeAccountOperationProcessor::class,
+            input: removeAccountOperationOperationDto::class,
+            output: false,
         ),
     ]
 )]

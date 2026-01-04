@@ -6,12 +6,8 @@ use Symfony\Component\Validator\Constraints\NotNull;
 
 final class SetUrlOperationDto
 {
-    #[NotNull()]
-    public string $entity_id;
-    #[NotNull()]
-    public string $url;
+    public ?string $url;
     #[NotNull()]
     public string $name;
-    #[NotNull()]
-    public string $bic;
+    public ?string $bic;
 }

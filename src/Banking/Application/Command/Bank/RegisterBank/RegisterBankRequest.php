@@ -16,8 +16,8 @@ final class RegisterBankRequest implements CommandRequest
         public string $entity_id,
         public string $name,
         public string $country,
-        public string $url,
-        public string $bic,
+        public ?string $url = null,
+        public ?string $bic = null,
     ) {
     }
 }

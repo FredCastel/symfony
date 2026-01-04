@@ -76,4 +76,9 @@ class CommandElement extends AbstractElement
     {
         return $this->getTargetAction()->entity;
     }
+
+    public function hasParameters(): bool
+    {
+        return $this->parameters !== [];
+    }
 }

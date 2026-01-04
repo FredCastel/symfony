@@ -650,6 +650,7 @@
                       "name": "Url",
                       "description": "url of the bank",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "90a3247c-8ddc-4cea-8a99-10deed114d33"
                     },
                     {
@@ -657,6 +658,7 @@
                       "name": "Bic",
                       "description": "bic code of the bank",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "9a29db72-cf62-41bf-bd53-e6c9a6d36c14"
                     },
                     {
@@ -664,6 +666,7 @@
                       "name": "ValidSince",
                       "description": "bank validity start date, can be null",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "6955ed06-0b86-4283-a559-f81d22b480ba"
                     },
                     {
@@ -671,6 +674,7 @@
                       "name": "ValidUntil",
                       "description": "bank validity end date, can be null",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "0b9c30e1-0b40-4dce-95ee-5db1af538d17"
                     },
                     {
@@ -685,6 +689,7 @@
                       "name": "Image",
                       "description": "logo of the bank",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "0c82d167-1659-4e66-9fba-18064e26fd3c"
                     }
                   ]
@@ -732,6 +737,7 @@
                       "name": "Url",
                       "description": "change bank url",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "280b1320-3984-4486-903b-1f260e6f347e"
                     },
                     {
@@ -739,6 +745,7 @@
                       "name": "Bic",
                       "description": "change bank bic code",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "c2dc03c3-957c-43af-b3cb-60f168f54204"
                     }
                   ]
@@ -755,6 +762,7 @@
                       "name": "Url",
                       "description": "change bank url",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "280b1320-3984-4486-903b-1f260e6f347e"
                     },
                     {
@@ -769,6 +777,7 @@
                       "name": "Bic",
                       "description": "change bank bic code",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "c2dc03c3-957c-43af-b3cb-60f168f54204"
                     }
                   ]
@@ -785,6 +794,7 @@
                       "name": "Bic",
                       "description": "change bank bic code",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "c2dc03c3-957c-43af-b3cb-60f168f54204"
                     },
                     {
@@ -799,6 +809,7 @@
                       "name": "Url",
                       "description": "change bank url",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "280b1320-3984-4486-903b-1f260e6f347e"
                     }
                   ]
@@ -1712,6 +1723,7 @@
                       "name": "PartyId",
                       "description": "relation to Party",
                       "enabled": true,
+                      "nullable": false,
                       "target_parameter_ref": "b7c1f720-1147-459c-bcb2-2ad33324bb2b"
                     },
                     {
@@ -1741,6 +1753,7 @@
                       "name": "ValidSince",
                       "description": "account validity start date, can be null",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "a8f3cd2d-0f0a-4955-b591-4b11b7155e5e"
                     },
                     {
@@ -1748,6 +1761,7 @@
                       "name": "ValidUntil",
                       "description": "account validity end date, can be null",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "db9b489a-e9e0-47ca-abfa-f45f677bb7a8"
                     }
                   ]
@@ -1778,6 +1792,7 @@
                       "name": "PartyId",
                       "description": "relation to Party",
                       "enabled": true,
+                      "nullable": false,
                       "target_parameter_ref": "b7c1f720-1147-459c-bcb2-2ad33324bb2b"
                     },
                     {
@@ -1785,6 +1800,7 @@
                       "name": "validSince",
                       "description": "account validity start date, can be null",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "a8f3cd2d-0f0a-4955-b591-4b11b7155e5e"
                     },
                     {
@@ -1792,6 +1808,7 @@
                       "name": "validUntil",
                       "description": "account validity end date, can be null",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "db9b489a-e9e0-47ca-abfa-f45f677bb7a8"
                     },
                     {
@@ -1813,6 +1830,7 @@
                       "name": "BankId",
                       "description": "id of the related bank",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "59d4b633-9a9c-4b03-8974-931b35ce7d6f"
                     }
                   ]
@@ -3160,6 +3178,7 @@
                       "name": "Name",
                       "description": "Party Name",
                       "enabled": true,
+                      "nullable": false,
                       "target_parameter_ref": "dd6a224d-ccbf-4e79-b15d-f57c7569b086"
                     },
                     {
@@ -3167,6 +3186,7 @@
                       "name": "Address",
                       "description": "Party Address",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "b56ea3f3-df0c-4a59-9d1b-a1d120bd7722"
                     },
                     {
@@ -3174,6 +3194,7 @@
                       "name": "Image",
                       "description": "Party Picture",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "72d86972-525a-44f4-931f-578f228d1abf"
                     },
                     {
@@ -3181,6 +3202,7 @@
                       "name": "State",
                       "description": "Party State",
                       "enabled": false,
+                      "nullable": false,
                       "target_parameter_ref": "77a32aca-5294-4cd7-96ce-9e00a0eb464a"
                     },
                     {
@@ -3188,6 +3210,7 @@
                       "name": "Category",
                       "description": "Party Category",
                       "enabled": false,
+                      "nullable": false,
                       "target_parameter_ref": "192406ce-15b3-421b-a737-1c10bdd6c4ae"
                     },
                     {
@@ -3195,6 +3218,7 @@
                       "name": "Url",
                       "description": "Party url",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "03f0690e-7ae6-4a95-9f96-dd3429e50c65"
                     }
                   ]
@@ -3211,6 +3235,7 @@
                       "name": "Name",
                       "description": "Party Name",
                       "enabled": true,
+                      "nullable": false,
                       "target_parameter_ref": "dd6a224d-ccbf-4e79-b15d-f57c7569b086"
                     },
                     {
@@ -3218,6 +3243,7 @@
                       "name": "Address",
                       "description": "Party Address",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "b56ea3f3-df0c-4a59-9d1b-a1d120bd7722"
                     },
                     {
@@ -3225,6 +3251,7 @@
                       "name": "Url",
                       "description": "Party url",
                       "enabled": true,
+                      "nullable": true,
                       "target_parameter_ref": "03f0690e-7ae6-4a95-9f96-dd3429e50c65"
                     },
                     {
@@ -3232,6 +3259,7 @@
                       "name": "Image",
                       "description": "Party Picture",
                       "enabled": false,
+                      "nullable": true,
                       "target_parameter_ref": "72d86972-525a-44f4-931f-578f228d1abf"
                     },
                     {
@@ -3239,6 +3267,7 @@
                       "name": "State",
                       "description": "Party State",
                       "enabled": false,
+                      "nullable": false,
                       "target_parameter_ref": "77a32aca-5294-4cd7-96ce-9e00a0eb464a"
                     },
                     {
@@ -3246,6 +3275,7 @@
                       "name": "Category",
                       "description": "Party Category",
                       "enabled": false,
+                      "nullable": false,
                       "target_parameter_ref": "192406ce-15b3-421b-a737-1c10bdd6c4ae"
                     }
                   ]
@@ -3278,6 +3308,7 @@
                       "name": "Name",
                       "description": "Party Name",
                       "enabled": true,
+                      "nullable": false,
                       "target_parameter_ref": "088113b5-36f0-465c-8f00-29bf8c14679a"
                     }
                   ]

@@ -7,8 +7,6 @@ use Symfony\Component\Validator\Constraints\NotNull;
 final class AddAccountOperationOperationDto
 {
     #[NotNull()]
-    public string $entity_id;
-    #[NotNull()]
     public string $operationDate;
     #[NotNull()]
     public string $valueDate;

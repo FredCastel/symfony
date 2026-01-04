@@ -14,9 +14,9 @@ final class SetBankBicRequest implements CommandRequest
     public function __construct(
         public string $id,
         public string $entity_id,
-        public string $bic,
+        public ?string $bic = null,
         public string $name,
-        public string $url,
+        public ?string $url = null,
     ) {
     }
 }

@@ -19,16 +19,14 @@ final class RemoveAccountProcessor extends CommandProcessor
     {
         Assert::isInstanceOf($context['previous_data'], AccountResource::class);
 
-        /** @var removeAccountOperationDto */
-        $input = $data;
-
         /** @var AccountResource */
         $current = $context['previous_data'];
         $id = $current->id;
+        $entity_id = $current->id;
 
         $command = new RemoveAccountRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
         );
 
         $this->dispatch($command);

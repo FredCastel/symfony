@@ -7,8 +7,6 @@ use Symfony\Component\Validator\Constraints\NotNull;
 final class RegisterBankAccountOperationDto
 {
     #[NotNull()]
-    public string $entity_id;
-    #[NotNull()]
     public string $name;
     #[NotNull()]
     public string $currency;

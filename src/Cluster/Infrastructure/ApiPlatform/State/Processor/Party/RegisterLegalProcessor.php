@@ -17,11 +17,12 @@ final class RegisterLegalProcessor extends CommandProcessor
     {
         /** @var registerLegalOperationDto */
         $input = $data;
-        $id = $this->idGen->next();
+        $entity_id = $this->idGen->next();
+        $id = $entity_id;     // todo subentity manageement id
 
         $command = new RegisterLegalRequest(
             id: $id,
-            entity_id: $input->entity_id,
+            entity_id: $entity_id,
             name: $input->name,
             address: $input->address,
             url: $input->url,
