@@ -14,12 +14,24 @@ doctrine:
             Doctrine\DBAL\Platforms\PostgreSQLPlatform: identity
         auto_mapping: true
         mappings:
-            App:
-                type: attribute
+            Banking:
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
-                alias: App
+                type: 'attribute'
+                dir: '%kernel.project_dir%/src/Banking/Infrastructure/Doctrine/Entity'
+                prefix: 'Banking\Infrastructure\Doctrine\Entity'
+                alias: Banking
+            Cluster:
+                is_bundle: false
+                type: 'attribute'
+                dir: '%kernel.project_dir%/src/Cluster/Infrastructure/Doctrine/Entity'
+                prefix: 'Cluster\Infrastructure\Doctrine\Entity'
+                alias: Cluster
+            Core:
+                is_bundle: false
+                type: 'attribute'
+                dir: '%kernel.project_dir%/src/Core/Infrastructure/Doctrine/Entity'
+                prefix: 'Core\Infrastructure\Doctrine\Entity'
+                alias: Core
         controller_resolver:
             auto_mapping: false
 
