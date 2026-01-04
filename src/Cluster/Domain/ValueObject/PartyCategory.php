@@ -2,14 +2,14 @@
 
 namespace Cluster\Domain\ValueObject;
 
-use CORE\Domain\ValueObject\Category;
+use Core\Domain\ValueObject\Category;
 
 /**
  * @todo adjust this definition
  */
 final class PartyCategory extends Category
 {
-    private function __construct(
+    public function __construct(
         string $value,
     ) {
         parent::__construct($value);

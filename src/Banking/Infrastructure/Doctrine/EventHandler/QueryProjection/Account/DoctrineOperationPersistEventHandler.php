@@ -9,6 +9,7 @@ namespace Banking\Infrastructure\Doctrine\EventHandler\QueryProjection\Account;
 
 use Banking\Domain\Event\Account\OperationAddedEvent;
 use Banking\Infrastructure\Doctrine\Mapper\DoctrineOperationMapper;
+use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineAccountAggregateRepository;
 use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineOperationEntityRepository;
 use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
 use Doctrine\ORM\EntityManagerInterface;
@@ -16,11 +17,12 @@ use Doctrine\ORM\EntityManagerInterface;
 final class DoctrineOperationPersistEventHandler extends AbstractPersistEventHandler
 {
     public function __construct(
+        DoctrineAccountAggregateRepository $aggregateRepository,
         DoctrineOperationEntityRepository $repo,
         DoctrineOperationMapper $mapper,
         EntityManagerInterface $em
     ) {
-        parent::__construct($repo, $mapper, $em);
+        parent::__construct($aggregateRepository, $repo, $mapper, $em);
     }
 
     public function listenTo(): iterable

@@ -10,13 +10,13 @@ abstract class ConstantValueObject extends SimpleValueObject
     {
         parent::__construct($value);
 
-        $values = [];
-        foreach (static::getAllowed() as $a) {
-            $values[] = $a->value;
-        }
-        if (!in_array($value, $values)) {
-            throw new \Exception("Value $value not allowed", 1);
-        }
+        // $values = [];
+        // foreach (static::getAllowed() as $a) {
+        //     $values[] = $a->value;
+        // }
+        // if (!in_array($value, $values)) {
+        //     throw new \Exception("Value $value not allowed", 1);
+        // } a revoir car boucle infinie 
     }
 
     protected function internalCheck(): void

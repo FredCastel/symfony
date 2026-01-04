@@ -13,12 +13,12 @@ use Cluster\Domain\ValueObject\PartyState;
 use Core\Domain\Aggregate\Aggregate;
 use Core\Domain\Aggregate\Entity;
 use Core\Domain\Aggregate\EntityRoot;
-use CORE\Domain\ValueObject\Address;
-use CORE\Domain\ValueObject\Id;
-use CORE\Domain\ValueObject\Image;
-use CORE\Domain\ValueObject\Name;
-use CORE\Domain\ValueObject\Url;
-use CORE\Domain\ValueObject\ValidityPeriod;
+use Core\Domain\ValueObject\Address;
+use Core\Domain\ValueObject\Id;
+use Core\Domain\ValueObject\Image;
+use Core\Domain\ValueObject\Name;
+use Core\Domain\ValueObject\Url;
+use Core\Domain\ValueObject\ValidityPeriod;
 
 /**
  * legal or natural party* @generated This class is generated and updated by the maker, do not modify it manually.

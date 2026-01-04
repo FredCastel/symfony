@@ -17,11 +17,11 @@ use Banking\Domain\ValueObject\AccountState;
 use Core\Domain\Aggregate\Aggregate;
 use Core\Domain\Aggregate\Entity;
 use Core\Domain\Aggregate\EntityRoot;
-use CORE\Domain\ValueObject\Amount;
-use CORE\Domain\ValueObject\Currency;
-use CORE\Domain\ValueObject\Id;
-use CORE\Domain\ValueObject\Name;
-use CORE\Domain\ValueObject\ValidityPeriod;
+use Core\Domain\ValueObject\Amount;
+use Core\Domain\ValueObject\Currency;
+use Core\Domain\ValueObject\Id;
+use Core\Domain\ValueObject\Name;
+use Core\Domain\ValueObject\ValidityPeriod;
 
 /**
  * An account, can be a cash or bank account* @generated This class is generated and updated by the maker, do not modify it manually.

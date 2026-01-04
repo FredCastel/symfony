@@ -2,7 +2,7 @@
 
 namespace Banking\Domain\ValueObject;
 
-use CORE\Domain\ValueObject\SimpleValueObject;
+use Core\Domain\ValueObject\SimpleValueObject;
 use Core\Service\Assert\Assert;
 
 /**
@@ -10,7 +10,7 @@ use Core\Service\Assert\Assert;
  */
 final class Bic extends SimpleValueObject
 {
-    private function __construct(
+    public function __construct(
         string $value,
     ) {
         parent::__construct($value);

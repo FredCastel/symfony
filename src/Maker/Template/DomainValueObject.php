@@ -10,7 +10,7 @@ namespace <?= $ns ?>;
 */ 
 <?= $class_data->getClassDeclaration() ?>
 {
-    private function __construct(
+    public function __construct(
         string $value,
     ) {
         parent::__construct($value);

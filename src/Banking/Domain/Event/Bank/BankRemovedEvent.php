@@ -2,7 +2,7 @@
 /**
  *===========================================
  *===== GENERATED class NEVER CHANGE IT  ====
- *===========================================
+ *===========================================.
  */
 
 namespace Banking\Domain\Event\Bank;
@@ -12,22 +12,24 @@ use Core\Domain\Event\AbstractEvent;
 /**
  * Event of the Bank aggegate
  * linked to Remove action of Bank entity
- * Remove : Delete a bank 
+ * Remove : Delete a bank.
+ *
  * @internal GENERATED class NEVER CHANGE IT
  */
-readonly final class BankRemovedEvent extends AbstractEvent{
+final readonly class BankRemovedEvent extends AbstractEvent
+{
     /**
-     * Create a new event BankRemoved 
-     * linked to action Remove 
-     * of entity Bank 
+     * Create a new event BankRemoved
+     * linked to action Remove
+     * of entity Bank.
      *
-     * @param string $id the aggregate id
+     * @param string $id        the aggregate id
      * @param string $entity_id the entity id
-          */
+     */
     public function __construct(
         string $id,
         string $entity_id,
-            ) {
-    parent::__construct($id,$entity_id);
+    ) {
+        parent::__construct($id, $entity_id);
     }
 }

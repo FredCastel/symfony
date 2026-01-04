@@ -10,9 +10,9 @@ use Banking\Domain\ValueObject\OperationState;
 use Core\Domain\Aggregate\Aggregate;
 use Core\Domain\Aggregate\Entity;
 use Core\Domain\Aggregate\EntityChild;
-use CORE\Domain\ValueObject\Amount;
-use CORE\Domain\ValueObject\DateTime;
-use CORE\Domain\ValueObject\Label;
+use Core\Domain\ValueObject\Amount;
+use Core\Domain\ValueObject\DateTime;
+use Core\Domain\ValueObject\Label;
 
 /**
  * Account operation detail (items)* @generated This class is generated and updated by the maker, do not modify it manually.

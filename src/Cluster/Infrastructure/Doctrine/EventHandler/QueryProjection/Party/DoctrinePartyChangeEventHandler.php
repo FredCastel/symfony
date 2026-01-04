@@ -11,6 +11,7 @@ use Cluster\Domain\Event\Party\PartyDisabledEvent;
 use Cluster\Domain\Event\Party\PartyEnabledEvent;
 use Cluster\Domain\Event\Party\PartyRenamedEvent;
 use Cluster\Infrastructure\Doctrine\Mapper\DoctrinePartyMapper;
+use Cluster\Infrastructure\Doctrine\Repository\Party\DoctrinePartyAggregateRepository;
 use Cluster\Infrastructure\Doctrine\Repository\Party\DoctrinePartyEntityRepository;
 use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,11 +19,12 @@ use Doctrine\ORM\EntityManagerInterface;
 final class DoctrinePartyChangeEventHandler extends AbstractPersistEventHandler
 {
     public function __construct(
+        DoctrinePartyAggregateRepository $aggregateRepository,
         DoctrinePartyEntityRepository $repo,
         DoctrinePartyMapper $mapper,
         EntityManagerInterface $em
     ) {
-        parent::__construct($repo, $mapper, $em);
+        parent::__construct($aggregateRepository, $repo, $mapper, $em);
     }
 
     public function listenTo(): iterable

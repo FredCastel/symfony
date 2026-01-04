@@ -25,6 +25,11 @@ abstract class Entity
         return $this->$method($event);
     }
 
+    public function getAggregate(): Aggregate
+    {
+        return $this->aggregate;
+    }
+
     public function getId(): Id
     {
         return $this->id;

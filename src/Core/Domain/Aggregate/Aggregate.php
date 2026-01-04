@@ -28,7 +28,7 @@ abstract class Aggregate
     public function apply(AbstractEvent $event): Aggregate{
         //call EntityRoot's apply method
         /**  @var Aggregate */
-        $newVersionOfAggretate = $this->root->apply($event);
+        $newVersionOfAggretate = $this->root->apply($event)->getAggregate();
 
         //increment version after applying event
         $this->version = new Version($this->version->value + 1);
@@ -54,5 +54,10 @@ abstract class Aggregate
      * used in get() method in entity repository
      * @return Entity[] array of entities with id as table key
      */
-    abstract public function getEntities(): array;
+    public function getEntities(): array{        
+        $list = [];
+        $list[$this->root->getId()->value] = $this->root;
+        $list = array_merge($list, $this->root->getChildEntities());
+        return $list;
+    }
 }

@@ -89,6 +89,7 @@ class DoctrineEventHandlerMaker extends AbstractMaker
                             extendsClass: AbstractPersistEventHandler::class,
                             useStatements: [
                                 ...$useStatements,
+                                DoctrineAggregateRepositoryMaker::getFullName($entity->aggregate),
                                 DoctrineEntityRepositoryMaker::getFullName($resource),
                                 DoctrineMapperMaker::getFullName($resource),
                                 AbstractPersistEventHandler::class,

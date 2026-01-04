@@ -22,7 +22,7 @@ abstract class DoctrineAggregateRepository extends ServiceEntityRepository
     public function __construct(
         ManagerRegistry $registry
     ) {
-        parent::__construct($registry, static::getAggregateClass());
+        parent::__construct($registry, DoctrineEvent::class);
         $this->idGenerator = new DoctrineIdGenerator();
 
         $this->serializer = new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
@@ -33,7 +33,7 @@ abstract class DoctrineAggregateRepository extends ServiceEntityRepository
     public function save(Aggregate $aggregate, array $events): void
     {
         //check version        
-        $version = $this->getAggregateVersion($aggregate->getId()->value);
+        $version = $this->getAggregateVersion($aggregate->getId()->value) + 1;
 
         if ($version != $aggregate->getVersion()->value)
             throw new \Exception("Aggregation " . static::getAggregateClass() . " version is " . $aggregate->getVersion()->value . " need $version", 1);
@@ -63,8 +63,8 @@ abstract class DoctrineAggregateRepository extends ServiceEntityRepository
         //insert entity aggregate key
         foreach ($aggregate->getEntities() as $entity) {
            $keyEntity = (new DoctrineEntityKey())
-                ->setId($entity->getId()->value)
-                ->setAggregateId($aggregate->getId()->value);
+                ->setId(Uuid::fromString($entity->getId()->value))
+                ->setAggregateId(Uuid::fromString($aggregate->getId()->value));
             $this->getEntityManager()->persist($keyEntity);
         }
     }
@@ -75,12 +75,11 @@ abstract class DoctrineAggregateRepository extends ServiceEntityRepository
         $class = $this->getAggregateClass();
         //$version = $this->getAggregateVersion($id);
 
-        $instance = new $class();
+        $instance = new $class(new \Core\Domain\ValueObject\Id($id));
         //$instance->setVersion(new Version($version));
         foreach ($events as $event) {
             $instance = $instance->apply($event);
         }
-
         return $instance;
     }
 
@@ -108,7 +107,8 @@ abstract class DoctrineAggregateRepository extends ServiceEntityRepository
         $dql = "SELECT max( e.version ) FROM $table as e 
             WHERE e.aggregate = :aggregate 
               and e.aggregateId = :id";
-        $result = $this->getEntityManager()->createQuery($dql)
+        $em = $this->getEntityManager();              
+        $result = $em->createQuery($dql)
             ->setParameter('aggregate', $aggregate)
             ->setParameter('id', $id)
             ->getSingleScalarResult();

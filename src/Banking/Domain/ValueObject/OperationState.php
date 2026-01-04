@@ -2,14 +2,14 @@
 
 namespace Banking\Domain\ValueObject;
 
-use CORE\Domain\ValueObject\State;
+use Core\Domain\ValueObject\State;
 
 /**
  * @todo adjust this definition
  */
 final class OperationState extends State
 {
-    private function __construct(
+    public function __construct(
         string $value,
     ) {
         parent::__construct($value);

@@ -11,6 +11,7 @@ use Banking\Domain\Event\Bank\BankChangedEvent;
 use Banking\Domain\Event\Bank\BankDisabledEvent;
 use Banking\Domain\Event\Bank\BankEnabledEvent;
 use Banking\Infrastructure\Doctrine\Mapper\DoctrineBankMapper;
+use Banking\Infrastructure\Doctrine\Repository\Bank\DoctrineBankAggregateRepository;
 use Banking\Infrastructure\Doctrine\Repository\Bank\DoctrineBankEntityRepository;
 use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,11 +19,12 @@ use Doctrine\ORM\EntityManagerInterface;
 final class DoctrineBankChangeEventHandler extends AbstractPersistEventHandler
 {
     public function __construct(
+        DoctrineBankAggregateRepository $aggregateRepository,
         DoctrineBankEntityRepository $repo,
         DoctrineBankMapper $mapper,
         EntityManagerInterface $em
     ) {
-        parent::__construct($repo, $mapper, $em);
+        parent::__construct($aggregateRepository, $repo, $mapper, $em);
     }
 
     public function listenTo(): iterable

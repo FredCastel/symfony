@@ -36,7 +36,7 @@ abstract class DoctrineEntityRepository extends ServiceEntityRepository
     protected function getEntityAggregate(string $id): Aggregate
     {
         $table = DoctrineEntityKey::class;
-        $dql = "SELECT SINGLE e.aggregate_id FROM $table as e 
+        $dql = "SELECT e.aggregateId FROM $table as e 
             WHERE e.id = :id";
         $aggregateId = $this->getEntityManager()->createQuery($dql)
             ->setParameter('id', $id)
