@@ -13,9 +13,9 @@ use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\AddAccountOperationO
 use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\RemoveAccountOperationOperationDto;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Account\AddAccountOperationProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Account\RemoveAccountOperationProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootCollectionProvider;
-use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootItemProvider;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineOperation;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceCollectionProvider;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
 
 #[ApiResource(
     shortName: 'Operation',
@@ -23,34 +23,33 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineOperation;
     operations: [
         // getter
 
-        new Get(
-            name: '_api_/banking-operation/{id}',
-            uriTemplate: '/banking-operation/{id}',
-            provider: RootItemProvider::class,
-            output: OperationResource::class,
-        ),
-
+        // Resource Getters
         new GetCollection(
             name: '_api_/banking-operation',
             uriTemplate: '/banking-operation',
             normalizationContext: ['iri_only' => true],
             itemUriTemplate: '/banking-operation/{id}',
-            provider: RootCollectionProvider::class,
+            provider: ResourceCollectionProvider::class,
         ),
-
+        new Get(
+            name: '_api_/banking-operation/{id}',
+            uriTemplate: '/banking-operation/{id}',
+            provider: ResourceItemProvider::class,
+            output: OperationResource::class,
+        ),
         // commands
         new Post(
             name: '_api_/banking-operation/addAccountOperation',
             uriTemplate: 'banking-operation/addAccountOperation',
             normalizationContext: ['iri_only' => true],
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: AddAccountOperationProcessor::class,
             input: AddAccountOperationOperationDto::class,
         ),
         new Delete(
             name: '_api_/banking-operation/{id}/removeAccountOperation',
             uriTemplate: 'banking-operation/{id}/removeAccountOperation',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RemoveAccountOperationProcessor::class,
             input: RemoveAccountOperationOperationDto::class,
             output: false,

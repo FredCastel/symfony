@@ -79,6 +79,9 @@ class ApiCollectionProviderMaker extends AbstractMaker
                         if (!$query->isCollectionQuery()) {
                             continue;
                         }
+                        if ($query->isRoot()) {
+                            continue;
+                        }
 
                         $useStatements = [];
                         foreach ($query->getSubResources() as $subResource) {

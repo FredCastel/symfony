@@ -1,15 +1,14 @@
 <?php
 
-namespace Banking\Infrastructure\ApiPlatform\State\Provider\Account;
+namespace Core\Infrastructure\ApiPlatform\State\Provider;
 
 use ApiPlatform\Doctrine\Orm\State\ItemProvider;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;
-use Banking\Infrastructure\ApiPlatform\Resource\Account\OperationResource;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
-final class RootItemProvider implements ProviderInterface
+final class ResourceItemProvider implements ProviderInterface
 {
     public function __construct(
         #[Autowire(service: ItemProvider::class)]
@@ -26,6 +25,9 @@ final class RootItemProvider implements ProviderInterface
             return null;
         }
 
-        return OperationResource::mapEntityToDto($entity);
+        //get Resource
+        $resourceClass = $context["resource_class"];
+
+        return $resourceClass::mapEntityToDto($entity);
     }
 }

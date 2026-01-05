@@ -24,9 +24,9 @@ use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RemoveProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RenameProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetBicProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetUrlProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Provider\Bank\RootCollectionProvider;
-use Banking\Infrastructure\ApiPlatform\State\Provider\Bank\RootItemProvider;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceCollectionProvider;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
 
 #[ApiResource(
     shortName: 'Bank',
@@ -34,34 +34,33 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
     operations: [
         // getter
 
-        new Get(
-            name: '_api_/banking-bank/{id}',
-            uriTemplate: '/banking-bank/{id}',
-            provider: RootItemProvider::class,
-            output: BankResource::class,
-        ),
-
+        // Resource Getters
         new GetCollection(
             name: '_api_/banking-bank',
             uriTemplate: '/banking-bank',
             normalizationContext: ['iri_only' => true],
             itemUriTemplate: '/banking-bank/{id}',
-            provider: RootCollectionProvider::class,
+            provider: ResourceCollectionProvider::class,
         ),
-
+        new Get(
+            name: '_api_/banking-bank/{id}',
+            uriTemplate: '/banking-bank/{id}',
+            provider: ResourceItemProvider::class,
+            output: BankResource::class,
+        ),
         // commands
         new Post(
             name: '_api_/banking-bank/register',
             uriTemplate: 'banking-bank/register',
             normalizationContext: ['iri_only' => true],
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RegisterProcessor::class,
             input: RegisterOperationDto::class,
         ),
         new Patch(
             name: '_api_/banking-bank/{id}/enable',
             uriTemplate: 'banking-bank/{id}/enable',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: EnableProcessor::class,
             input: EnableOperationDto::class,
             output: false,
@@ -69,7 +68,7 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
         new Patch(
             name: '_api_/banking-bank/{id}/disable',
             uriTemplate: 'banking-bank/{id}/disable',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: DisableProcessor::class,
             input: DisableOperationDto::class,
             output: false,
@@ -77,7 +76,7 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
         new Delete(
             name: '_api_/banking-bank/{id}/remove',
             uriTemplate: 'banking-bank/{id}/remove',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RemoveProcessor::class,
             input: RemoveOperationDto::class,
             output: false,
@@ -85,7 +84,7 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
         new Patch(
             name: '_api_/banking-bank/{id}/rename',
             uriTemplate: 'banking-bank/{id}/rename',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RenameProcessor::class,
             input: RenameOperationDto::class,
             output: false,
@@ -93,7 +92,7 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
         new Patch(
             name: '_api_/banking-bank/{id}/setUrl',
             uriTemplate: 'banking-bank/{id}/setUrl',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: SetUrlProcessor::class,
             input: SetUrlOperationDto::class,
             output: false,
@@ -101,7 +100,7 @@ use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
         new Patch(
             name: '_api_/banking-bank/{id}/setBic',
             uriTemplate: 'banking-bank/{id}/setBic',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: SetBicProcessor::class,
             input: SetBicOperationDto::class,
             output: false,

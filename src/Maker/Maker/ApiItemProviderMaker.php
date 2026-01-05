@@ -76,6 +76,9 @@ class ApiItemProviderMaker extends AbstractMaker
                         if (!$query->isItemQuery()) {
                             continue;
                         }
+                        if ($query->isRoot()) {
+                            continue;
+                        }
 
                         $useStatements = [];
                         foreach ($query->getSubResources() as $subResource) {

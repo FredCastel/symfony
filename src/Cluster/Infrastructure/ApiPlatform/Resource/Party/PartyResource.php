@@ -22,9 +22,9 @@ use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RegisterLegalProces
 use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RegisterNaturalProcessor;
 use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RemoveProcessor;
 use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RenameProcessor;
-use Cluster\Infrastructure\ApiPlatform\State\Provider\Party\RootCollectionProvider;
-use Cluster\Infrastructure\ApiPlatform\State\Provider\Party\RootItemProvider;
 use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceCollectionProvider;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
 
 #[ApiResource(
     shortName: 'Party',
@@ -32,27 +32,26 @@ use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
     operations: [
         // getter
 
-        new Get(
-            name: '_api_/cluster-party/{id}',
-            uriTemplate: '/cluster-party/{id}',
-            provider: RootItemProvider::class,
-            output: PartyResource::class,
-        ),
-
+        // Resource Getters
         new GetCollection(
             name: '_api_/cluster-party',
             uriTemplate: '/cluster-party',
             normalizationContext: ['iri_only' => true],
             itemUriTemplate: '/cluster-party/{id}',
-            provider: RootCollectionProvider::class,
+            provider: ResourceCollectionProvider::class,
         ),
-
+        new Get(
+            name: '_api_/cluster-party/{id}',
+            uriTemplate: '/cluster-party/{id}',
+            provider: ResourceItemProvider::class,
+            output: PartyResource::class,
+        ),
         // commands
         new Post(
             name: '_api_/cluster-party/registerNatural',
             uriTemplate: 'cluster-party/registerNatural',
             normalizationContext: ['iri_only' => true],
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RegisterNaturalProcessor::class,
             input: RegisterNaturalOperationDto::class,
         ),
@@ -60,14 +59,14 @@ use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
             name: '_api_/cluster-party/registerLegal',
             uriTemplate: 'cluster-party/registerLegal',
             normalizationContext: ['iri_only' => true],
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RegisterLegalProcessor::class,
             input: RegisterLegalOperationDto::class,
         ),
         new Patch(
             name: '_api_/cluster-party/{id}/enable',
             uriTemplate: 'cluster-party/{id}/enable',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: EnableProcessor::class,
             input: EnableOperationDto::class,
             output: false,
@@ -75,7 +74,7 @@ use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
         new Patch(
             name: '_api_/cluster-party/{id}/disable',
             uriTemplate: 'cluster-party/{id}/disable',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: DisableProcessor::class,
             input: DisableOperationDto::class,
             output: false,
@@ -83,7 +82,7 @@ use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
         new Patch(
             name: '_api_/cluster-party/{id}/rename',
             uriTemplate: 'cluster-party/{id}/rename',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RenameProcessor::class,
             input: RenameOperationDto::class,
             output: false,
@@ -91,7 +90,7 @@ use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
         new Delete(
             name: '_api_/cluster-party/{id}/remove',
             uriTemplate: 'cluster-party/{id}/remove',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RemoveProcessor::class,
             input: RemoveOperationDto::class,
             output: false,

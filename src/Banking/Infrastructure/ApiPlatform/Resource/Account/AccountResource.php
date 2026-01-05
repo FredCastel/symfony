@@ -28,31 +28,16 @@ use Banking\Infrastructure\ApiPlatform\State\Processor\Account\RenameAccountProc
 use Banking\Infrastructure\ApiPlatform\State\Processor\Account\SetAccountBalanceLimitsProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Account\SetAccountInitialBalanceProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Account\listCollectionProvider;
-use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootCollectionProvider;
-use Banking\Infrastructure\ApiPlatform\State\Provider\Account\RootItemProvider;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineAccount;
 use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceCollectionProvider;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
 
 #[ApiResource(
     shortName: 'Account',
     stateOptions: new Options(entityClass: DoctrineAccount::class),
     operations: [
         // getter
-
-        new Get(
-            name: '_api_/banking-account/{id}',
-            uriTemplate: '/banking-account/{id}',
-            provider: RootItemProvider::class,
-            output: AccountResource::class,
-        ),
-
-        new GetCollection(
-            name: '_api_/banking-account',
-            uriTemplate: '/banking-account',
-            normalizationContext: ['iri_only' => true],
-            itemUriTemplate: '/banking-account/{id}',
-            provider: RootCollectionProvider::class,
-        ),
 
         new GetCollection(
             name: '_api_/banking-account/list',
@@ -62,12 +47,26 @@ use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
             provider: listCollectionProvider::class,
         ),
 
+        // Resource Getters
+        new GetCollection(
+            name: '_api_/banking-account',
+            uriTemplate: '/banking-account',
+            normalizationContext: ['iri_only' => true],
+            itemUriTemplate: '/banking-account/{id}',
+            provider: ResourceCollectionProvider::class,
+        ),
+        new Get(
+            name: '_api_/banking-account/{id}',
+            uriTemplate: '/banking-account/{id}',
+            provider: ResourceItemProvider::class,
+            output: AccountResource::class,
+        ),
         // commands
         new Post(
             name: '_api_/banking-account/registerBankAccount',
             uriTemplate: 'banking-account/registerBankAccount',
             normalizationContext: ['iri_only' => true],
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RegisterBankAccountProcessor::class,
             input: RegisterBankAccountOperationDto::class,
         ),
@@ -75,14 +74,14 @@ use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
             name: '_api_/banking-account/registerCashAccount',
             uriTemplate: 'banking-account/registerCashAccount',
             normalizationContext: ['iri_only' => true],
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RegisterCashAccountProcessor::class,
             input: RegisterCashAccountOperationDto::class,
         ),
         new Patch(
             name: '_api_/banking-account/{id}/openAccoun',
             uriTemplate: 'banking-account/{id}/openAccoun',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: OpenAccounProcessor::class,
             input: OpenAccounOperationDto::class,
             output: false,
@@ -90,7 +89,7 @@ use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
         new Patch(
             name: '_api_/banking-account/{id}/closeAccount',
             uriTemplate: 'banking-account/{id}/closeAccount',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: CloseAccountProcessor::class,
             input: CloseAccountOperationDto::class,
             output: false,
@@ -98,7 +97,7 @@ use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
         new Patch(
             name: '_api_/banking-account/{id}/renameAccount',
             uriTemplate: 'banking-account/{id}/renameAccount',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RenameAccountProcessor::class,
             input: RenameAccountOperationDto::class,
             output: false,
@@ -106,7 +105,7 @@ use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
         new Patch(
             name: '_api_/banking-account/{id}/setAccountInitialBalance',
             uriTemplate: 'banking-account/{id}/setAccountInitialBalance',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: SetAccountInitialBalanceProcessor::class,
             input: SetAccountInitialBalanceOperationDto::class,
             output: false,
@@ -114,7 +113,7 @@ use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
         new Patch(
             name: '_api_/banking-account/{id}/setAccountBalanceLimits',
             uriTemplate: 'banking-account/{id}/setAccountBalanceLimits',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: SetAccountBalanceLimitsProcessor::class,
             input: SetAccountBalanceLimitsOperationDto::class,
             output: false,
@@ -122,7 +121,7 @@ use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
         new Delete(
             name: '_api_/banking-account/{id}/removeAccount',
             uriTemplate: 'banking-account/{id}/removeAccount',
-            provider: RootItemProvider::class,
+            provider: ResourceItemProvider::class,
             processor: RemoveAccountProcessor::class,
             input: RemoveAccountOperationDto::class,
             output: false,

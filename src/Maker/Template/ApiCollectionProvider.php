@@ -19,11 +19,7 @@ namespace <?= $ns ?>;
 
         $dtos = [];
         foreach ($entities as $entity) {
-            <?php if($query->isRoot()): ?>
-            $dtos[] = <?= $makers->apiResourceMaker::getName($query->resource) ?>::mapEntityToDto($entity);
-            <?php else: ?>
             $dtos[] = <?= $makers->apiResourceQueryDtoMaker::getName($query) ?>::mapEntityToDto($entity);
-            <?php endif; ?>
         }
 
         return new TraversablePaginator(

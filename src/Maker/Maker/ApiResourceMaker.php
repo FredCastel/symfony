@@ -17,6 +17,8 @@ use ApiPlatform\Metadata\Post;
 use Core\Infrastructure\ApiPlatform\Payload\EmptyPayload;
 use Core\Infrastructure\ApiPlatform\Resource\AllowedResource;
 use Core\Infrastructure\ApiPlatform\State\Provider\AllowedOperationProvider;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceCollectionProvider;
+use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
 use Maker\Element\ApplicationElement;
 use Maker\Element\CommandElement;
 use Maker\Element\EntityElement;
@@ -126,6 +128,8 @@ class ApiResourceMaker extends AbstractMaker
                             EmptyPayload::class,
                             AllowedResource::class,
                             AllowedOperationProvider::class,
+                            ResourceItemProvider::class,
+                            ResourceCollectionProvider::class,
                         ]
                     );
 

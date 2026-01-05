@@ -11,15 +11,7 @@ namespace <?= $ns ?>;
         //getter
         <?php foreach ($resource->queries as $query): ?>
         <?php if($query->isCollectionQuery()): ?>
-        <?php if($query->isRoot()): ?>
-        new GetCollection(
-            name: '_api_/<?= $resource->apiPath ?>',
-            uriTemplate: '/<?= $resource->apiPath ?>',
-            normalizationContext: ['iri_only' => true],
-            itemUriTemplate: '/<?= $resource->apiPath ?>/{id}',
-            provider: <?= $makers->apiCollectionProviderMaker::getName($resource->getRootCollectionQuery()) ?>::class,
-        ),
-        <?php else: ?>
+        <?php if(!$query->isRoot()): ?>
         new GetCollection(
             name: '_api_/<?= $resource->apiPath ?>/<?= $query->name ?>',
             uriTemplate: '/<?= $resource->apiPath ?>/<?= $query->name ?>',
@@ -29,14 +21,7 @@ namespace <?= $ns ?>;
         ),
         <?php endif; ?>
         <?php else: ?>        
-        <?php if($query->isRoot()): ?>
-        new Get(
-            name: '_api_/<?= $resource->apiPath ?>/{id}',
-            uriTemplate: '/<?= $resource->apiPath ?>/{id}',
-            provider: <?= $makers->apiItemProviderMaker::getName($resource->getRootItemQuery()) ?>::class,
-            output: <?= $class_data->getClassName() ?>::class,
-        ),
-        <?php else: ?>
+        <?php if(!$query->isRoot()): ?>
         new Get(
             name: '_api_/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
             uriTemplate: '/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
@@ -47,6 +32,20 @@ namespace <?= $ns ?>;
         <?php endif; ?>      
         <?php endif; ?>           
         <?php endforeach; ?>
+        //Resource Getters        
+        new GetCollection(
+            name: '_api_/<?= $resource->apiPath ?>',
+            uriTemplate: '/<?= $resource->apiPath ?>',
+            normalizationContext: ['iri_only' => true],
+            itemUriTemplate: '/<?= $resource->apiPath ?>/{id}',
+            provider: ResourceCollectionProvider::class,
+        ),
+        new Get(
+            name: '_api_/<?= $resource->apiPath ?>/{id}',
+            uriTemplate: '/<?= $resource->apiPath ?>/{id}',
+            provider: ResourceItemProvider::class,
+            output: <?= $class_data->getClassName() ?>::class,
+        ),
         //commands
         <?php foreach ($resource->operations as $operation): ?>
         new <?= $operation->getMethod() ?>(
@@ -55,7 +54,7 @@ namespace <?= $ns ?>;
             <?php if($operation->isInsert()): ?>
             normalizationContext: ['iri_only' => true],
             <?php endif; ?>
-            provider: <?= $makers->apiItemProviderMaker::getName($resource->getRootItemQuery()) ?>::class,
+            provider: ResourceItemProvider::class,
             processor: <?= $makers->apiProcessorMaker::getName($operation) ?>::class,
             input: <?= $operation->getTargetCommand()->parameters ? $makers->apiResourceOperationDtoMaker::getName($operation).'::class' : 'false' ?>,
             <?php if(!$operation->isInsert()): ?>
