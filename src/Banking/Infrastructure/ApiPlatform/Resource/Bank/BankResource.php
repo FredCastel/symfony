@@ -12,6 +12,7 @@ use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\DisableOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\EnableOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\ListQueryDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RegisterOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RemoveOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RenameOperationDto;
@@ -24,6 +25,7 @@ use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RemoveProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RenameProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetBicProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetUrlProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Provider\Bank\ListCollectionProvider;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
 use Core\Infrastructure\ApiPlatform\State\Provider\ResourceCollectionProvider;
 use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
@@ -33,6 +35,14 @@ use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
     stateOptions: new Options(entityClass: DoctrineBank::class),
     operations: [
         // getter
+        new GetCollection(
+            name: '_api_/banking-bank/list',
+            uriTemplate: '/banking-bank/list',
+            normalizationContext: ['iri_only' => false],
+            itemUriTemplate: '/banking-bank/{id}',
+            provider: ListCollectionProvider::class,
+            output: ListQueryDto::class,
+        ),
 
         // Resource Getters
         new GetCollection(

@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Infrastructure\ApiPlatform\State\Provider;
+namespace Cluster\Infrastructure\ApiPlatform\State\Provider\Party;
 
 use ApiPlatform\Doctrine\Orm\Paginator;
 use ApiPlatform\Doctrine\Orm\State\CollectionProvider;
@@ -9,7 +9,7 @@ use ApiPlatform\State\Pagination\TraversablePaginator;
 use ApiPlatform\State\ProviderInterface;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
-final class ResourceCollectionProvider implements ProviderInterface
+final class ListCollectionProvider implements ProviderInterface
 {
     public function __construct(
         #[Autowire(service: CollectionProvider::class)]
@@ -18,17 +18,14 @@ final class ResourceCollectionProvider implements ProviderInterface
     }
 
     public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
-    {//dd($operation,$context);
+    {
         $entities = $this->collectionProvider->provide($operation, $uriVariables, $context);
         assert($entities instanceof Paginator);
-
-        //get Resource
-        $resourceClass = $context["resource_class"];
 
         $dtos = [];
 
         foreach ($entities as $entity) {
-            $dtos[] = $resourceClass::mapEntityToDto($entity);
+            $dtos[] = ListQueryDto::mapEntityToDto($entity);
         }
 
         return new TraversablePaginator(

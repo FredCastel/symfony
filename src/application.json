@@ -979,99 +979,15 @@
               ],
               "queries": [
                 {
-                  "key": "74a78f09-c699-48ab-943c-3cb338519343",
-                  "name": "",
-                  "enabled": true,
-                  "method": "GET",
-                  "type": "item",
-                  "root": true,
-                  "api_path": "",
-                  "outputs": [
-                    {
-                      "key": "e6ef89d2-0b00-462a-a489-85f03ca3e934",
-                      "name": "Name",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "e7d6f4cb-3afb-434b-a768-d9d3edeaac57"
-                    },
-                    {
-                      "key": "6e196b7c-bf49-4d8f-9bb4-aa46f6f0b9ef",
-                      "name": "Countrycode",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "2c32a22f-3abf-4977-a0ff-9d7a07911969"
-                    },
-                    {
-                      "key": "2b16c04b-332d-475a-ad7c-0db66b7ffa3d",
-                      "name": "State",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "a42dfd43-28a4-427f-b43d-80b7bbfd3917"
-                    },
-                    {
-                      "key": "61321c19-7fe4-4645-8553-ffc1cc13dd6c",
-                      "name": "Validityperiodsince",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "8680fd76-085f-4207-9640-4c86bfcb3601"
-                    },
-                    {
-                      "key": "26317fab-3511-4d7b-8056-e5785507bfe5",
-                      "name": "Validityperioduntil",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "837250c7-7a7c-4b79-a234-ae16692af193"
-                    },
-                    {
-                      "key": "a667aa61-e58c-4245-b199-5eade99b6429",
-                      "name": "Url",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "fbd9d989-849e-4b89-b72e-0b5a55e28091"
-                    },
-                    {
-                      "key": "001685ed-8928-49b5-a751-96f0efc4827e",
-                      "name": "Bic",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "2422e6c8-5668-4771-9263-56aebc204e10"
-                    },
-                    {
-                      "key": "c9904be1-8138-44e7-8985-ab4efbaef0ba",
-                      "name": "Image",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "31c23747-68ca-4ebb-af02-a1187989c8c9"
-                    }
-                  ]
-                },
-                {
-                  "key": "ef3db412-b12a-4fa7-9ec8-c1fc85aa2693",
-                  "name": "",
+                  "key": "50187860-44b3-4300-ba61-cac633c2f5e2",
+                  "name": "List",
                   "enabled": true,
                   "method": "GET",
                   "type": "collection",
-                  "root": true,
-                  "api_path": "",
+                  "api_path": "list",
                   "outputs": [
                     {
-                      "key": "e3b87f3d-1331-44a2-b740-51e9dc2a13cc",
+                      "key": "a9f54966-74d5-45cf-9931-30dee4c21d1d",
                       "name": "Name",
                       "enabled": true,
                       "type": "string",
@@ -1080,67 +996,13 @@
                       "target_field_ref": "e7d6f4cb-3afb-434b-a768-d9d3edeaac57"
                     },
                     {
-                      "key": "22a3cac8-3c15-46cc-9433-2edee8db5d16",
+                      "key": "6d075f57-c1d5-40a1-8176-b5726fcf6848",
                       "name": "Countrycode",
                       "enabled": true,
                       "type": "string",
                       "nullable": false,
                       "kind": "field",
                       "target_field_ref": "2c32a22f-3abf-4977-a0ff-9d7a07911969"
-                    },
-                    {
-                      "key": "9a4fa8f8-8be1-4b9f-8ce6-6aeea11868a5",
-                      "name": "State",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "a42dfd43-28a4-427f-b43d-80b7bbfd3917"
-                    },
-                    {
-                      "key": "28a078e0-3ae3-4147-ad35-d1118cdb67da",
-                      "name": "Validityperiodsince",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "8680fd76-085f-4207-9640-4c86bfcb3601"
-                    },
-                    {
-                      "key": "ca280acb-78c9-4f3c-9bd9-10151e3afeec",
-                      "name": "Validityperioduntil",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "837250c7-7a7c-4b79-a234-ae16692af193"
-                    },
-                    {
-                      "key": "8127395f-2ded-4626-b414-8c0a561ba617",
-                      "name": "Url",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "fbd9d989-849e-4b89-b72e-0b5a55e28091"
-                    },
-                    {
-                      "key": "4e55dd76-3b28-4cf6-91b9-4e4326267d0d",
-                      "name": "Bic",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "2422e6c8-5668-4771-9263-56aebc204e10"
-                    },
-                    {
-                      "key": "aeaae1cd-04a5-4ca8-88ff-42c44fc35381",
-                      "name": "Image",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "31c23747-68ca-4ebb-af02-a1187989c8c9"
                     }
                   ]
                 }
@@ -2159,250 +2021,11 @@
               ],
               "queries": [
                 {
-                  "key": "9807f6a7-2998-40ed-945e-67e8114e65da",
-                  "name": "",
-                  "enabled": true,
-                  "method": "GET",
-                  "type": "item",
-                  "root": true,
-                  "api_path": "",
-                  "outputs": [
-                    {
-                      "key": "9175ae51-8700-43ae-b5d1-fbd6063319e2",
-                      "name": "Name",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "64bd4f2a-6b79-4201-be0c-c6601914e331"
-                    },
-                    {
-                      "key": "4fb90601-7c9f-4784-9a28-3ecb7267913a",
-                      "name": "State",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "5bbc3bba-7eb9-48d5-bad4-ef26a34970c3"
-                    },
-                    {
-                      "key": "1992b291-64d7-454c-809a-da0a9ecf1f4c",
-                      "name": "Category",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "a49574d0-8480-49bf-8b8e-3e5a5e0e6295"
-                    },
-                    {
-                      "key": "80a9fe2a-a6d4-4c4a-95ed-7de4221c2a72",
-                      "name": "Currencycode",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "01a33679-5bf4-4872-b02b-09b4752b0b0e"
-                    },
-                    {
-                      "key": "accb44ec-8e1c-437f-b1aa-e90d69d7a2df",
-                      "name": "Balance",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "8de34fdf-95be-4c7b-aadf-a956a93e7dfe"
-                    },
-                    {
-                      "key": "a99e62ed-7aab-4fe6-865e-b6a9680e69af",
-                      "name": "Initialbalance",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "8cfd1730-9b75-4507-93cf-68bda4cd2be0"
-                    },
-                    {
-                      "key": "b564d3b7-14ba-4b16-9b06-33047a4727de",
-                      "name": "Minimumbalance",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "900c1f28-2cad-4c8a-b324-8b6045248d26"
-                    },
-                    {
-                      "key": "480de2f9-3c57-4bc9-8490-eaf3547ea2cd",
-                      "name": "Maximumbalance",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "1eed8ca7-8914-47c9-b126-83d8843f2cbd"
-                    },
-                    {
-                      "key": "bd6f7bc8-a8e3-465e-a554-8a2c530630e7",
-                      "name": "Validityperiodsince",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "cf01b080-c28d-4cd3-ab95-605fe2fcb5d5"
-                    },
-                    {
-                      "key": "b7bf2c49-529d-4630-9439-0a49867b9a84",
-                      "name": "Validityperioduntil",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "fa522719-fb84-4d07-8832-ad72ba3f1efc"
-                    },
-                    {
-                      "key": "ae3e05a1-bdd7-4f0e-b824-05e24065dcb2",
-                      "name": "Bankid",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "association",
-                      "target_association_ref": "8e8d5bfc-5b87-453c-8aaf-bc40107f6c01"
-                    },
-                    {
-                      "key": "b1dfb568-572d-410d-9c91-c630d0bfad1a",
-                      "name": "Partyid",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "association",
-                      "target_association_ref": "6e809d2b-ea52-401d-94e3-60d8b33f906d"
-                    }
-                  ]
-                },
-                {
-                  "key": "59e6d07b-1c17-41d4-8758-09a6ad15f637",
-                  "name": "",
-                  "enabled": true,
-                  "method": "GET",
-                  "type": "collection",
-                  "root": true,
-                  "api_path": "",
-                  "outputs": [
-                    {
-                      "key": "36b37728-ff57-4803-8b45-bb992903d71a",
-                      "name": "Name",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "64bd4f2a-6b79-4201-be0c-c6601914e331"
-                    },
-                    {
-                      "key": "9ab5e540-8818-49c2-ba79-bab972ed1601",
-                      "name": "State",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "5bbc3bba-7eb9-48d5-bad4-ef26a34970c3"
-                    },
-                    {
-                      "key": "a8f37ff4-2cee-406e-8ad1-1ff6c26831f6",
-                      "name": "Category",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "a49574d0-8480-49bf-8b8e-3e5a5e0e6295"
-                    },
-                    {
-                      "key": "d44f8b23-a66f-4714-9867-fee3573e6186",
-                      "name": "Currencycode",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "01a33679-5bf4-4872-b02b-09b4752b0b0e"
-                    },
-                    {
-                      "key": "626d089b-7ffd-416b-8bca-8314ded73142",
-                      "name": "Balance",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "8de34fdf-95be-4c7b-aadf-a956a93e7dfe"
-                    },
-                    {
-                      "key": "e72eedbc-4c32-4bcb-997e-e37b6605bc4b",
-                      "name": "Initialbalance",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "8cfd1730-9b75-4507-93cf-68bda4cd2be0"
-                    },
-                    {
-                      "key": "456d4fff-2ac3-48d6-97bc-0d025e0a5a1f",
-                      "name": "Minimumbalance",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "900c1f28-2cad-4c8a-b324-8b6045248d26"
-                    },
-                    {
-                      "key": "4a8b9ee0-906f-424f-837d-0e2de15f1961",
-                      "name": "Maximumbalance",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "1eed8ca7-8914-47c9-b126-83d8843f2cbd"
-                    },
-                    {
-                      "key": "5c846d01-65cc-4463-b357-f492ab1e36af",
-                      "name": "Validityperiodsince",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "cf01b080-c28d-4cd3-ab95-605fe2fcb5d5"
-                    },
-                    {
-                      "key": "e1bc1789-c33d-4c28-be2d-86332d80be62",
-                      "name": "Validityperioduntil",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "fa522719-fb84-4d07-8832-ad72ba3f1efc"
-                    },
-                    {
-                      "key": "94730ef2-0720-47f4-a5c0-95956ab7a9ee",
-                      "name": "Bankid",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "association",
-                      "target_association_ref": "8e8d5bfc-5b87-453c-8aaf-bc40107f6c01"
-                    },
-                    {
-                      "key": "aeeabf0c-726b-4969-86e2-d9d481910a98",
-                      "name": "Partyid",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "association",
-                      "target_association_ref": "6e809d2b-ea52-401d-94e3-60d8b33f906d"
-                    }
-                  ]
-                },
-                {
                   "key": "b5e3a156-44de-49d8-a2bb-21c31322e049",
                   "name": "List",
                   "enabled": true,
                   "method": "GET",
                   "type": "collection",
-                  "root": false,
                   "api_path": "list",
                   "outputs": [
                     {
@@ -2546,156 +2169,7 @@
                   "target_command_ref": "40740555-055d-4849-b383-e9403a4eb71f"
                 }
               ],
-              "queries": [
-                {
-                  "key": "2d514d2e-ddbb-475d-826f-03f2619982a0",
-                  "name": "",
-                  "enabled": true,
-                  "method": "GET",
-                  "type": "item",
-                  "root": true,
-                  "api_path": "",
-                  "outputs": [
-                    {
-                      "key": "645b2525-f663-4d97-8566-9c11aaa1ca5c",
-                      "name": "Label",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "0805b557-4fdf-43fe-b7dd-9f485c6d291b"
-                    },
-                    {
-                      "key": "b923c934-c327-45a7-a27a-b9baf5159737",
-                      "name": "State",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "ba9a70d1-0395-4e72-8505-66d89146dbad"
-                    },
-                    {
-                      "key": "87b1d695-4453-4f17-b7ce-dc4d436123a2",
-                      "name": "Category",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "af6d9b66-f1fe-4f9d-be86-b6f64ea08a88"
-                    },
-                    {
-                      "key": "6b527c94-04bb-4095-a6db-ff183748c01e",
-                      "name": "Amount",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "a6490409-2302-42ab-9df9-d3ec4579584d"
-                    },
-                    {
-                      "key": "0fc83b71-dce0-434a-bc02-beada5b97597",
-                      "name": "Valuedate",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "e0ccbce8-2ef6-4e2c-8fc0-76d7c55e250d"
-                    },
-                    {
-                      "key": "5a3681c6-6460-43af-96ec-13922b37c24e",
-                      "name": "Operationdate",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "bed90809-1d68-400b-9dac-c789d1a8a476"
-                    },
-                    {
-                      "key": "ad32c5c1-bb73-40f8-972f-bf387d710909",
-                      "name": "Account",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "parent",
-                      "target_parent_ref": "b9c86fb3-f385-484f-9f49-771964cdd2fc"
-                    }
-                  ]
-                },
-                {
-                  "key": "8761507c-f330-43f9-b00b-d1ddf5486fce",
-                  "name": "",
-                  "enabled": true,
-                  "method": "GET",
-                  "type": "collection",
-                  "root": true,
-                  "api_path": "",
-                  "outputs": [
-                    {
-                      "key": "c057f557-c73a-4842-bc66-5fbc1f4b2119",
-                      "name": "Label",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "0805b557-4fdf-43fe-b7dd-9f485c6d291b"
-                    },
-                    {
-                      "key": "ba4491c5-3916-42fe-bfd1-7efd9d42d814",
-                      "name": "State",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "ba9a70d1-0395-4e72-8505-66d89146dbad"
-                    },
-                    {
-                      "key": "efec9d57-bece-4ff0-a84d-c1e08ad032c7",
-                      "name": "Category",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "af6d9b66-f1fe-4f9d-be86-b6f64ea08a88"
-                    },
-                    {
-                      "key": "dd3927f6-d82a-4b0f-b041-d4b8090a1d38",
-                      "name": "Amount",
-                      "enabled": true,
-                      "type": "float",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "a6490409-2302-42ab-9df9-d3ec4579584d"
-                    },
-                    {
-                      "key": "2d077080-da2f-48dd-862d-8873aa9704de",
-                      "name": "Valuedate",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "e0ccbce8-2ef6-4e2c-8fc0-76d7c55e250d"
-                    },
-                    {
-                      "key": "796dd899-9653-48e7-bd81-3504723d90cc",
-                      "name": "Operationdate",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "bed90809-1d68-400b-9dac-c789d1a8a476"
-                    },
-                    {
-                      "key": "5dc5e11c-f417-42a6-baab-6972332910be",
-                      "name": "Account",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "parent",
-                      "target_parent_ref": "b9c86fb3-f385-484f-9f49-771964cdd2fc"
-                    }
-                  ]
-                }
-              ]
+              "queries": []
             }
           ]
         }
@@ -3478,99 +2952,15 @@
               ],
               "queries": [
                 {
-                  "key": "5b487576-b535-4d43-8a3b-9c29abaa02fd",
-                  "name": "",
-                  "enabled": true,
-                  "method": "GET",
-                  "type": "item",
-                  "root": true,
-                  "api_path": "",
-                  "outputs": [
-                    {
-                      "key": "57035829-7803-4826-8f09-606de7c71478",
-                      "name": "Name",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "0d386690-ffd7-4534-bc33-33a5fead4f7a"
-                    },
-                    {
-                      "key": "0e52ab68-4308-4d5a-a1f1-6fabe4f7ee72",
-                      "name": "State",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "9f84bf25-8da5-4554-b4c7-698049d724fa"
-                    },
-                    {
-                      "key": "9cb44374-86f6-4214-9370-b995885cedea",
-                      "name": "Category",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "8a49a4ae-c966-4963-8cb9-275a17e4f7ad"
-                    },
-                    {
-                      "key": "823f201a-54ff-4419-9d2c-5ca3fac82611",
-                      "name": "Validityperiodsince",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "65833ec7-835a-4774-8655-ed394bfd8a09"
-                    },
-                    {
-                      "key": "8f987efd-d574-4c06-9196-7905f95739e6",
-                      "name": "Validityperioduntil",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "c8fc6c1d-b829-4276-bd8a-8ed64fcd9f61"
-                    },
-                    {
-                      "key": "0d594055-f5f9-49c6-ac05-324ad4697072",
-                      "name": "Url",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "1f612f6a-a6cc-4b4b-aadf-334ae1a644dd"
-                    },
-                    {
-                      "key": "1b250555-ba56-4970-9b48-fc075979f2ef",
-                      "name": "Address",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "3c3338d0-76d2-4cdb-98c4-9dbd79c07805"
-                    },
-                    {
-                      "key": "419f82ae-c307-410a-9edb-6f90adfd30ef",
-                      "name": "Image",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "9a39de3e-676d-4275-be1a-5e6ccff522f6"
-                    }
-                  ]
-                },
-                {
-                  "key": "cffd521e-d475-426c-94c8-288656795c85",
-                  "name": "",
+                  "key": "d5928b7a-1408-4e43-b98a-0035c243190e",
+                  "name": "List",
                   "enabled": true,
                   "method": "GET",
                   "type": "collection",
-                  "root": true,
-                  "api_path": "",
+                  "api_path": "list",
                   "outputs": [
                     {
-                      "key": "fdc4158b-6b09-4f93-be25-dff7de0c04bd",
+                      "key": "a5e6d7e3-923a-41c5-90ed-94e868b759d0",
                       "name": "Name",
                       "enabled": true,
                       "type": "string",
@@ -3579,67 +2969,13 @@
                       "target_field_ref": "0d386690-ffd7-4534-bc33-33a5fead4f7a"
                     },
                     {
-                      "key": "404136b0-89d2-448a-bdd9-cf57b12f7c4d",
-                      "name": "State",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "9f84bf25-8da5-4554-b4c7-698049d724fa"
-                    },
-                    {
-                      "key": "ee3829b0-372c-46bd-95cd-6ba249599f3e",
+                      "key": "332497b3-35b1-4593-85cc-32074d388275",
                       "name": "Category",
                       "enabled": true,
                       "type": "string",
                       "nullable": false,
                       "kind": "field",
                       "target_field_ref": "8a49a4ae-c966-4963-8cb9-275a17e4f7ad"
-                    },
-                    {
-                      "key": "f0ef6651-06ca-40cd-884e-7f6266fb32f7",
-                      "name": "Validityperiodsince",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "65833ec7-835a-4774-8655-ed394bfd8a09"
-                    },
-                    {
-                      "key": "da8cb149-8430-4fc2-b9d0-5578daac9bf7",
-                      "name": "Validityperioduntil",
-                      "enabled": true,
-                      "type": "\\DateTimeImmutable",
-                      "nullable": false,
-                      "kind": "field",
-                      "target_field_ref": "c8fc6c1d-b829-4276-bd8a-8ed64fcd9f61"
-                    },
-                    {
-                      "key": "ba1546c1-cec2-4f80-9d36-1cdf98a79337",
-                      "name": "Url",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "1f612f6a-a6cc-4b4b-aadf-334ae1a644dd"
-                    },
-                    {
-                      "key": "d8a19408-40d7-4500-9d9c-09a856ab01c0",
-                      "name": "Address",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "3c3338d0-76d2-4cdb-98c4-9dbd79c07805"
-                    },
-                    {
-                      "key": "4255c098-a912-4418-b9e2-9434c418f22c",
-                      "name": "Image",
-                      "enabled": true,
-                      "type": "string",
-                      "nullable": true,
-                      "kind": "field",
-                      "target_field_ref": "9a39de3e-676d-4275-be1a-5e6ccff522f6"
                     }
                   ]
                 }

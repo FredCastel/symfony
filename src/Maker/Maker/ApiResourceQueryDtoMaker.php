@@ -68,8 +68,6 @@ class ApiResourceQueryDtoMaker extends AbstractMaker
                 foreach ($context->resources as $resource) {
 
                     foreach ($resource->queries as $query) {
-                        if ($query->isRoot())
-                            continue;
 
                         $useStatements = [];
                         // foreach ($resource->associations as $association) {

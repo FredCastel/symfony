@@ -1,8 +1,8 @@
 <?php
 
-namespace Banking\Infrastructure\ApiPlatform\Resource\Account\Dto;
+namespace Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto;
 
-use Banking\Infrastructure\Doctrine\Entity\DoctrineAccount;
+use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
 
 final class ListQueryDto
 {
@@ -12,11 +12,7 @@ final class ListQueryDto
 
     public ?string $category;
 
-    public ?float $balance;
-
-    public ?string $currencycode;
-
-    public static function mapEntityToDto(?DoctrineAccount $doctrineEntity): ?self
+    public static function mapEntityToDto(?DoctrineParty $doctrineEntity): ?self
     {
         if (null == $doctrineEntity) {
             return null;
@@ -27,10 +23,6 @@ final class ListQueryDto
         $dto->name = $doctrineEntity->getname();
 
         $dto->category = $doctrineEntity->getcategory();
-
-        $dto->balance = $doctrineEntity->getbalance();
-
-        $dto->currencycode = $doctrineEntity->getcurrencycode();
 
         return $dto;
     }

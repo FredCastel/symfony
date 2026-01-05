@@ -12,6 +12,7 @@ use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\DisableOperationDto;
 use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\EnableOperationDto;
+use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\ListQueryDto;
 use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\RegisterLegalOperationDto;
 use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\RegisterNaturalOperationDto;
 use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\RemoveOperationDto;
@@ -22,6 +23,7 @@ use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RegisterLegalProces
 use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RegisterNaturalProcessor;
 use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RemoveProcessor;
 use Cluster\Infrastructure\ApiPlatform\State\Processor\Party\RenameProcessor;
+use Cluster\Infrastructure\ApiPlatform\State\Provider\Party\ListCollectionProvider;
 use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
 use Core\Infrastructure\ApiPlatform\State\Provider\ResourceCollectionProvider;
 use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
@@ -31,6 +33,14 @@ use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
     stateOptions: new Options(entityClass: DoctrineParty::class),
     operations: [
         // getter
+        new GetCollection(
+            name: '_api_/cluster-party/list',
+            uriTemplate: '/cluster-party/list',
+            normalizationContext: ['iri_only' => false],
+            itemUriTemplate: '/cluster-party/{id}',
+            provider: ListCollectionProvider::class,
+            output: ListQueryDto::class,
+        ),
 
         // Resource Getters
         new GetCollection(

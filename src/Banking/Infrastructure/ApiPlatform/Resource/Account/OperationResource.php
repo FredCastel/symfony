@@ -22,7 +22,6 @@ use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
     stateOptions: new Options(entityClass: DoctrineOperation::class),
     operations: [
         // getter
-
         // Resource Getters
         new GetCollection(
             name: '_api_/banking-operation',

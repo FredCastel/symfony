@@ -11,25 +11,22 @@ namespace <?= $ns ?>;
         //getter
         <?php foreach ($resource->queries as $query): ?>
         <?php if($query->isCollectionQuery()): ?>
-        <?php if(!$query->isRoot()): ?>
         new GetCollection(
             name: '_api_/<?= $resource->apiPath ?>/<?= $query->name ?>',
             uriTemplate: '/<?= $resource->apiPath ?>/<?= $query->name ?>',
             normalizationContext: ['iri_only' => false],
             itemUriTemplate: '/<?= $resource->apiPath ?>/{id}',
             provider: <?= $makers->apiCollectionProviderMaker::getName($query) ?>::class,
+            output: <?= $makers->apiResourceQueryDtoMaker::getName($query) ?>::class,
         ),
-        <?php endif; ?>
         <?php else: ?>        
-        <?php if(!$query->isRoot()): ?>
         new Get(
             name: '_api_/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
             uriTemplate: '/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
             input: false,
             provider: <?= $makers->apiQueryProviderMaker::getName($query) ?>::class,
-            output: <?= $makers->apiResourceDtoMaker::getName($query) ?>::class,
+            output: <?= $makers->apiResourceQueryDtoMaker::getName($query) ?>::class,
         ),         
-        <?php endif; ?>      
         <?php endif; ?>           
         <?php endforeach; ?>
         //Resource Getters        

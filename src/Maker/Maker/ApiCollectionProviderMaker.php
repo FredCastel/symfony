@@ -62,7 +62,7 @@ class ApiCollectionProviderMaker extends AbstractMaker
      */
     static public function getName(object $object, string $prefix = '', string $suffix = ''): string
     {
-        return ($object->isRoot() ? 'Root' : $object->name) . $prefix . 'Collection' . $suffix . 'Provider';
+        return ucfirst($object->name) . $prefix . 'Collection' . $suffix . 'Provider';
     }
 
     public function runGenerate(ApplicationElement $def, Generator $generator): void
@@ -77,9 +77,6 @@ class ApiCollectionProviderMaker extends AbstractMaker
 
                     foreach ($resource->queries as $query) {
                         if (!$query->isCollectionQuery()) {
-                            continue;
-                        }
-                        if ($query->isRoot()) {
                             continue;
                         }
 

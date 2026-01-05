@@ -15,7 +15,6 @@ class ResourceQueryElement extends AbstractElement
     */
     public readonly string $method;
     public readonly string $type;
-    public readonly bool $root;
     public readonly string $apiPath;
     protected string $target_command_ref;
     protected static bool $lowerCaseName = true;
@@ -36,7 +35,6 @@ class ResourceQueryElement extends AbstractElement
         
         $this->method = $data->method;
         $this->type = $data->type;
-        $this->root = $data->root;
         $this->apiPath = $data->api_path;
 
         //add outputs
@@ -47,11 +45,6 @@ class ResourceQueryElement extends AbstractElement
         }
 
         $this->resource->addQuery($this);
-    }
-
-    public function isRoot(): bool
-    {
-        return $this->root;
     }
 
     public function isItemQuery(): bool

@@ -4,10 +4,6 @@ namespace <?= $ns ?>;
 
 <?= $class_data->getUseStatements(); ?>
 
-
-#[Get(
-    shortName: '<?= $resource->getTargetEntity()->name ?>',
-)]    
 <?= $class_data->getClassDeclaration() ?>
 {
     public string $id;

@@ -11,6 +11,7 @@ use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\CloseAccountOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\ListQueryDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\OpenAccounOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\RegisterBankAccountOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Account\Dto\RegisterCashAccountOperationDto;
@@ -27,7 +28,7 @@ use Banking\Infrastructure\ApiPlatform\State\Processor\Account\RemoveAccountProc
 use Banking\Infrastructure\ApiPlatform\State\Processor\Account\RenameAccountProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Account\SetAccountBalanceLimitsProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Account\SetAccountInitialBalanceProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Provider\Account\listCollectionProvider;
+use Banking\Infrastructure\ApiPlatform\State\Provider\Account\ListCollectionProvider;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineAccount;
 use Cluster\Infrastructure\ApiPlatform\Resource\Party\PartyResource;
 use Core\Infrastructure\ApiPlatform\State\Provider\ResourceCollectionProvider;
@@ -38,13 +39,13 @@ use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
     stateOptions: new Options(entityClass: DoctrineAccount::class),
     operations: [
         // getter
-
         new GetCollection(
             name: '_api_/banking-account/list',
             uriTemplate: '/banking-account/list',
             normalizationContext: ['iri_only' => false],
             itemUriTemplate: '/banking-account/{id}',
-            provider: listCollectionProvider::class,
+            provider: ListCollectionProvider::class,
+            output: ListQueryDto::class,
         ),
 
         // Resource Getters
