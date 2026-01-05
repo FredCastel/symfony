@@ -17,7 +17,7 @@ final class RegisterCashAccountHandler extends AbstractRegisterCashAccountHandle
     protected function save(
         RegisterCashAccountRequest $command,
     ): array {
-        [$aggregate, $events] = (new AccountAggregate(new Id($command->id)))->getRoot()->Register(
+        [$aggregate, $events] = (new AccountAggregate(new Id($command->id)))->getRoot()->register(
             entity_id: $command->entity_id,
             name: $command->name,
             state: 'todo',// TODO mapping rule

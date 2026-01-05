@@ -5,6 +5,7 @@ namespace Banking\Infrastructure\ApiPlatform\State\Provider\Bank;
 use ApiPlatform\Doctrine\Orm\State\ItemProvider;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\BankResource;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
@@ -25,6 +26,6 @@ final class RootItemProvider implements ProviderInterface
             return null;
         }
 
-        return QueryDto::mapEntityToDto($entity);
+        return BankResource::mapEntityToDto($entity);
     }
 }

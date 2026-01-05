@@ -17,7 +17,7 @@ namespace <?= $ns ?>;
             uriTemplate: '/<?= $resource->apiPath ?>',
             normalizationContext: ['iri_only' => true],
             itemUriTemplate: '/<?= $resource->apiPath ?>/{id}',
-            provider: <?= $makers->apiCollectionProviderMaker::getName($query) ?>::class,
+            provider: <?= $makers->apiCollectionProviderMaker::getName($resource->getRootCollectionQuery()) ?>::class,
         ),
         <?php else: ?>
         new GetCollection(
@@ -41,7 +41,7 @@ namespace <?= $ns ?>;
             name: '_api_/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
             uriTemplate: '/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
             input: false,
-            provider: <?= $makers->apiQueryProviderMaker::getName($resource->getRootCollectionQuery()) ?>::class,
+            provider: <?= $makers->apiQueryProviderMaker::getName($query) ?>::class,
             output: <?= $makers->apiResourceDtoMaker::getName($query) ?>::class,
         ),         
         <?php endif; ?>      

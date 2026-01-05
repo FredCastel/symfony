@@ -112,35 +112,35 @@ abstract class AbstractAccount extends EntityRoot
     protected function applyAccountRegisteredEvent(AccountRegisteredEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $instance->name = new Name(
+        $this->name = new Name(
             value: $event->name,
         );
 
-        $instance->state = new AccountState(
+        $this->state = new AccountState(
             value: $event->state,
         );
 
-        $instance->category = new AccountCategory(
+        $this->category = new AccountCategory(
             value: $event->category,
         );
 
-        $instance->currency = new Currency(
+        $this->currency = new Currency(
             code: $event->currency,
         );
 
-        $instance->validityPeriod = new ValidityPeriod(
+        $this->validityPeriod = new ValidityPeriod(
             since: $event->validSince,
             until: $event->validUntil,
         );
 
         // mapping parameters linked to an entity relation (external entity key)
-        $instance->bankId = $event->bankId ? new Id($event->bankId) : null;
-        $instance->partyId = new Id($event->partyId);
+        $this->bankId = $event->bankId ? new Id($event->bankId) : null;
+        $this->partyId = new Id($event->partyId);
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -155,9 +155,9 @@ abstract class AbstractAccount extends EntityRoot
     protected function applyAccountOpenedEvent(AccountOpenedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -172,9 +172,9 @@ abstract class AbstractAccount extends EntityRoot
     protected function applyAccountClosedEvent(AccountClosedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -189,14 +189,14 @@ abstract class AbstractAccount extends EntityRoot
     protected function applyAccountChangedEvent(AccountChangedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $instance->name = new Name(
+        $this->name = new Name(
             value: $event->name,
         );
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -211,15 +211,15 @@ abstract class AbstractAccount extends EntityRoot
     protected function applyAccountInitialBalanceSetEvent(AccountInitialBalanceSetEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $instance->initialBalance = new Amount(
+        $this->initialBalance = new Amount(
             value: $event->balance,
-            currency: $instance->getCurrency(),
+            currency: $this->getCurrency(),
         );
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -234,20 +234,20 @@ abstract class AbstractAccount extends EntityRoot
     protected function applyAccountBalanceLimitSetEvent(AccountBalanceLimitSetEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $instance->minimumBalance = new Amount(
+        $this->minimumBalance = new Amount(
             value: $event->minimum,
-            currency: $instance->getCurrency(),
+            currency: $this->getCurrency(),
         );
 
-        $instance->maximumBalance = new Amount(
+        $this->maximumBalance = new Amount(
             value: $event->maximum,
-            currency: $instance->getCurrency(),
+            currency: $this->getCurrency(),
         );
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -262,9 +262,9 @@ abstract class AbstractAccount extends EntityRoot
     protected function applyAccountRemovedEvent(AccountRemovedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /************* Children Entities Events Applier */
@@ -280,16 +280,16 @@ abstract class AbstractAccount extends EntityRoot
     protected function applyOperationAddedEvent(OperationAddedEvent $event): self
     {
         // this is a change action, clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // create new child entity
         $child = new Operation(id: new Id($event->entity_id), aggregate: $this->aggregate, parent: $this);
         // apply event on child entity
         $child = $child->apply($event);
         // add child to collection
-        $instance->operations[$child->getId()->value] = $child;
+        $this->operations[$child->getId()->value] = $child;
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -303,16 +303,16 @@ abstract class AbstractAccount extends EntityRoot
     protected function applyOperationRemovedEvent(OperationRemovedEvent $event): self
     {
         // this is a change action, clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // get child entity from collection
-        $child = $instance->getOperation(new Id($event->entity_id));
+        $child = $this->getOperation(new Id($event->entity_id));
         // apply event on child entity
         $child = $child->apply($event);
         // remove child from collection
-        unset($instance->operations[$child->getId()->value]);
+        unset($this->operations[$child->getId()->value]);
 
-        return $instance;
+        return $this;
     }
 
     /************* This Entity and child entities Action to Event function */

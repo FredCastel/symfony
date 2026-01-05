@@ -74,39 +74,39 @@ abstract class AbstractBank extends EntityRoot
     protected function applyBankRegisteredEvent(BankRegisteredEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $instance->name = new Name(
+        $this->name = new Name(
             value: $event->name,
         );
 
-        $instance->state = new BankState(
+        $this->state = new BankState(
             value: $event->state,
         );
 
-        $instance->country = new Country(
+        $this->country = new Country(
             code: $event->country,
         );
 
-        $instance->url = $event->url ? new Url(
+        $this->url = $event->url ? new Url(
             value: $event->url,
         ) : null;
 
-        $instance->bic = $event->bic ? new Bic(
+        $this->bic = $event->bic ? new Bic(
             value: $event->bic,
         ) : null;
 
-        $instance->image = $event->image ? new Image(
+        $this->image = $event->image ? new Image(
             value: $event->image,
         ) : null;
 
-        $instance->validityPeriod = new ValidityPeriod(
+        $this->validityPeriod = new ValidityPeriod(
             since: $event->validSince,
             until: null,
         );
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -121,9 +121,9 @@ abstract class AbstractBank extends EntityRoot
     protected function applyBankEnabledEvent(BankEnabledEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -138,9 +138,9 @@ abstract class AbstractBank extends EntityRoot
     protected function applyBankDisabledEvent(BankDisabledEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -155,22 +155,22 @@ abstract class AbstractBank extends EntityRoot
     protected function applyBankChangedEvent(BankChangedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $instance->name = new Name(
+        $this->name = new Name(
             value: $event->name,
         );
 
-        $instance->url = $event->url ? new Url(
+        $this->url = $event->url ? new Url(
             value: $event->url,
         ) : null;
 
-        $instance->bic = $event->bic ? new Bic(
+        $this->bic = $event->bic ? new Bic(
             value: $event->bic,
         ) : null;
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -185,9 +185,9 @@ abstract class AbstractBank extends EntityRoot
     protected function applyBankRemovedEvent(BankRemovedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /************* Children Entities Events Applier */

@@ -19,7 +19,10 @@ namespace <?= $ns ?>;
         if (!$entity) {
             return null;
         }
-
+        <?php if($query->isRoot()): ?>
+        return <?= $makers->apiResourceMaker::getName($query->resource) ?>::mapEntityToDto($entity);
+        <?php else: ?>
         return <?= $makers->apiResourceQueryDtoMaker::getName($query) ?>::mapEntityToDto($entity);
+        <?php endif; ?>
     }
 }

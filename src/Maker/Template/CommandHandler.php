@@ -23,7 +23,7 @@ namespace <?= $ns ?>;
     ): array 
     {
         <?php if ($entity->isRoot() && $action->isInsertAction()): ?>
-        [$aggregate, $events] = (new <?= $makers->domainAggregateMaker::getName($aggregate) ?>(new Id($command->id)))->getRoot()-><?= $action->name ?>(
+        [$aggregate, $events] = (new <?= $makers->domainAggregateMaker::getName($aggregate) ?>(new Id($command->id)))->getRoot()-><?= lcfirst($action->name) ?>(
         <?php else: ?>
         [$aggregate, $events] = $aggregate->getRoot()-><?= $action->name ?>(
         <?php endif; ?>

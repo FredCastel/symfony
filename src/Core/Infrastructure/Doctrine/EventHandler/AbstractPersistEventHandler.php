@@ -27,7 +27,6 @@ abstract class AbstractPersistEventHandler extends AbstractEventHandler
         $entity = $aggregate->getEntities()[$event->getId()]; //$this->repo->get($event->getEntityId());
         //convert to entity
         $entityClass = $this->mapper->getDoctrineEntityClass();
-        var_dump($entity);
         $doctrineEntity = $this->mapper->fromModel(new $entityClass(), $entity);
         //insert
         $this->em->persist($doctrineEntity);

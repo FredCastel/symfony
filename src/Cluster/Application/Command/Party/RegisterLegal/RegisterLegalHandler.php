@@ -17,7 +17,7 @@ final class RegisterLegalHandler extends AbstractRegisterLegalHandler implements
     protected function save(
         RegisterLegalRequest $command,
     ): array {
-        [$aggregate, $events] = (new PartyAggregate(new Id($command->id)))->getRoot()->Register(
+        [$aggregate, $events] = (new PartyAggregate(new Id($command->id)))->getRoot()->register(
             entity_id: $command->entity_id,
             name: $command->name,
             state: 'todo',// TODO mapping rule

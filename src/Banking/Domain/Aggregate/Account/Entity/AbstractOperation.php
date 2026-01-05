@@ -69,27 +69,27 @@ abstract class AbstractOperation extends EntityChild
     protected function applyOperationAddedEvent(OperationAddedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $instance->label = new Label(
+        $this->label = new Label(
             value: $event->label,
         );
 
-        $instance->amount = new Amount(
+        $this->amount = new Amount(
             value: $event->amount,
-            currency: $instance->parent->getCurrency(),
+            currency: $this->parent->getCurrency(),
         );
 
-        $instance->valueDate = new DateTime(
+        $this->valueDate = new DateTime(
             value: $event->valueDate,
         );
 
-        $instance->operationDate = new DateTime(
+        $this->operationDate = new DateTime(
             value: $event->operationDate,
         );
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -104,9 +104,9 @@ abstract class AbstractOperation extends EntityChild
     protected function applyOperationRemovedEvent(OperationRemovedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /************* Children Entities Events Applier */

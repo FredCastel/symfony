@@ -17,7 +17,7 @@ final class RegisterBankAccountHandler extends AbstractRegisterBankAccountHandle
     protected function save(
         RegisterBankAccountRequest $command,
     ): array {
-        [$aggregate, $events] = (new AccountAggregate(new Id($command->id)))->getRoot()->Register(
+        [$aggregate, $events] = (new AccountAggregate(new Id($command->id)))->getRoot()->register(
             entity_id: $command->entity_id,
             name: $command->name,
             state: 'todo',// TODO mapping rule

@@ -77,34 +77,34 @@ abstract class AbstractParty extends EntityRoot
     protected function applyPartyRegisteredEvent(PartyRegisteredEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $instance->name = new Name(
+        $this->name = new Name(
             value: $event->name,
         );
 
-        $instance->state = new PartyState(
+        $this->state = new PartyState(
             value: $event->state,
         );
 
-        $instance->category = new PartyCategory(
+        $this->category = new PartyCategory(
             value: $event->category,
         );
 
-        $instance->url = $event->url ? new Url(
+        $this->url = $event->url ? new Url(
             value: $event->url,
         ) : null;
 
-        $instance->address = $event->address ? new Address(
+        $this->address = $event->address ? new Address(
             value: $event->address,
         ) : null;
 
-        $instance->image = $event->image ? new Image(
+        $this->image = $event->image ? new Image(
             value: $event->image,
         ) : null;
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -119,9 +119,9 @@ abstract class AbstractParty extends EntityRoot
     protected function applyPartyEnabledEvent(PartyEnabledEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -136,9 +136,9 @@ abstract class AbstractParty extends EntityRoot
     protected function applyPartyDisabledEvent(PartyDisabledEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -153,14 +153,14 @@ abstract class AbstractParty extends EntityRoot
     protected function applyPartyRenamedEvent(PartyRenamedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $instance->name = new Name(
+        $this->name = new Name(
             value: $event->name,
         );
 
-        return $instance;
+        return $this;
     }
 
     /**
@@ -175,9 +175,9 @@ abstract class AbstractParty extends EntityRoot
     protected function applyPartyRemovedEvent(PartyRemovedEvent $event): self
     {
         // clone the existing instance, and apply changes
-        $instance = clone $this;
+        // $instance = clone $this;
 
-        return $instance;
+        return $this;
     }
 
     /************* Children Entities Events Applier */
