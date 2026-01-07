@@ -14,7 +14,7 @@ class EntityValidator
 
         $propertyValidator = new PropertyValidator();
         foreach ($props as $prop) {
-            if (in_array(ValueObject::class, class_parents($prop)))
+            if (in_array(ValueObject::class, class_parents($prop->getType()->getName())))
                 $propertyValidator->validate($entity, $prop->getValue($entity));
         }
 

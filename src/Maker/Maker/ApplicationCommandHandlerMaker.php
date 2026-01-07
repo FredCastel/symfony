@@ -98,7 +98,8 @@ class ApplicationCommandHandlerMaker extends AbstractMaker
                         );
 
                         //replace file; so delete existing
-                        $this->deleteClassFile($class_data->getFullClassName());
+                        //  $this->deleteClassFile($class_data->getFullClassName());
+                        if ($this->existsClassFile($class_data->getFullClassName())) continue;
 
                         $generator->generateClass(
                             className: $class_data->getFullClassName(),

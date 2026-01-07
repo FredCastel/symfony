@@ -9,6 +9,9 @@ use Core\Domain\ValueObject\Category;
  */
 final class PartyCategory extends Category
 {
+    public const NATURAL = 'natural';
+    public const LEGAL = 'legal';
+
     public function __construct(
         string $value,
     ) {
@@ -18,14 +21,14 @@ final class PartyCategory extends Category
     public static function NATURAL(): self
     {
         return new self(
-            value: 'natural',
+            value: self::NATURAL,
         );
     }
 
     public static function LEGAL(): self
     {
         return new self(
-            value: 'legal',
+            value: self::LEGAL,
         );
     }
 

@@ -62,7 +62,7 @@ php bin/console make:ddd:api
 ## PhpUnit
 
 ```console
-php bin/phpunit
+php bin/phpunit --verbose
 php bin/phpunit tests/Banking/Infrastructure/ApiPlatform/BankWriterApiTest.php
 php bin/phpunit tests/Banking/Infrastructure/ApiPlatform/BankReaderApiTest.php
 ```

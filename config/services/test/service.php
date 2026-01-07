@@ -7,6 +7,7 @@ use Core\Domain\Repository\Dependencies;
 use Core\Domain\Repository\Dependency;
 use Core\Infrastructure\Doctrine\DoctrineIdGenerator;
 use Core\Infrastructure\InMemory\IntIdGenerator;
+use Core\Service\Bus\Command\DispatcherCommandBus;
 use Core\Service\IdGenerator;
 
 return function (ContainerConfigurator $containerConfigurator, string $env) {
@@ -27,6 +28,16 @@ return function (ContainerConfigurator $containerConfigurator, string $env) {
     // $services->set(DoctrineIdGenerator::class)->public();
     // $services->set(IdGenerator::class)->class(DoctrineIdGenerator::class);
     // $services->set(DoctrineIdGenerator::class)->class(DoctrineIdGenerator::class)->public();
+
+    //bus
+    $services->set(DispatcherCommandBus::class)
+        ->args(
+            [
+                tagged_iterator('ddd.command_handler'),
+            ]
+        )
+        ->public()
+    ;
 
     // $services
     //     ->instanceof(Dependency::class)

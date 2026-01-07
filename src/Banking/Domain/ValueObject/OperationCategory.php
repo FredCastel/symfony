@@ -9,6 +9,9 @@ use Core\Domain\ValueObject\Category;
  */
 final class OperationCategory extends Category
 {
+    public const COMING = 'coming';
+    public const SAVED = 'saved';
+
     public function __construct(
         string $value,
     ) {
@@ -18,14 +21,14 @@ final class OperationCategory extends Category
     public static function COMING(): self
     {
         return new self(
-            value: 'coming',
+            value: self::COMING,
         );
     }
 
     public static function SAVED(): self
     {
         return new self(
-            value: 'saved',
+            value: self::SAVED,
         );
     }
 

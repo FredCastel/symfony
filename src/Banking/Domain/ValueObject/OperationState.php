@@ -9,6 +9,9 @@ use Core\Domain\ValueObject\State;
  */
 final class OperationState extends State
 {
+    public const TICKED = 'ticked';
+    public const NONE = 'none';
+
     public function __construct(
         string $value,
     ) {
@@ -18,14 +21,14 @@ final class OperationState extends State
     public static function TICKED(): self
     {
         return new self(
-            value: 'ticked',
+            value: self::TICKED,
         );
     }
 
     public static function NONE(): self
     {
         return new self(
-            value: 'none',
+            value: self::NONE,
         );
     }
 

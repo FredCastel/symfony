@@ -7,7 +7,6 @@ use ApiPlatform\Doctrine\Orm\State\CollectionProvider;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\Pagination\TraversablePaginator;
 use ApiPlatform\State\ProviderInterface;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\ListQueryDto;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 final class ListCollectionProvider implements ProviderInterface

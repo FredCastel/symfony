@@ -9,6 +9,16 @@ use Core\Domain\ValueObject\Category;
  */
 final class AccountCategory extends Category
 {
+    public const CASH = 'cash';
+    public const LIVRET = 'livret';
+    public const COMPTE_A_TERME = 'compte_a_terme';
+    public const ASSURANCE_VIE = 'assurance_vie';
+    public const PER = 'per';
+    public const PEL = 'pel';
+    public const CEL = 'cel';
+    public const EPARGNE = 'epargne';
+    public const CB = 'cb';
+
     public function __construct(
         string $value,
     ) {
@@ -18,63 +28,63 @@ final class AccountCategory extends Category
     public static function CASH(): self
     {
         return new self(
-            value: 'cash',
+            value: self::CASH,
         );
     }
 
     public static function LIVRET(): self
     {
         return new self(
-            value: 'livret',
+            value: self::LIVRET,
         );
     }
 
     public static function COMPTE_A_TERME(): self
     {
         return new self(
-            value: 'compte_a_terme',
+            value: self::COMPTE_A_TERME,
         );
     }
 
     public static function ASSURANCE_VIE(): self
     {
         return new self(
-            value: 'assurance_vie',
+            value: self::ASSURANCE_VIE,
         );
     }
 
     public static function PER(): self
     {
         return new self(
-            value: 'per',
+            value: self::PER,
         );
     }
 
     public static function PEL(): self
     {
         return new self(
-            value: 'pel',
+            value: self::PEL,
         );
     }
 
     public static function CEL(): self
     {
         return new self(
-            value: 'cel',
+            value: self::CEL,
         );
     }
 
     public static function EPARGNE(): self
     {
         return new self(
-            value: 'epargne',
+            value: self::EPARGNE,
         );
     }
 
     public static function CB(): self
     {
         return new self(
-            value: 'cb',
+            value: self::CB,
         );
     }
 

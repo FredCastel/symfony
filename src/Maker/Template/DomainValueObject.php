@@ -10,6 +10,12 @@ namespace <?= $ns ?>;
 */ 
 <?= $class_data->getClassDeclaration() ?>
 {
+    <?php if($valueObject->withValues()): ?>
+    <?php foreach ($valueObject->values as $value): ?>
+    public const <?= strtoupper($value) ?> = '<?= $value ?>';
+    <?php endforeach ?>
+    <?php endif ?>
+
     public function __construct(
         string $value,
     ) {
@@ -21,7 +27,7 @@ namespace <?= $ns ?>;
     public static function <?= strtoupper($value) ?>(): self
     {
         return new self(
-            value: "<?= $value ?>",
+            value: self::<?= strtoupper($value) ?>,
         );
     }
     <?php endforeach ?>

@@ -21,10 +21,11 @@ abstract class ConstantValueObject extends SimpleValueObject
 
     protected function internalCheck(): void
     {
+        $values = static::getAllowedValues();
         Assert::that($this->value)
             ->notNull()
             ->notEmpty()
-            ->inArray(static::getAllowed());
+            ->inArray($values);
     }
 
     /**
@@ -32,4 +33,11 @@ abstract class ConstantValueObject extends SimpleValueObject
      * @return ConstantValueObject[]
      */
     static abstract function getAllowed(): array;
+    /**
+     * Summary of getAllowedValues
+     * @return iterable
+     */
+    static function getAllowedValues(): iterable{
+        return array_map(fn($item) => $item->value, static::getAllowed());
+    }
 }

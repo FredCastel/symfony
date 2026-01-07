@@ -9,6 +9,10 @@ use Core\Domain\ValueObject\State;
  */
 final class AccountState extends State
 {
+    public const DRAFT = 'draft';
+    public const OPENED = 'opened';
+    public const CLOSED = 'closed';
+
     public function __construct(
         string $value,
     ) {
@@ -18,21 +22,21 @@ final class AccountState extends State
     public static function DRAFT(): self
     {
         return new self(
-            value: 'draft',
+            value: self::DRAFT,
         );
     }
 
     public static function OPENED(): self
     {
         return new self(
-            value: 'opened',
+            value: self::OPENED,
         );
     }
 
     public static function CLOSED(): self
     {
         return new self(
-            value: 'closed',
+            value: self::CLOSED,
         );
     }
 

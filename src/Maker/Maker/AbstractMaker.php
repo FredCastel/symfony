@@ -75,10 +75,17 @@ abstract class AbstractMaker extends SymfonyAbstractMaker
 
     }
 
-    public function deleteClassFile($className)
+    public function deleteClassFile($className) :void
     {
         $path = self::$fileManager->getRelativePathForFutureClass($className);
         $filesystem = new Filesystem();
         $filesystem->remove($path);
+    }
+
+    public function existsClassFile($className): bool
+    {
+        $path = self::$fileManager->getRelativePathForFutureClass($className);
+        $filesystem = new Filesystem();
+        return $filesystem->exists($path);
     }
 }

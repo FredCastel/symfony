@@ -9,6 +9,10 @@ use Core\Domain\ValueObject\State;
  */
 final class PartyState extends State
 {
+    public const DRAFT = 'draft';
+    public const ENABLED = 'enabled';
+    public const DISABLED = 'disabled';
+
     public function __construct(
         string $value,
     ) {
@@ -18,21 +22,21 @@ final class PartyState extends State
     public static function DRAFT(): self
     {
         return new self(
-            value: 'draft',
+            value: self::DRAFT,
         );
     }
 
     public static function ENABLED(): self
     {
         return new self(
-            value: 'enabled',
+            value: self::ENABLED,
         );
     }
 
     public static function DISABLED(): self
     {
         return new self(
-            value: 'disabled',
+            value: self::DISABLED,
         );
     }
 
