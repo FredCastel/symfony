@@ -359,7 +359,7 @@ return function (ContainerConfigurator $containerConfigurator, string $env) {
     /**
      * FIXTURES
      */
-    // $services->load('DataFixtures\\', "$path/dataFixtures/");
+    $services->load('DataFixtures\\', "$path/fixtures/");
     // $services->load('DataFixtures\\Banking\\', "$path/dataFixtures/Banking/");
     // $services->load('DataFixtures\\Cluster\\', "$path/dataFixtures/Cluster/");
     // $services->load('DataFixtures\\Business\\', "$path/dataFixtures/Business/");

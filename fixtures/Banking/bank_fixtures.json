@@ -1,0 +1,44 @@
+{
+	"fixtures": [
+		{
+			"id": "bank_fixtures",
+			"aggreagate_ref": "bankid",
+			"aggreagate_id": "bankid",
+			"name": "fortuneo",
+			"commands": [
+				{
+					"id": "1",
+					"name":"Register Fortuneo Bank",
+					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
+					"request": {
+						"name": "Fortuneo",
+						"country": "FR",
+						"bic": "FTNOFRP1",
+            			"url": "https://mabanque.fortuneo.fr"
+					}
+				},
+				{
+					"id": "2",
+					"name":"Register Crédit Mutuel Bank",
+					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
+					"request": {
+						"name": "Crédit Mutuel",
+						"country": "FR",
+						"url": "https://www.creditmutuel.fr"
+					}
+				},
+				{
+					"id": "2",
+					"name":"Register Crédit Mutuel de Bretagne Bank",
+					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
+					"request": {
+						"name": "Crédit Mutuel de Bretagne",
+						"country": "FR",
+						"bic": "CMBRFR2B",
+						"url": "https://mon.cmb.fr"
+					}
+				}
+			]
+		}
+	]
+}
