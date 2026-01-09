@@ -17,7 +17,7 @@ clear
 php bin/console doctrine:database:drop --env=dev --force 
 php bin/console doctrine:database:create --env=dev
 php bin/console doctrine:schema:update --env=dev --force
-php bin/console doctrine:fixtures:load --env=dev --group=main -n
+php bin/console doctrine:fixtures:load --env=dev -n
 ```
 
 ```console
@@ -88,6 +88,9 @@ puis saisir les commande php bin....
 pour se connecter depuis vscode sur la base de donnée utiliée
  - Host localhost
  - Port celui donné par docker sur le conteneur database-1
+ - avoir le port publié dans compose.yaml     
+    ports:
+      - "5432:5432"  # Ajoutez cette ligne
 
 activer touches fleches pour l'historique
 ```console

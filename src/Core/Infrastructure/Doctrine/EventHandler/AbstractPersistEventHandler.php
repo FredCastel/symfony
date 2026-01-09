@@ -5,7 +5,6 @@ namespace Core\Infrastructure\Doctrine\EventHandler;
 use Core\Domain\Event\AbstractEvent;
 use Core\Domain\Repository\AggregateRepository;
 use Core\Domain\Repository\EntityRepository;
-use Core\Domain\ValueObject\Id;
 use Core\Infrastructure\Doctrine\Mapper\EntityMapper;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -24,10 +23,15 @@ abstract class AbstractPersistEventHandler extends AbstractEventHandler
     {
         //get entity
         $aggregate = $this->aggregateRepository->get($event->getId());
-        $entity = $aggregate->getEntities()[$event->getId()]; //$this->repo->get($event->getEntityId());
-        //convert to entity
+        $entity = $aggregate->getEntities()[$event->getId()]; 
+        
+        //create entity
         $entityClass = $this->mapper->getDoctrineEntityClass();
-        $doctrineEntity = $this->mapper->fromModel(new $entityClass(), $entity);
+        $doctrineEntity = new $entityClass();
+
+        //convert to doctrine entity
+        $doctrineEntity = $this->mapper->fromModel($doctrineEntity, $entity);
+        
         //insert
         $this->em->persist($doctrineEntity);
         $this->em->flush();

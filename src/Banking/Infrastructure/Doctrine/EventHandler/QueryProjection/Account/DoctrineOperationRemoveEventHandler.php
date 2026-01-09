@@ -11,10 +11,10 @@ use Banking\Domain\Event\Account\OperationRemovedEvent;
 use Banking\Infrastructure\Doctrine\Mapper\DoctrineOperationMapper;
 use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineAccountAggregateRepository;
 use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineOperationEntityRepository;
-use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
+use Core\Infrastructure\Doctrine\EventHandler\AbstractRemoveEventHandler;
 use Doctrine\ORM\EntityManagerInterface;
 
-final class DoctrineOperationRemoveEventHandler extends AbstractPersistEventHandler
+final class DoctrineOperationRemoveEventHandler extends AbstractRemoveEventHandler
 {
     public function __construct(
         DoctrineAccountAggregateRepository $aggregateRepository,

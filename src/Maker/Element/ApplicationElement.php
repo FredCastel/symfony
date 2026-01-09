@@ -41,7 +41,6 @@ class ApplicationElement extends AbstractElement
         if (!self::$instance) {
             $file = 'src/application.json';
             $def = json_decode(file_get_contents($file));
-            var_dump($def->key);
             self::$instance = new ApplicationElement($def);
         }
 

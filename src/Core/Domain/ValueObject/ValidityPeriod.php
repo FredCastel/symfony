@@ -7,7 +7,7 @@ use Core\Service\Assert\Assert;
 class ValidityPeriod extends ValueObject
 {
     const initialSinceDate = "1990-01-01T00:00:00+00:00";
-    const initialUntilDate = "2099-12-31T00:00:00+00:00";
+    const initialUntilDate = "2999-12-31T00:00:00+00:00";
 
     readonly public DateTime $since;
     readonly public DateTime $until;

@@ -47,7 +47,6 @@ final class DoctrineBankMapper extends EntityMapper
         if (null == $entity) {
             return null;
         }
-
         $doctrineEntity
             ->setId(Uuid::fromString($entity->getId()->value))
                                     ->setName($entity->getName()->value)

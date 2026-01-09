@@ -32,6 +32,7 @@ class DispatcherEventBus implements EventBus
         foreach ($this->handlers as $key => $handlers) {
             if ($key == $eventClass) {
                 foreach ($handlers as $handler) {//handlers is an array
+                    /** @var EventHandler */
                     $handler->handle($event);
                 }
             }

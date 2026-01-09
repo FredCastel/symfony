@@ -84,6 +84,7 @@ class ApiCollectionProviderMaker extends AbstractMaker
                         foreach ($query->getSubResources() as $subResource) {
                             $useStatements[] = ApiResourceMaker::getFullName($subResource);
                         }
+                        $useStatements[] = ApiResourceQueryDtoMaker::getFullName($query);
 
                         //collection
                         $class_data = ClassData::create(

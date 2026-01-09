@@ -32,13 +32,14 @@ abstract class DoctrineAggregateRepository extends ServiceEntityRepository
 
     public function save(Aggregate $aggregate, array $events): void
     {
-        //check version        
-        $version = $this->getAggregateVersion($aggregate->getId()->value) + 1;
+        //check current aggregate version        
+        $version = $this->getAggregateVersion($aggregate->getId()->value);
 
         if ($version != $aggregate->getVersion()->value)
             throw new \Exception("Aggregation " . static::getAggregateClass() . " version is " . $aggregate->getVersion()->value . " need $version", 1);
 
         foreach ($events as $event) {
+            $version++;
             $eventEntity = new DoctrineEvent();
             $eventEntity->setId(Uuid::fromString($this->idGenerator->next()));
             $eventEntity->setAggregate(get_class($aggregate));
@@ -52,20 +53,30 @@ abstract class DoctrineAggregateRepository extends ServiceEntityRepository
             $this->getEntityManager()->persist($eventEntity);
         }
 
-        //delete entity aggregate key
-        $table = DoctrineEntityKey::class;
-        $dql = "DELETE $table as e 
-            WHERE e.aggregateId = :id";
-        $this->getEntityManager()->createQuery($dql)
-            ->setParameter('id', $aggregate->getId()->value)
-            ->execute();
+        //synchro entity/aggregatae ids
+        $conn = $this->getEntityManager()->getConnection();
 
-        //insert entity aggregate key
-        foreach ($aggregate->getEntities() as $entity) {
-           $keyEntity = (new DoctrineEntityKey())
-                ->setId(Uuid::fromString($entity->getId()->value))
-                ->setAggregateId(Uuid::fromString($aggregate->getId()->value));
-            $this->getEntityManager()->persist($keyEntity);
+        //1 delete aggregate entities keys
+        $conn->executeStatement(
+            'DELETE FROM entity WHERE aggregate_id = :aggregateId',
+            ['aggregateId' => $aggregate->getId()->value]
+        );
+
+        //2 insert new entities key
+        if (!empty($aggregate->getEntities())) {
+            $placeholders = [];
+            $params = [];
+            foreach ($aggregate->getEntities() as $entity) {
+                $placeholders[] = "(?, ?)";
+                $params[] = Uuid::fromString($entity->getId()->value);
+                $params[] = Uuid::fromString($aggregate->getId()->value);
+            }
+            $sql = sprintf(
+                'INSERT INTO entity (aggregate_id, id) VALUES %s',
+                implode(', ', $placeholders)
+            );
+
+            $conn->executeStatement($sql, $params);
         }
     }
 
@@ -73,10 +84,10 @@ abstract class DoctrineAggregateRepository extends ServiceEntityRepository
     {
         $events = $this->getEventsByAggregate($id);
         $class = $this->getAggregateClass();
-        //$version = $this->getAggregateVersion($id);
+        $version = $this->getAggregateVersion($id);
 
-        $instance = new $class(new \Core\Domain\ValueObject\Id($id));
-        //$instance->setVersion(new Version($version));
+        $instance = new $class(new \Core\Domain\ValueObject\Id($id), $version);
+        // $instance->setVersion(new Version($version));
         foreach ($events as $event) {
             $instance = $instance->apply($event);
         }
@@ -107,11 +118,12 @@ abstract class DoctrineAggregateRepository extends ServiceEntityRepository
         $dql = "SELECT max( e.version ) FROM $table as e 
             WHERE e.aggregate = :aggregate 
               and e.aggregateId = :id";
-        $em = $this->getEntityManager();              
+        $em = $this->getEntityManager();
         $result = $em->createQuery($dql)
             ->setParameter('aggregate', $aggregate)
             ->setParameter('id', $id)
             ->getSingleScalarResult();
+
         return $result ?? 0;
     }
 }

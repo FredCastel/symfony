@@ -8,34 +8,64 @@
 			"commands": [
 				{
 					"id": "1",
-					"name":"Register Fortuneo Bank",
+					"name": "Register Fortuneo Bank",
 					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
+					"method":"post",
 					"request": {
 						"name": "Fortuneo",
 						"country": "FR",
 						"bic": "FTNOFRP1",
-            			"url": "https://mabanque.fortuneo.fr"
+						"url": "https://mabanque.fortuneo.fr"
 					}
 				},
 				{
 					"id": "2",
-					"name":"Register Crédit Mutuel Bank",
-					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
+					"name": "Set url Fortuneo Bank",
+					"method":"patch",
+					"requestClass": "Banking\\Application\\Command\\Bank\\SetBankUrl\\SetBankUrlRequest",
 					"request": {
-						"name": "Crédit Mutuel",
-						"country": "FR",
-						"url": "https://www.creditmutuel.fr"
+						"name": "Fortuneo",
+						"bic": "FTNOFRP1",
+						"url": "https://mabanque.fortuneo.fr"
 					}
-				},
+				}
+			]
+		},
+		{
+			"id": "bank_fixtures",
+			"aggreagate_ref": "bankid",
+			"aggreagate_id": "bankid",
+			"name": "Crédit Mutuel de Bretagne",
+			"commands": [
 				{
-					"id": "2",
-					"name":"Register Crédit Mutuel de Bretagne Bank",
+					"id": "1",
+					"name": "Register Crédit Mutuel de Bretagne Bank",
 					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
+					"method":"post",
 					"request": {
 						"name": "Crédit Mutuel de Bretagne",
 						"country": "FR",
 						"bic": "CMBRFR2B",
 						"url": "https://mon.cmb.fr"
+					}
+				}
+			]
+		},
+		{
+			"id": "bank_fixtures",
+			"aggreagate_ref": "bankid",
+			"aggreagate_id": "bankid",
+			"name": "Crédit Mutuel",
+			"commands": [
+				{
+					"id": "1",
+					"name": "Register Crédit Mutuel Bank",
+					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
+					"method":"post",
+					"request": {
+						"name": "Crédit Mutuel",
+						"country": "FR",
+						"url": "https://www.creditmutuel.fr"
 					}
 				}
 			]

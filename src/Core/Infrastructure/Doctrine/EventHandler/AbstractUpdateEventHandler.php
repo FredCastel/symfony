@@ -5,13 +5,13 @@ namespace Core\Infrastructure\Doctrine\EventHandler;
 use Core\Domain\Event\AbstractEvent;
 use Core\Domain\Repository\AggregateRepository;
 use Core\Domain\Repository\EntityRepository;
-use Core\Infrastructure\Doctrine\Mapper\AggregateMapper;
 use Core\Infrastructure\Doctrine\Mapper\EntityMapper;
 use Doctrine\ORM\EntityManagerInterface;
 
 abstract class AbstractUpdateEventHandler extends AbstractEventHandler
 {
     public function __construct(
+        protected AggregateRepository $aggregateRepository,
         protected EntityRepository $repo,
         protected EntityMapper $mapper,
         protected EntityManagerInterface $em,
@@ -22,12 +22,16 @@ abstract class AbstractUpdateEventHandler extends AbstractEventHandler
     public function handle(AbstractEvent $event): void
     {
         //get entity
-        $entity = $this->repo->get($event->getEntityId());
-        //get entity
-        $entityClass = $this->mapper->getDoctrineEntityClass();
-        $doctrineEntity = $this->em->find($entityClass, $entity->getId()->value);
-        //update entity from model data
+        $aggregate = $this->aggregateRepository->get($event->getId());
+        $entity = $aggregate->getEntities()[$event->getId()];
+        
+        //load entity from orm to be able to update it
+        $doctrineRepository = $this->em->getRepository($this->mapper->getDoctrineEntityClass());
+        $doctrineEntity = $doctrineRepository->find($entity->getId());
+
+        //convert to doctrine entity
         $doctrineEntity = $this->mapper->fromModel($doctrineEntity, $entity);
+        
         //update
         $this->em->flush();
     }

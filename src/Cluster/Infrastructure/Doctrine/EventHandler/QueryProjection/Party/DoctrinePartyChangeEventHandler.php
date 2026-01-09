@@ -13,10 +13,10 @@ use Cluster\Domain\Event\Party\PartyRenamedEvent;
 use Cluster\Infrastructure\Doctrine\Mapper\DoctrinePartyMapper;
 use Cluster\Infrastructure\Doctrine\Repository\Party\DoctrinePartyAggregateRepository;
 use Cluster\Infrastructure\Doctrine\Repository\Party\DoctrinePartyEntityRepository;
-use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
+use Core\Infrastructure\Doctrine\EventHandler\AbstractUpdateEventHandler;
 use Doctrine\ORM\EntityManagerInterface;
 
-final class DoctrinePartyChangeEventHandler extends AbstractPersistEventHandler
+final class DoctrinePartyChangeEventHandler extends AbstractUpdateEventHandler
 {
     public function __construct(
         DoctrinePartyAggregateRepository $aggregateRepository,

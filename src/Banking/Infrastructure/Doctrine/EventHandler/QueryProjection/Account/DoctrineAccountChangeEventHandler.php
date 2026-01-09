@@ -15,10 +15,10 @@ use Banking\Domain\Event\Account\AccountOpenedEvent;
 use Banking\Infrastructure\Doctrine\Mapper\DoctrineAccountMapper;
 use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineAccountAggregateRepository;
 use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineAccountEntityRepository;
-use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
+use Core\Infrastructure\Doctrine\EventHandler\AbstractUpdateEventHandler;
 use Doctrine\ORM\EntityManagerInterface;
 
-final class DoctrineAccountChangeEventHandler extends AbstractPersistEventHandler
+final class DoctrineAccountChangeEventHandler extends AbstractUpdateEventHandler
 {
     public function __construct(
         DoctrineAccountAggregateRepository $aggregateRepository,

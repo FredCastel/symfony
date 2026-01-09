@@ -16,8 +16,9 @@ abstract class Aggregate
 
     public function __construct(
         protected Id $id,
+        int $version = 0
     ) {
-        $this->version = new Version(0);
+        $this->version = new Version($version);
         $this->initRoot();
     }
     /**
@@ -30,8 +31,8 @@ abstract class Aggregate
         /**  @var Aggregate */
         $newVersionOfAggretate = $this->root->apply($event)->getAggregate();
 
-        //increment version after applying event
-        $this->version = new Version($this->version->value + 1);
+        // //increment version after applying event
+        // $this->version = new Version($this->version->value + 1);
 
         return $newVersionOfAggretate;
     }

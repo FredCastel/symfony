@@ -7,6 +7,7 @@ use ApiPlatform\Doctrine\Orm\State\CollectionProvider;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\Pagination\TraversablePaginator;
 use ApiPlatform\State\ProviderInterface;
+use Cluster\Infrastructure\ApiPlatform\Resource\Party\Dto\ListQueryDto;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 final class ListCollectionProvider implements ProviderInterface

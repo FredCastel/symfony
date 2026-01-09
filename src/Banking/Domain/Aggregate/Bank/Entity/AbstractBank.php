@@ -161,11 +161,9 @@ abstract class AbstractBank extends EntityRoot
         $this->name = new Name(
             value: $event->name,
         );
-
         $this->url = $event->url ? new Url(
             value: $event->url,
         ) : null;
-
         $this->bic = $event->bic ? new Bic(
             value: $event->bic,
         ) : null;

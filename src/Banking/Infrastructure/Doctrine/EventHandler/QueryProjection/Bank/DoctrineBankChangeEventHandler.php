@@ -13,10 +13,10 @@ use Banking\Domain\Event\Bank\BankEnabledEvent;
 use Banking\Infrastructure\Doctrine\Mapper\DoctrineBankMapper;
 use Banking\Infrastructure\Doctrine\Repository\Bank\DoctrineBankAggregateRepository;
 use Banking\Infrastructure\Doctrine\Repository\Bank\DoctrineBankEntityRepository;
-use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
+use Core\Infrastructure\Doctrine\EventHandler\AbstractUpdateEventHandler;
 use Doctrine\ORM\EntityManagerInterface;
 
-final class DoctrineBankChangeEventHandler extends AbstractPersistEventHandler
+final class DoctrineBankChangeEventHandler extends AbstractUpdateEventHandler
 {
     public function __construct(
         DoctrineBankAggregateRepository $aggregateRepository,

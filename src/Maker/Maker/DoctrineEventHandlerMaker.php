@@ -5,6 +5,8 @@ namespace Maker\Maker;
 use Core\Domain\Event\AbstractEvent;
 use Core\Domain\ValueObject\Id;
 use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
+use Core\Infrastructure\Doctrine\EventHandler\AbstractRemoveEventHandler;
+use Core\Infrastructure\Doctrine\EventHandler\AbstractUpdateEventHandler;
 use Maker\Element\ApplicationElement;
 use Maker\Element\EntityElement;
 use Maker\Template\MakerTemplate;
@@ -78,15 +80,15 @@ class DoctrineEventHandlerMaker extends AbstractMaker
 
                     //list handlers
                     $handlers=[];
-                    $handlers[]=(object) array('name' => 'Persist', 'actionCheck'=>'isInsertAction');
-                    $handlers[]=(object) array('name' => 'Change', 'actionCheck'=>'isUpdateAction');
-                    $handlers[]=(object) array('name' => 'Remove', 'actionCheck'=>'isDeleteAction');
+                    $handlers[]=(object) array('name' => 'Persist', 'actionCheck'=>'isInsertAction','extendsClass'=>AbstractPersistEventHandler::class );
+                    $handlers[]=(object) array('name' => 'Change', 'actionCheck'=>'isUpdateAction','extendsClass'=>AbstractUpdateEventHandler::class );
+                    $handlers[]=(object) array('name' => 'Remove', 'actionCheck'=>'isDeleteAction','extendsClass'=>AbstractRemoveEventHandler::class );
 
                     foreach ($handlers as $handler) {
 
                         $class_data = ClassData::create(
                             class: static::$generatedPath . self::getFullName($entity,'',$handler->name),
-                            extendsClass: AbstractPersistEventHandler::class,
+                            extendsClass: $handler->extendsClass,
                             useStatements: [
                                 ...$useStatements,
                                 DoctrineAggregateRepositoryMaker::getFullName($entity->aggregate),

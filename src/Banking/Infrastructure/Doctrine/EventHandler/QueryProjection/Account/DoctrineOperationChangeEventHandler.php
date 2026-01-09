@@ -10,10 +10,10 @@ namespace Banking\Infrastructure\Doctrine\EventHandler\QueryProjection\Account;
 use Banking\Infrastructure\Doctrine\Mapper\DoctrineOperationMapper;
 use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineAccountAggregateRepository;
 use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineOperationEntityRepository;
-use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
+use Core\Infrastructure\Doctrine\EventHandler\AbstractUpdateEventHandler;
 use Doctrine\ORM\EntityManagerInterface;
 
-final class DoctrineOperationChangeEventHandler extends AbstractPersistEventHandler
+final class DoctrineOperationChangeEventHandler extends AbstractUpdateEventHandler
 {
     public function __construct(
         DoctrineAccountAggregateRepository $aggregateRepository,

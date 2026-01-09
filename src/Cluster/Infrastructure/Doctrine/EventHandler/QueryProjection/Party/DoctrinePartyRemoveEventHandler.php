@@ -11,10 +11,10 @@ use Cluster\Domain\Event\Party\PartyRemovedEvent;
 use Cluster\Infrastructure\Doctrine\Mapper\DoctrinePartyMapper;
 use Cluster\Infrastructure\Doctrine\Repository\Party\DoctrinePartyAggregateRepository;
 use Cluster\Infrastructure\Doctrine\Repository\Party\DoctrinePartyEntityRepository;
-use Core\Infrastructure\Doctrine\EventHandler\AbstractPersistEventHandler;
+use Core\Infrastructure\Doctrine\EventHandler\AbstractRemoveEventHandler;
 use Doctrine\ORM\EntityManagerInterface;
 
-final class DoctrinePartyRemoveEventHandler extends AbstractPersistEventHandler
+final class DoctrinePartyRemoveEventHandler extends AbstractRemoveEventHandler
 {
     public function __construct(
         DoctrinePartyAggregateRepository $aggregateRepository,

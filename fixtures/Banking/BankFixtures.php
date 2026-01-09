@@ -3,6 +3,8 @@
 namespace DataFixtures\Banking;
 
 use Banking\Application\Command\Bank\RegisterBank\RegisterBankRequest;
+use Banking\Application\Command\Bank\RemoveBank\RemoveBankRequest;
+use Banking\Application\Command\Bank\SetBankUrl\SetBankUrlRequest;
 use Core\Service\Bus\Command\CommandBus;
 use Core\Service\IdGenerator;
 use DataFixtures\FixtureObject;
@@ -27,20 +29,48 @@ class BankFixtures extends Fixture
         $fixtures = $def->fixtures;
 
         foreach ($fixtures as $fixture) {
-            foreach ($fixture->commands as $commandData) {
+            foreach ($fixture->commands as $command) {
+                if ($command->method === 'post') {
+                    $aggragetId = $this->idGen->next();
+                    $entityId = $aggragetId;
+                }
 
-                $aggragetId = $this->idGen->next();
-                $entityId = $aggragetId;
-                $requestClass = $commandData->requestClass;
-                $request = new $requestClass(
-                    id: $aggragetId,
-                    entity_id: $entityId,
-                    name: $commandData->request->name,
-                    country: $commandData->request->country,
-                    bic: $commandData->request->bic ?? null,
-                );
+                switch ($command->requestClass) {
+                    case RegisterBankRequest::class:
+                        $request = new RegisterBankRequest(
+                            id: $aggragetId,
+                            entity_id: $entityId,
+                            name: $command->request->name,
+                            country: $command->request->country,
+                            bic: $command->request->bic ?? null,
+                        );
+                        break;
+
+                    case SetBankUrlRequest::class:
+                        $request = new SetBankUrlRequest(
+                            id: $aggragetId,
+                            entity_id: $entityId,
+                            url: $command->request->url,
+                            name: $command->request->name,
+                            bic: $command->request->bic ?? null,
+                        );
+                        break;
+
+                    case RemoveBankRequest::class:
+                        $request = new RemoveBankRequest(
+                            id: $aggragetId,
+                            entity_id: $entityId,
+                        );
+                        break;
+
+
+                    default:
+                    unset($request);
+                        break;
+                }
                 $this->commandBus->dispatch($request);
             }
+            
         }
     }
 }
