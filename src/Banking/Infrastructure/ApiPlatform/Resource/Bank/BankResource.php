@@ -15,14 +15,14 @@ use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\EnableOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\ListQueryDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RegisterOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RemoveOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RenameOperationDto;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RenameBankOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\SetBicOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\SetUrlOperationDto;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\DisableProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\EnableProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RegisterProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RemoveProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RenameProcessor;
+use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RenameBankProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetBicProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetUrlProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Provider\Bank\ListCollectionProvider;
@@ -92,14 +92,6 @@ use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
             output: false,
         ),
         new Patch(
-            name: '_api_/banking-bank/{id}/rename',
-            uriTemplate: 'banking-bank/{id}/rename',
-            provider: ResourceItemProvider::class,
-            processor: RenameProcessor::class,
-            input: RenameOperationDto::class,
-            output: false,
-        ),
-        new Patch(
             name: '_api_/banking-bank/{id}/setUrl',
             uriTemplate: 'banking-bank/{id}/setUrl',
             provider: ResourceItemProvider::class,
@@ -113,6 +105,14 @@ use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
             provider: ResourceItemProvider::class,
             processor: SetBicProcessor::class,
             input: SetBicOperationDto::class,
+            output: false,
+        ),
+        new Patch(
+            name: '_api_/banking-bank/{id}/renameBank',
+            uriTemplate: 'banking-bank/{id}/renameBank',
+            provider: ResourceItemProvider::class,
+            processor: RenameBankProcessor::class,
+            input: RenameBankOperationDto::class,
             output: false,
         ),
     ]

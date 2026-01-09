@@ -1,0 +1,19 @@
+{
+	"fixtures": [
+		{
+			"id": "party_fixtures",
+			"name": "Moi",
+			"commands": [
+				{
+					"id": "1",
+					"name": "Register Moi Party",
+					"requestClass": "Cluster\\Application\\Command\\Party\\RegisterNatural\\RegisterNaturalRequest",
+					"method":"post",
+					"request": {
+						"name": "Frédéric Castel"
+					}
+				}
+			]
+		}
+	]
+}

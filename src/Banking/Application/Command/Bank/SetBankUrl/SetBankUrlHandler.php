@@ -20,9 +20,7 @@ final class SetBankUrlHandler extends AbstractSetBankUrlHandler implements Comma
     ): array {
         [$aggregate, $events] = $aggregate->getRoot()->Change(
             entity_id: $command->entity_id,
-            name: $command->name,
             url: $command->url,
-            bic: $command->bic,
         );
 
         return [$aggregate, $events];

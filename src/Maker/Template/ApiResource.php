@@ -24,7 +24,7 @@ namespace <?= $ns ?>;
             name: '_api_/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
             uriTemplate: '/<?= $resource->apiPath ?>/{id}/<?= $query->name ?>',
             input: false,
-            provider: <?= $makers->apiQueryProviderMaker::getName($query) ?>::class,
+            provider: <?= $makers->apiItemProviderMaker::getName($query) ?>::class,
             output: <?= $makers->apiResourceQueryDtoMaker::getName($query) ?>::class,
         ),         
         <?php endif; ?>           

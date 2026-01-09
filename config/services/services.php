@@ -33,7 +33,6 @@ use Core\Service\Bus\Event\EventBusFactory;
 use Core\Service\Bus\Query\QueryBus;
 use Core\Service\Bus\Query\QueryBusFactory;
 use Core\Service\IdGenerator;
-use DataFixtures\Banking\BankFixtures;
 use Maker\Maker\ApiCollectionProviderMaker;
 use Maker\Maker\ApiItemProviderMaker;
 use Maker\Maker\ApiMaker;

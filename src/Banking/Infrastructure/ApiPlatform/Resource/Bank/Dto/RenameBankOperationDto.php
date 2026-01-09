@@ -4,10 +4,8 @@ namespace Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto;
 
 use Symfony\Component\Validator\Constraints\NotNull;
 
-final class RenameOperationDto
+final class RenameBankOperationDto
 {
     #[NotNull()]
     public string $name;
-    public ?string $url = null;
-    public ?string $bic = null;
 }

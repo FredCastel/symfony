@@ -581,15 +581,6 @@
                     "role": "update",
                     "parameters": [
                       {
-                        "key": "4b37c0ac-7fab-4e14-8fdf-e0ec8e8da954",
-                        "name": "Name",
-                        "description": "change bank name",
-                        "enabled": true,
-                        "type": "string",
-                        "target_property_ref": "a9d1aaa6-0aa4-466f-96b5-e22545f9d6c0",
-                        "target_property_input_ref": "3f281f49-4888-4dd2-9e12-875f46954f6c"
-                      },
-                      {
                         "key": "280b1320-3984-4486-903b-1f260e6f347e",
                         "name": "Url",
                         "description": "change bank url",
@@ -619,6 +610,25 @@
                     "event_name": "BankRemoved",
                     "role": "delete",
                     "parameters": []
+                  },
+                  {
+                    "key": "0a000a78-7961-498b-8eaf-be411aecc32b",
+                    "name": "Rename",
+                    "description": "Rename a bank",
+                    "enabled": true,
+                    "event_name": "BankRenamed",
+                    "role": "update",
+                    "parameters": [
+                      {
+                        "key": "39b2ef25-24e9-4289-9e19-7bebcb0dfdc4",
+                        "name": "Name",
+                        "description": "new Name",
+                        "enabled": true,
+                        "type": "string",
+                        "target_property_ref": "a9d1aaa6-0aa4-466f-96b5-e22545f9d6c0",
+                        "target_property_input_ref": "3f281f49-4888-4dd2-9e12-875f46954f6c"
+                      }
+                    ]
                   }
                 ],
                 "entities": []
@@ -711,42 +721,18 @@
                   "parameters": []
                 },
                 {
-                  "key": "1b384608-06ad-4056-a006-735a1c1c5507",
-                  "name": "RemoveBank",
-                  "description": "Delete a bank",
-                  "enabled": true,
-                  "target_action_ref": "01337d13-2af6-4a52-9525-876ff4ee8d59",
-                  "parameters": []
-                },
-                {
-                  "key": "037e9382-deb4-4b26-8dd1-053a41bc19ee",
+                  "key": "17556681-38d7-4b30-963a-8acf9f56e34b",
                   "name": "RenameBank",
-                  "description": "Change bank name",
+                  "description": "Rename a bank",
                   "enabled": true,
-                  "target_action_ref": "ec37541a-330a-4d72-934a-bed4f1213333",
+                  "target_action_ref": "0a000a78-7961-498b-8eaf-be411aecc32b",
                   "parameters": [
                     {
-                      "key": "31239d0d-fbec-492f-b620-fe6faf5af10e",
+                      "key": "469fb98e-9844-4d66-82a8-290c5954235d",
                       "name": "Name",
-                      "description": "change bank name",
+                      "description": "new Name",
                       "enabled": true,
-                      "target_parameter_ref": "4b37c0ac-7fab-4e14-8fdf-e0ec8e8da954"
-                    },
-                    {
-                      "key": "be48bfc3-1df7-48cc-987d-16909b95d25f",
-                      "name": "Url",
-                      "description": "change bank url",
-                      "enabled": true,
-                      "nullable": true,
-                      "target_parameter_ref": "280b1320-3984-4486-903b-1f260e6f347e"
-                    },
-                    {
-                      "key": "8a21a712-c9c0-4d97-8491-96948352b8c4",
-                      "name": "Bic",
-                      "description": "change bank bic code",
-                      "enabled": true,
-                      "nullable": true,
-                      "target_parameter_ref": "c2dc03c3-957c-43af-b3cb-60f168f54204"
+                      "target_parameter_ref": "39b2ef25-24e9-4289-9e19-7bebcb0dfdc4"
                     }
                   ]
                 },
@@ -760,23 +746,16 @@
                     {
                       "key": "4eb65706-b086-40cf-ab1d-3bb0fe92a003",
                       "name": "Url",
-                      "description": "change bank url",
+                      "description": "new url",
                       "enabled": true,
                       "nullable": true,
                       "target_parameter_ref": "280b1320-3984-4486-903b-1f260e6f347e"
                     },
                     {
-                      "key": "90b8942a-3a15-41ef-88da-51b522c84e02",
-                      "name": "Name",
-                      "description": "change bank name",
-                      "enabled": true,
-                      "target_parameter_ref": "4b37c0ac-7fab-4e14-8fdf-e0ec8e8da954"
-                    },
-                    {
                       "key": "7f78f142-66ad-4ac8-88da-4a81580a2e69",
                       "name": "Bic",
                       "description": "change bank bic code",
-                      "enabled": true,
+                      "enabled": false,
                       "nullable": true,
                       "target_parameter_ref": "c2dc03c3-957c-43af-b3cb-60f168f54204"
                     }
@@ -792,27 +771,28 @@
                     {
                       "key": "b69e23a5-f005-496c-8809-bf5dbf46824e",
                       "name": "Bic",
-                      "description": "change bank bic code",
+                      "description": "new bic code",
                       "enabled": true,
                       "nullable": true,
                       "target_parameter_ref": "c2dc03c3-957c-43af-b3cb-60f168f54204"
                     },
                     {
-                      "key": "024c7560-ddb4-4e01-874f-4b3706f7622e",
-                      "name": "Name",
-                      "description": "change bank name",
-                      "enabled": true,
-                      "target_parameter_ref": "4b37c0ac-7fab-4e14-8fdf-e0ec8e8da954"
-                    },
-                    {
                       "key": "4bd4740d-b073-4856-b003-1f8061fed1ab",
                       "name": "Url",
                       "description": "change bank url",
-                      "enabled": true,
+                      "enabled": false,
                       "nullable": true,
                       "target_parameter_ref": "280b1320-3984-4486-903b-1f260e6f347e"
                     }
                   ]
+                },
+                {
+                  "key": "1b384608-06ad-4056-a006-735a1c1c5507",
+                  "name": "RemoveBank",
+                  "description": "Delete a bank",
+                  "enabled": true,
+                  "target_action_ref": "01337d13-2af6-4a52-9525-876ff4ee8d59",
+                  "parameters": []
                 }
               ]
             }
@@ -950,15 +930,6 @@
                   "target_command_ref": "1b384608-06ad-4056-a006-735a1c1c5507"
                 },
                 {
-                  "key": "a3eee81e-626a-4e5c-9045-4a095852018c",
-                  "name": "Rename",
-                  "description": "Change bank name",
-                  "enabled": true,
-                  "method": "PATCH",
-                  "api_path": "rename",
-                  "target_command_ref": "037e9382-deb4-4b26-8dd1-053a41bc19ee"
-                },
-                {
                   "key": "f14909ba-b940-4b7c-a71f-6d7840f671fe",
                   "name": "SetUrl",
                   "description": "Change bank url",
@@ -975,6 +946,15 @@
                   "method": "PATCH",
                   "api_path": "set-bic",
                   "target_command_ref": "bdb9c699-8c04-49e9-b807-c509117f5197"
+                },
+                {
+                  "key": "55d75953-b1cf-44f7-9ba3-8ffef9c4b0a9",
+                  "name": "RenameBank",
+                  "description": "Rename a bank",
+                  "enabled": true,
+                  "method": "PATCH",
+                  "api_path": "rename-bank",
+                  "target_command_ref": "17556681-38d7-4b30-963a-8acf9f56e34b"
                 }
               ],
               "queries": [
@@ -2474,6 +2454,7 @@
                   {
                     "key": "9dbc24e4-b3bf-44f6-8f2d-1d477145c828",
                     "name": "Url",
+                    "description": "Party Url",
                     "enabled": true,
                     "nullable": true,
                     "value_object_ref": "43f22535-ffa1-46d0-992c-8c1d72e03099",
@@ -2489,6 +2470,7 @@
                   {
                     "key": "f3f91a0b-2eb9-496e-8ea7-d5ad9c1beb2c",
                     "name": "Address",
+                    "description": "Party Address",
                     "enabled": true,
                     "nullable": true,
                     "value_object_ref": "b369caf7-2b8f-428e-9333-b66aecee81a4",
@@ -2504,6 +2486,7 @@
                   {
                     "key": "476fe771-7e5a-44a4-9688-6ff3ab60fb3b",
                     "name": "Image",
+                    "description": "Party ",
                     "enabled": true,
                     "nullable": true,
                     "value_object_ref": "f975a5c7-23bb-40e5-8b21-12b537854b69",

@@ -24,8 +24,6 @@
 					"method":"patch",
 					"requestClass": "Banking\\Application\\Command\\Bank\\SetBankUrl\\SetBankUrlRequest",
 					"request": {
-						"name": "Fortuneo",
-						"bic": "FTNOFRP1",
 						"url": "https://mabanque.fortuneo.fr"
 					}
 				}

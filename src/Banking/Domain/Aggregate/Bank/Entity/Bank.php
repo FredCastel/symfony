@@ -7,6 +7,7 @@ use Banking\Domain\Event\Bank\BankDisabledEvent;
 use Banking\Domain\Event\Bank\BankEnabledEvent;
 use Banking\Domain\Event\Bank\BankRegisteredEvent;
 use Banking\Domain\Event\Bank\BankRemovedEvent;
+use Banking\Domain\Event\Bank\BankRenamedEvent;
 use Core\Domain\Aggregate\Entity;
 use Core\Domain\Aggregate\EntityValidationException;
 
@@ -56,6 +57,15 @@ final class Bank extends AbstractBank
     public function applyBankRemovedEvent(BankRemovedEvent $event): self
     {
         $instance = parent::applyBankRemovedEvent($event);
+
+        // TODO manage custom rules when necessary
+
+        return $instance;
+    }
+
+    public function applyBankRenamedEvent(BankRenamedEvent $event): self
+    {
+        $instance = parent::applyBankRenamedEvent($event);
 
         // TODO manage custom rules when necessary
 
@@ -116,6 +126,17 @@ final class Bank extends AbstractBank
      * can be used to list the allowed action on an instance of the Bank entity.
      */
     public function canRemove(): bool
+    {
+        // TODO implement action voter rules
+        return true;
+    }
+
+    /**
+     * check if the action "Rename" can be applied on entity
+     * this check is done before appling any the action
+     * can be used to list the allowed action on an instance of the Bank entity.
+     */
+    public function canRename(): bool
     {
         // TODO implement action voter rules
         return true;

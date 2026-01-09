@@ -5,10 +5,6 @@ namespace Banking\Infrastructure\ApiPlatform\Resource\Account\Dto;
 use ApiPlatform\Metadata\Get;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineOperation;
 
-
-#[Get(
-    shortName: 'Operation',
-)]    
 final class QueryDto{
     public string $id;
 

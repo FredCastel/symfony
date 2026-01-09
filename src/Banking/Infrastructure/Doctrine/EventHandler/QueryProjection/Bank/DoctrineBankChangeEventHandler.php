@@ -10,6 +10,7 @@ namespace Banking\Infrastructure\Doctrine\EventHandler\QueryProjection\Bank;
 use Banking\Domain\Event\Bank\BankChangedEvent;
 use Banking\Domain\Event\Bank\BankDisabledEvent;
 use Banking\Domain\Event\Bank\BankEnabledEvent;
+use Banking\Domain\Event\Bank\BankRenamedEvent;
 use Banking\Infrastructure\Doctrine\Mapper\DoctrineBankMapper;
 use Banking\Infrastructure\Doctrine\Repository\Bank\DoctrineBankAggregateRepository;
 use Banking\Infrastructure\Doctrine\Repository\Bank\DoctrineBankEntityRepository;
@@ -34,5 +35,7 @@ final class DoctrineBankChangeEventHandler extends AbstractUpdateEventHandler
         yield BankDisabledEvent::class;
 
         yield BankChangedEvent::class;
+
+        yield BankRenamedEvent::class;
     }
 }

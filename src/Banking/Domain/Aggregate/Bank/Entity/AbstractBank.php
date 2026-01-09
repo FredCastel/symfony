@@ -8,6 +8,7 @@ use Banking\Domain\Event\Bank\BankDisabledEvent;
 use Banking\Domain\Event\Bank\BankEnabledEvent;
 use Banking\Domain\Event\Bank\BankRegisteredEvent;
 use Banking\Domain\Event\Bank\BankRemovedEvent;
+use Banking\Domain\Event\Bank\BankRenamedEvent;
 use Banking\Domain\ValueObject\BankState;
 use Banking\Domain\ValueObject\Bic;
 use Core\Domain\Aggregate\Aggregate;
@@ -158,12 +159,10 @@ abstract class AbstractBank extends EntityRoot
         // $instance = clone $this;
 
         // mapping parameters linked to an entity property
-        $this->name = new Name(
-            value: $event->name,
-        );
         $this->url = $event->url ? new Url(
             value: $event->url,
         ) : null;
+
         $this->bic = $event->bic ? new Bic(
             value: $event->bic,
         ) : null;
@@ -184,6 +183,28 @@ abstract class AbstractBank extends EntityRoot
     {
         // clone the existing instance, and apply changes
         // $instance = clone $this;
+
+        return $this;
+    }
+
+    /**
+     * apply the event BankRenamedEvent on entity
+     * related to action "Rename" : Rename a bank
+     * role update.
+     *
+     * @see Banking\Domain\Event\Bank\BankRenamedEvent
+     *
+     * @param BankRenamedEvent $event Rename a bank
+     */
+    protected function applyBankRenamedEvent(BankRenamedEvent $event): self
+    {
+        // clone the existing instance, and apply changes
+        // $instance = clone $this;
+
+        // mapping parameters linked to an entity property
+        $this->name = new Name(
+            value: $event->name,
+        );
 
         return $this;
     }
@@ -293,20 +314,17 @@ abstract class AbstractBank extends EntityRoot
      * @see Banking\Domain\Event\Bank\BankChangedEvent
      *
      * @param string      $entity_id entity id
-     * @param string      $name      change bank name
      * @param string|null $url       change bank url
      * @param string|null $bic       change bank bic code
      */
     public function change(
         string $entity_id,
-        string $name,
         ?string $url = null,
         ?string $bic = null,
     ): array {
         $event = new BankChangedEvent(
             id: $this->aggregate->getId(),// aggregate Id,
             entity_id: $entity_id,// entity Id
-            name: $name,
             url: $url,
             bic: $bic,
         );
@@ -332,6 +350,32 @@ abstract class AbstractBank extends EntityRoot
         $event = new BankRemovedEvent(
             id: $this->aggregate->getId(),// aggregate Id,
             entity_id: $entity_id,// entity Id
+        );
+
+        return [
+            $this->aggregate->apply($event),
+            [$event],
+        ];
+    }
+
+    /**
+     * Rename a bank
+     * Action : "Rename"
+     * Create the event : BankRenamedEvent.
+     *
+     * @see Banking\Domain\Event\Bank\BankRenamedEvent
+     *
+     * @param string $entity_id entity id
+     * @param string $name      new Name
+     */
+    public function rename(
+        string $entity_id,
+        string $name,
+    ): array {
+        $event = new BankRenamedEvent(
+            id: $this->aggregate->getId(),// aggregate Id,
+            entity_id: $entity_id,// entity Id
+            name: $name,
         );
 
         return [
@@ -421,6 +465,13 @@ abstract class AbstractBank extends EntityRoot
      * can be used to list the allowed action on an instance of the Bank entity.
      */
     abstract public function canRemove(): bool;
+
+    /**
+     * check if the action "Rename" can be applied on entity
+     * this check is done before appling any the action
+     * can be used to list the allowed action on an instance of the Bank entity.
+     */
+    abstract public function canRename(): bool;
 
     /************* Entity Properties Getter */
 

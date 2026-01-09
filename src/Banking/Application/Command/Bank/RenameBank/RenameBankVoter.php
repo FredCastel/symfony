@@ -36,7 +36,7 @@ final class RenameBankVoter extends CommandIdVoter
          */
         $entity = $this->bankRepository->get($id);
 
-        if (!$entity->canChange()) {
+        if (!$entity->canRename()) {
             $notif = new Notification();
             $notif->addMessage(new InformationMessage('RenameBank', "Command can't be applied"));
 

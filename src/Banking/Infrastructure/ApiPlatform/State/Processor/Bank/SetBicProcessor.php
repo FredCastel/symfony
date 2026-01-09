@@ -31,8 +31,6 @@ final class SetBicProcessor extends CommandProcessor
             id: $id,
             entity_id: $entity_id,
             bic: $input->bic,
-            name: $input->name,
-            url: $input->url,
         );
 
         $this->dispatch($command);

@@ -1,17 +1,15 @@
 <?php
 
-namespace DataFixtures\Banking;
+namespace DataFixtures\Cluster;
 
-use Banking\Application\Command\Bank\RegisterBank\RegisterBankRequest;
-use Banking\Application\Command\Bank\RemoveBank\RemoveBankRequest;
-use Banking\Application\Command\Bank\SetBankUrl\SetBankUrlRequest;
+use Cluster\Application\Command\Party\RegisterNatural\RegisterNaturalRequest;
 use Core\Service\Bus\Command\CommandBus;
 use Core\Service\IdGenerator;
 use DataFixtures\FixtureObject;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class BankFixtures extends Fixture
+class PartyFixtures extends Fixture
 {
     public function __construct(
         private CommandBus $commandBus,
@@ -21,7 +19,7 @@ class BankFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
 
-        $file = 'fixtures/Banking/bank_fixtures.json';
+        $file = 'fixtures/Cluster/party_fixtures.json';
         $def = json_decode(file_get_contents($file));
 
         /** @var FixtureObject[] */
@@ -35,31 +33,13 @@ class BankFixtures extends Fixture
                 }
 
                 switch ($command->requestClass) {
-                    case RegisterBankRequest::class:
-                        $request = new RegisterBankRequest(
+                    case RegisterNaturalRequest::class:
+                        $request = new RegisterNaturalRequest(
                             id: $aggragetId,
                             entity_id: $entityId,
                             name: $command->request->name,
-                            country: $command->request->country,
-                            bic: $command->request->bic ?? null,
                         );
                         break;
-
-                    case SetBankUrlRequest::class:
-                        $request = new SetBankUrlRequest(
-                            id: $aggragetId,
-                            entity_id: $entityId,
-                            url: $command->request->url,
-                        );
-                        break;
-
-                    case RemoveBankRequest::class:
-                        $request = new RemoveBankRequest(
-                            id: $aggragetId,
-                            entity_id: $entityId,
-                        );
-                        break;
-
 
                     default:
                     unset($request);

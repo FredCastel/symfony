@@ -15,8 +15,6 @@ final class SetBankUrlRequest implements CommandRequest
         public string $id,
         public string $entity_id,
         public ?string $url = null,
-        public string $name,
-        public ?string $bic = null,
     ) {
     }
 }

@@ -11,28 +11,26 @@ use Core\Domain\Event\AbstractEvent;
 
 /**
  * Event of the Bank aggegate
- * linked to Change action of Bank entity
- * Change : Change bank simple properties.
+ * linked to Rename action of Bank entity
+ * Rename : Rename a bank.
  *
  * @internal GENERATED class NEVER CHANGE IT
  */
-final readonly class BankChangedEvent extends AbstractEvent
+final readonly class BankRenamedEvent extends AbstractEvent
 {
     /**
-     * Create a new event BankChanged
-     * linked to action Change
+     * Create a new event BankRenamed
+     * linked to action Rename
      * of entity Bank.
      *
-     * @param string      $id        the aggregate id
-     * @param string      $entity_id the entity id
-     * @param string|null $url       change bank url
-     * @param string|null $bic       change bank bic code
+     * @param string $id        the aggregate id
+     * @param string $entity_id the entity id
+     * @param string $name      new Name
      */
     public function __construct(
         string $id,
         string $entity_id,
-        public ?string $url,
-        public ?string $bic,
+        public string $name,
     ) {
         parent::__construct($id, $entity_id);
     }

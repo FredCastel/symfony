@@ -53,10 +53,19 @@ abstract class AbstractParty extends EntityRoot
      */
     protected ValidityPeriod $validityPeriod;
 
+    /**
+     * Party Url.
+     */
     protected ?Url $url;
 
-    protected ?Address $address;
+    /**
+     * Party Address.
+     */
+    protected ?Address $address=null;
 
+    /**
+     * Party.
+     */
     protected ?Image $image;
 
     /************* Entity Relations */
@@ -96,9 +105,13 @@ abstract class AbstractParty extends EntityRoot
             value: $event->url,
         ) : null;
 
-        $this->address = $event->address ? new Address(
-            value: $event->address,
-        ) : null;
+        // $this->address = $event->address ? new Address(
+        //     value: $event->address,
+        // ) : null;
+        $this->validityPeriod = new ValidityPeriod(
+            since: null,
+            until: null,
+        );
 
         $this->image = $event->image ? new Image(
             value: $event->image,
@@ -329,6 +342,9 @@ abstract class AbstractParty extends EntityRoot
      * @param PartyState     $state          party State
      * @param PartyCategory  $category       party Category
      * @param ValidityPeriod $validityPeriod party Validity dates
+     * @param Url|null       $url            party Url
+     * @param Address|null   $address        party Address
+     * @param Image|null     $image          party
      */
     public function set(
         Name $name,
@@ -450,7 +466,8 @@ abstract class AbstractParty extends EntityRoot
     }
 
     /**
-     * Get the Party url property.
+     * Get the Party url property
+     * Party Url.
      */
     public function getUrl(): ?Url
     {
@@ -458,7 +475,8 @@ abstract class AbstractParty extends EntityRoot
     }
 
     /**
-     * Get the Party address property.
+     * Get the Party address property
+     * Party Address.
      */
     public function getAddress(): ?Address
     {
@@ -466,7 +484,8 @@ abstract class AbstractParty extends EntityRoot
     }
 
     /**
-     * Get the Party image property.
+     * Get the Party image property
+     * Party.
      */
     public function getImage(): ?Image
     {

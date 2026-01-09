@@ -3,6 +3,8 @@
 namespace Cluster\Application\Command\Party\RegisterLegal;
 
 use Cluster\Domain\Aggregate\Party\PartyAggregate;
+use Cluster\Domain\ValueObject\PartyCategory;
+use Cluster\Domain\ValueObject\PartyState;
 use Core\Application\Command\CommandHandler;
 use Core\Domain\ValueObject\Id;
 
@@ -20,8 +22,8 @@ final class RegisterLegalHandler extends AbstractRegisterLegalHandler implements
         [$aggregate, $events] = (new PartyAggregate(new Id($command->id)))->getRoot()->register(
             entity_id: $command->entity_id,
             name: $command->name,
-            state: 'todo',// TODO mapping rule
-            category: 'todo',// TODO mapping rule
+            state: PartyState::ENABLED,//  mapping rule
+            category: PartyCategory::LEGAL,//  mapping rule
             url: $command->url,
             address: $command->address,
             image: null,
