@@ -24,7 +24,6 @@ final class RegisterLegalProcessor extends CommandProcessor
             id: $id,
             entity_id: $entity_id,
             name: $input->name,
-            address: $input->address,
             url: $input->url,
         );
 

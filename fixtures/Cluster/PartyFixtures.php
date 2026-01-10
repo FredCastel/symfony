@@ -3,8 +3,10 @@
 namespace DataFixtures\Cluster;
 
 use Cluster\Application\Command\Party\RegisterNatural\RegisterNaturalRequest;
+use Cluster\Infrastructure\Doctrine\Repository\Party\DoctrinePartyEntityRepository;
 use Core\Service\Bus\Command\CommandBus;
 use Core\Service\IdGenerator;
+use DataFixtures\Banking\BankFixtures;
 use DataFixtures\FixtureObject;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -14,7 +16,9 @@ class PartyFixtures extends Fixture
     public function __construct(
         private CommandBus $commandBus,
         private IdGenerator $idGen,
+        private DoctrinePartyEntityRepository $repo,
     ) {}
+
 
     public function load(ObjectManager $manager): void
     {
@@ -45,7 +49,14 @@ class PartyFixtures extends Fixture
                     unset($request);
                         break;
                 }
+
                 $this->commandBus->dispatch($request);
+                
+                if ($command->method === 'post') {
+                    //save ref
+                    $entity = $this->repo->find($entityId);
+                    $this->addReference($command->key, $entity);
+                }
             }
             
         }

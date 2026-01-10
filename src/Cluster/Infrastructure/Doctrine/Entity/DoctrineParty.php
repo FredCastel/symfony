@@ -51,10 +51,6 @@ class DoctrineParty extends DoctrineEntity
 
     #[Column(
         nullable: true, )]
-    private ?string $address = null;
-
-    #[Column(
-        nullable: true, )]
     private ?string $image = null;
 
     /************* Entity Relations */
@@ -147,18 +143,6 @@ class DoctrineParty extends DoctrineEntity
     public function setUrl(?string $url): self
     {
         $this->url = $url;
-
-        return $this;
-    }
-
-    public function getAddress(): ?string
-    {
-        return $this->address;
-    }
-
-    public function setAddress(?string $address): self
-    {
-        $this->address = $address;
 
         return $this;
     }

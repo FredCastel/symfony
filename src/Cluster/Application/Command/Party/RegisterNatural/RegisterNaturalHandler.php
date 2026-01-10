@@ -24,8 +24,9 @@ final class RegisterNaturalHandler extends AbstractRegisterNaturalHandler implem
             name: $command->name,
             state: PartyState::ENABLED,// mapping rule
             category: PartyCategory::NATURAL,// mapping rule
+            validSince: null,
+            validUntil: null,
             url: null,
-            address: $command->address,
             image: null,
         );
 

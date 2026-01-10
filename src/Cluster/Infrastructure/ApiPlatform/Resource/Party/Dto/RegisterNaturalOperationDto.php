@@ -8,5 +8,4 @@ final class RegisterNaturalOperationDto
 {
     #[NotNull()]
     public string $name;
-    public ?string $address = null;
 }

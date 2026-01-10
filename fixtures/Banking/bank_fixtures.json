@@ -11,6 +11,7 @@
 					"name": "Register Fortuneo Bank",
 					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
 					"method":"post",
+					"key":"FTNOFRP1",
 					"request": {
 						"name": "Fortuneo",
 						"country": "FR",
@@ -40,6 +41,7 @@
 					"name": "Register Crédit Mutuel de Bretagne Bank",
 					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
 					"method":"post",
+					"key":"CMBRFR2B",
 					"request": {
 						"name": "Crédit Mutuel de Bretagne",
 						"country": "FR",
@@ -60,9 +62,11 @@
 					"name": "Register Crédit Mutuel Bank",
 					"requestClass": "Banking\\Application\\Command\\Bank\\RegisterBank\\RegisterBankRequest",
 					"method":"post",
+					"key":"CMCIFR2A",
 					"request": {
 						"name": "Crédit Mutuel",
 						"country": "FR",
+						"bic": "CMCIFR2A",
 						"url": "https://www.creditmutuel.fr"
 					}
 				}

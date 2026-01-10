@@ -25,8 +25,9 @@ final class RegisterLegalHandler extends AbstractRegisterLegalHandler implements
             state: PartyState::ENABLED,//  mapping rule
             category: PartyCategory::LEGAL,//  mapping rule
             url: $command->url,
-            address: $command->address,
             image: null,
+            validSince: null,
+            validUntil: null,
         );
 
         return [$aggregate, $events];

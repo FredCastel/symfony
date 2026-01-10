@@ -9,6 +9,7 @@
 					"name": "Register Moi Party",
 					"requestClass": "Cluster\\Application\\Command\\Party\\RegisterNatural\\RegisterNaturalRequest",
 					"method":"post",
+					"key":"FREDCASTEL",
 					"request": {
 						"name": "Frédéric Castel"
 					}

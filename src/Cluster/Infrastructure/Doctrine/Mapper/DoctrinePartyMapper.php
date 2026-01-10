@@ -56,7 +56,6 @@ final class DoctrinePartyMapper extends EntityMapper
                                                 ->setValidityperiodsince(new \DateTimeImmutable($entity->getValidityPeriod()->since))
                                                 ->setValidityperioduntil(new \DateTimeImmutable($entity->getValidityPeriod()->until))
                                                 ->setUrl($entity->getUrl() ? ($entity->geturl()->value) : null)
-                                                ->setAddress($entity->getAddress() ? ($entity->getaddress()->value) : null)
                                                 ->setImage($entity->getImage() ? ($entity->getimage()->value) : null)
         ;
 

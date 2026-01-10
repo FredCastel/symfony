@@ -24,7 +24,6 @@ final class RegisterNaturalProcessor extends CommandProcessor
             id: $id,
             entity_id: $entity_id,
             name: $input->name,
-            address: $input->address,
         );
 
         $this->dispatch($command);

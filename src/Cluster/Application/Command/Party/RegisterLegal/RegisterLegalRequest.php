@@ -15,7 +15,6 @@ final class RegisterLegalRequest implements CommandRequest
         public string $id,
         public string $entity_id,
         public string $name,
-        public ?string $address = null,
         public ?string $url = null,
     ) {
     }

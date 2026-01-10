@@ -5,6 +5,7 @@ namespace DataFixtures\Banking;
 use Banking\Application\Command\Bank\RegisterBank\RegisterBankRequest;
 use Banking\Application\Command\Bank\RemoveBank\RemoveBankRequest;
 use Banking\Application\Command\Bank\SetBankUrl\SetBankUrlRequest;
+use Banking\Infrastructure\Doctrine\Repository\Bank\DoctrineBankEntityRepository;
 use Core\Service\Bus\Command\CommandBus;
 use Core\Service\IdGenerator;
 use DataFixtures\FixtureObject;
@@ -16,6 +17,7 @@ class BankFixtures extends Fixture
     public function __construct(
         private CommandBus $commandBus,
         private IdGenerator $idGen,
+        private DoctrineBankEntityRepository $repo,
     ) {}
 
     public function load(ObjectManager $manager): void
@@ -65,7 +67,14 @@ class BankFixtures extends Fixture
                     unset($request);
                         break;
                 }
+
                 $this->commandBus->dispatch($request);
+                
+                if ($command->method === 'post') {
+                    //save ref
+                    $entity = $this->repo->find($entityId);
+                    $this->addReference($command->key, $entity);
+                }
             }
             
         }

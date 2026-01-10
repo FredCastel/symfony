@@ -64,17 +64,17 @@ abstract class AbstractAccount extends EntityRoot
     /**
      * the balance of the account before adding any operation.
      */
-    protected ?Amount $initialBalance;
+    protected ?Amount $initialBalance = null;
 
     /**
      * the minimum balance allowed in the account.
      */
-    protected ?Amount $minimumBalance;
+    protected ?Amount $minimumBalance = null;
 
     /**
      * the maximum balance allowed in the account.
      */
-    protected ?Amount $maximumBalance;
+    protected ?Amount $maximumBalance = null;
 
     /**
      * the start and the end date of validity.

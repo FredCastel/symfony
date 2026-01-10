@@ -118,7 +118,6 @@ final class PartyResource
     public ?\DateTimeImmutable $validityperiodsince;
     public ?\DateTimeImmutable $validityperioduntil;
     public ?string $url;
-    public ?string $address;
     public ?string $image;
 
     public static function mapEntityToDto(?DoctrineParty $doctrineEntity): ?self
@@ -135,7 +134,6 @@ final class PartyResource
         $dto->validityperiodsince = $doctrineEntity->getvalidityperiodsince();
         $dto->validityperioduntil = $doctrineEntity->getvalidityperioduntil();
         $dto->url = $doctrineEntity->geturl();
-        $dto->address = $doctrineEntity->getaddress();
         $dto->image = $doctrineEntity->getimage();
 
         return $dto;

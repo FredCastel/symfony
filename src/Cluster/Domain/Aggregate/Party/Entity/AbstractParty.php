@@ -13,7 +13,6 @@ use Cluster\Domain\ValueObject\PartyState;
 use Core\Domain\Aggregate\Aggregate;
 use Core\Domain\Aggregate\Entity;
 use Core\Domain\Aggregate\EntityRoot;
-use Core\Domain\ValueObject\Address;
 use Core\Domain\ValueObject\Id;
 use Core\Domain\ValueObject\Image;
 use Core\Domain\ValueObject\Name;
@@ -56,17 +55,12 @@ abstract class AbstractParty extends EntityRoot
     /**
      * Party Url.
      */
-    protected ?Url $url;
-
-    /**
-     * Party Address.
-     */
-    protected ?Address $address=null;
+    protected ?Url $url = null;
 
     /**
      * Party.
      */
-    protected ?Image $image;
+    protected ?Image $image = null;
 
     /************* Entity Relations */
 
@@ -101,17 +95,14 @@ abstract class AbstractParty extends EntityRoot
             value: $event->category,
         );
 
+        $this->validityPeriod = new ValidityPeriod(
+            since: $event->validSince,
+            until: $event->validUntil,
+        );
+
         $this->url = $event->url ? new Url(
             value: $event->url,
         ) : null;
-
-        // $this->address = $event->address ? new Address(
-        //     value: $event->address,
-        // ) : null;
-        $this->validityPeriod = new ValidityPeriod(
-            since: null,
-            until: null,
-        );
 
         $this->image = $event->image ? new Image(
             value: $event->image,
@@ -204,21 +195,23 @@ abstract class AbstractParty extends EntityRoot
      *
      * @see Cluster\Domain\Event\Party\PartyRegisteredEvent
      *
-     * @param string      $entity_id entity id
-     * @param string      $name      Party Name
-     * @param string      $state     Party State
-     * @param string      $category  Party Category
-     * @param string|null $url       Party url
-     * @param string|null $address   Party Address
-     * @param string|null $image     Party Picture
+     * @param string      $entity_id  entity id
+     * @param string      $name       Party Name
+     * @param string      $state      Party State
+     * @param string      $category   Party Category
+     * @param string|null $validSince Valid Since
+     * @param string|null $validUntil Valid Until
+     * @param string|null $url        Party url
+     * @param string|null $image      Party Picture
      */
     public function register(
         string $entity_id,
         string $name,
         string $state,
         string $category,
+        ?string $validSince = null,
+        ?string $validUntil = null,
         ?string $url = null,
-        ?string $address = null,
         ?string $image = null,
     ): array {
         $event = new PartyRegisteredEvent(
@@ -227,8 +220,9 @@ abstract class AbstractParty extends EntityRoot
             name: $name,
             state: $state,
             category: $category,
+            validSince: $validSince,
+            validUntil: $validUntil,
             url: $url,
-            address: $address,
             image: $image,
         );
 
@@ -343,7 +337,6 @@ abstract class AbstractParty extends EntityRoot
      * @param PartyCategory  $category       party Category
      * @param ValidityPeriod $validityPeriod party Validity dates
      * @param Url|null       $url            party Url
-     * @param Address|null   $address        party Address
      * @param Image|null     $image          party
      */
     public function set(
@@ -352,7 +345,6 @@ abstract class AbstractParty extends EntityRoot
         PartyCategory $category,
         ValidityPeriod $validityPeriod,
         ?Url $url,
-        ?Address $address,
         ?Image $image,
     ): self {
         $this->name = $name;
@@ -360,7 +352,6 @@ abstract class AbstractParty extends EntityRoot
         $this->category = $category;
         $this->validityPeriod = $validityPeriod;
         $this->url = $url;
-        $this->address = $address;
         $this->image = $image;
 
         return $this;
@@ -472,15 +463,6 @@ abstract class AbstractParty extends EntityRoot
     public function getUrl(): ?Url
     {
         return $this->url;
-    }
-
-    /**
-     * Get the Party address property
-     * Party Address.
-     */
-    public function getAddress(): ?Address
-    {
-        return $this->address;
     }
 
     /**

@@ -31,7 +31,7 @@ abstract <?= str_replace('final', '', $class_data->getClassDeclaration()) ?>
     /**
     * <?= $property->description ?> 
     */ 
-    protected <?= $property->nullable ? '?' : '' ?><?= $property->valueObject->name ?> $<?= $property->name ?>;
+    protected <?= $property->nullable ? '?' : '' ?><?= $property->valueObject->name ?> $<?= $property->name ?><?= $property->nullable ? ' = null' : '' ?>;
     <?php endif; ?>
     <?php endforeach; ?>
 

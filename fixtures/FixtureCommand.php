@@ -7,6 +7,7 @@ use Core\Application\Command\CommandRequest;
 class FixtureCommand
 {
     public string $id;
+    public ?string $key=null;
     public string $name;
     public string $requestClass;
     public string $method;

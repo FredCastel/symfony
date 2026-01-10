@@ -1,0 +1,23 @@
+{
+	"fixtures": [
+		{
+			"id": "account_fixtures",
+			"name": "Livret A",
+			"commands": [
+				{
+					"id": "1",
+					"name": "Register CMB Livret A",
+					"requestClass": "Banking\\Application\\Command\\Account\\RegisterBankAccount\\RegisterBankAccountRequest",
+					"method":"post",
+					"key":"Livret A",
+					"request": {
+						"name": "Livret A",
+						"currency": "EUR",
+						"bankId": "CMBRFR2B",
+						"partyId": "FREDCASTEL"
+					}
+				}
+			]
+		}
+	]
+}

@@ -51,11 +51,11 @@ abstract class AbstractBank extends EntityRoot
 
     protected ValidityPeriod $validityPeriod;
 
-    protected ?Url $url;
+    protected ?Url $url = null;
 
-    protected ?Bic $bic;
+    protected ?Bic $bic = null;
 
-    protected ?Image $image;
+    protected ?Image $image = null;
 
     /************* Entity Relations */
 
