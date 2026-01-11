@@ -27,6 +27,8 @@ final class RegisterBankAccountProcessor extends CommandProcessor
             currency: $input->currency,
             partyId: $input->partyId,
             bankId: $input->bankId,
+            category: $input->category,
+            state: $input->state,
         );
 
         $this->dispatch($command);

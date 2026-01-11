@@ -27,6 +27,7 @@ final class RegisterProcessor extends CommandProcessor
             country: $input->country,
             url: $input->url,
             bic: $input->bic,
+            state: $input->state,
         );
 
         $this->dispatch($command);

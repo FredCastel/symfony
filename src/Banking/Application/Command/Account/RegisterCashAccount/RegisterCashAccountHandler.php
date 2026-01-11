@@ -22,11 +22,9 @@ final class RegisterCashAccountHandler extends AbstractRegisterCashAccountHandle
         [$aggregate, $events] = (new AccountAggregate(new Id($command->id)))->getRoot()->register(
             entity_id: $command->entity_id,
             name: $command->name,
-            state: AccountState::DRAFT,// mapping rule
-            category: AccountCategory::CASH,// TODO mapping rule
+            state: AccountState::DRAFT,
+            category: AccountCategory::CASH,
             currency: $command->currency,
-            validSince: null,
-            validUntil: null,
             bankId: null,
             partyId: $command->partyId,
         );

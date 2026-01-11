@@ -25,9 +25,6 @@ final class RegisterBankHandler extends AbstractRegisterBankHandler implements C
             country: $command->country,
             url: $command->url,
             bic: $command->bic,
-            image: null,
-            validSince: null,
-            validUntil: null,
         );
 
         return [$aggregate, $events];

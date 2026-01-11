@@ -95,18 +95,16 @@ abstract class AbstractParty extends EntityRoot
             value: $event->category,
         );
 
-        $this->validityPeriod = new ValidityPeriod(
-            since: $event->validSince,
-            until: $event->validUntil,
-        );
-
         $this->url = $event->url ? new Url(
             value: $event->url,
         ) : null;
 
-        $this->image = $event->image ? new Image(
-            value: $event->image,
-        ) : null;
+        // initialize some properties
+
+        $this->validityPeriod = new ValidityPeriod(
+            since: null,
+            until: null,
+        );
 
         return $this;
     }
@@ -195,24 +193,18 @@ abstract class AbstractParty extends EntityRoot
      *
      * @see Cluster\Domain\Event\Party\PartyRegisteredEvent
      *
-     * @param string      $entity_id  entity id
-     * @param string      $name       Party Name
-     * @param string      $state      Party State
-     * @param string      $category   Party Category
-     * @param string|null $validSince Valid Since
-     * @param string|null $validUntil Valid Until
-     * @param string|null $url        Party url
-     * @param string|null $image      Party Picture
+     * @param string      $entity_id entity id
+     * @param string      $name      Party Name
+     * @param string      $state     Party State
+     * @param string      $category  Party Category
+     * @param string|null $url       Party url
      */
     public function register(
         string $entity_id,
         string $name,
         string $state,
         string $category,
-        ?string $validSince = null,
-        ?string $validUntil = null,
         ?string $url = null,
-        ?string $image = null,
     ): array {
         $event = new PartyRegisteredEvent(
             id: $this->aggregate->getId(),// aggregate Id,
@@ -220,10 +212,7 @@ abstract class AbstractParty extends EntityRoot
             name: $name,
             state: $state,
             category: $category,
-            validSince: $validSince,
-            validUntil: $validUntil,
             url: $url,
-            image: $image,
         );
 
         return [
@@ -365,7 +354,7 @@ abstract class AbstractParty extends EntityRoot
     // Is states getters
 
     /**
-     * check if the entity is in the "draft" state.
+     * check if the entity is in the "Draft" state.
      */
     public function isDraft(): bool
     {
@@ -373,7 +362,7 @@ abstract class AbstractParty extends EntityRoot
     }
 
     /**
-     * check if the entity is in the "enabled" state.
+     * check if the entity is in the "Enabled" state.
      */
     public function isEnabled(): bool
     {
@@ -381,7 +370,7 @@ abstract class AbstractParty extends EntityRoot
     }
 
     /**
-     * check if the entity is in the "disabled" state.
+     * check if the entity is in the "Disabled" state.
      */
     public function isDisabled(): bool
     {

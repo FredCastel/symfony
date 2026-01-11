@@ -98,12 +98,10 @@ abstract class AbstractBank extends EntityRoot
             value: $event->bic,
         ) : null;
 
-        $this->image = $event->image ? new Image(
-            value: $event->image,
-        ) : null;
+        // initialize some properties
 
         $this->validityPeriod = new ValidityPeriod(
-            since: $event->validSince,
+            since: null,
             until: null,
         );
 
@@ -220,15 +218,12 @@ abstract class AbstractBank extends EntityRoot
      *
      * @see Banking\Domain\Event\Bank\BankRegisteredEvent
      *
-     * @param string      $entity_id  entity id
-     * @param string      $name       bank name
-     * @param string      $state      bank initial state
-     * @param string      $country    bank country
-     * @param string|null $url        url of the bank
-     * @param string|null $bic        bic code of the bank
-     * @param string|null $image      logo of the bank
-     * @param string|null $validSince bank validity start date, can be null
-     * @param string|null $validUntil bank validity end date, can be null
+     * @param string      $entity_id entity id
+     * @param string      $name      bank name
+     * @param string      $state     bank initial state
+     * @param string      $country   bank country
+     * @param string|null $url       url of the bank
+     * @param string|null $bic       bic code of the bank
      */
     public function register(
         string $entity_id,
@@ -237,9 +232,6 @@ abstract class AbstractBank extends EntityRoot
         string $country,
         ?string $url = null,
         ?string $bic = null,
-        ?string $image = null,
-        ?string $validSince = null,
-        ?string $validUntil = null,
     ): array {
         $event = new BankRegisteredEvent(
             id: $this->aggregate->getId(),// aggregate Id,
@@ -249,9 +241,6 @@ abstract class AbstractBank extends EntityRoot
             country: $country,
             url: $url,
             bic: $bic,
-            image: $image,
-            validSince: $validSince,
-            validUntil: $validUntil,
         );
 
         return [
@@ -421,7 +410,7 @@ abstract class AbstractBank extends EntityRoot
     // Is states getters
 
     /**
-     * check if the entity is in the "enabled" state.
+     * check if the entity is in the "Enabled" state.
      */
     public function isEnabled(): bool
     {
@@ -429,7 +418,7 @@ abstract class AbstractBank extends EntityRoot
     }
 
     /**
-     * check if the entity is in the "disabled" state.
+     * check if the entity is in the "Disabled" state.
      */
     public function isDisabled(): bool
     {

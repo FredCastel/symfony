@@ -7,13 +7,18 @@ class ValueObjectElement extends AbstractElement
     private readonly bool $core;
 
     public readonly ?string $extend;
-    public readonly ?array $values;
 
     /**
      * Summary of inputs
      * @var ValueObjectInputElement[]
      */
     public array $inputs = [];
+
+    /**
+     * Summary of values
+     * @var ValueObjectValueElement[]
+     */
+    public array $values = [];
 
     public function __construct(
         public readonly NamespaceElement $namespace,
@@ -30,26 +35,22 @@ class ValueObjectElement extends AbstractElement
             $this->core = true;
             $this->description = null;
             $this->extend = null;
-            $this->values = null;
         } else {
             $this->core = false;
             $this->extend = property_exists(object_or_class: $data, property: 'extend_ref') ? $data->extend_ref : null;
-
-            if (property_exists(object_or_class: $data, property: 'values')) {
-                $values=[];
-                foreach ($data->values as $value) {
-                    $values[] = $value->value;
-                }
-                $this->values =$values;
-            }else {
-                $this->values = null;
-            }
         }
 
         //add inputs
         if (property_exists(object_or_class: $data, property: 'inputs')) {
             foreach ($data->inputs as $input_data) {
                 new ValueObjectInputElement(valueObject: $this, data: $input_data);
+            }
+        }
+
+        //add values
+        if (property_exists(object_or_class: $data, property: 'values')) {
+            foreach ($data->values as $value_data) {
+                new ValueObjectValueElement(valueObject: $this, data: $value_data);
             }
         }
 
@@ -79,6 +80,17 @@ class ValueObjectElement extends AbstractElement
         return $this->inputs[$key];
     }
 
+    public function addValue(ValueObjectValueElement $value): self
+    {
+        $this->values[$value->key] = $value;
+        return $this;
+    }
+
+    public function getValue(string $key): ValueObjectValueElement
+    {
+        return $this->values[$key];
+    }
+
     public function isCore(): bool
     {
         return $this->core;
@@ -101,6 +113,6 @@ class ValueObjectElement extends AbstractElement
     }
     public function withValues(): bool
     {
-        return $this->values !== null;
+        return !empty($this->values);
     }
 }

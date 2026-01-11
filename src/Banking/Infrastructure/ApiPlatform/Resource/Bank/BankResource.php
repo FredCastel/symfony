@@ -10,9 +10,9 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
+use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\BankListQueryDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\DisableOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\EnableOperationDto;
-use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\ListQueryDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RegisterOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RemoveOperationDto;
 use Banking\Infrastructure\ApiPlatform\Resource\Bank\Dto\RenameBankOperationDto;
@@ -25,7 +25,7 @@ use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RemoveProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\RenameBankProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetBicProcessor;
 use Banking\Infrastructure\ApiPlatform\State\Processor\Bank\SetUrlProcessor;
-use Banking\Infrastructure\ApiPlatform\State\Provider\Bank\ListCollectionProvider;
+use Banking\Infrastructure\ApiPlatform\State\Provider\Bank\BankListCollectionProvider;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
 use Core\Infrastructure\ApiPlatform\State\Provider\ResourceCollectionProvider;
 use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
@@ -36,12 +36,12 @@ use Core\Infrastructure\ApiPlatform\State\Provider\ResourceItemProvider;
     operations: [
         // getter
         new GetCollection(
-            name: '_api_/banking-bank/list',
-            uriTemplate: '/banking-bank/list',
+            name: '_api_/banking-bank/bankList',
+            uriTemplate: '/banking-bank/bankList',
             normalizationContext: ['iri_only' => false],
             itemUriTemplate: '/banking-bank/{id}',
-            provider: ListCollectionProvider::class,
-            output: ListQueryDto::class,
+            provider: BankListCollectionProvider::class,
+            output: BankListQueryDto::class,
         ),
 
         // Resource Getters

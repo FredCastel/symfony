@@ -20,6 +20,7 @@ final class SetBankBicHandler extends AbstractSetBankBicHandler implements Comma
     ): array {
         [$aggregate, $events] = $aggregate->getRoot()->Change(
             entity_id: $command->entity_id,
+            url: null,
             bic: $command->bic,
         );
 

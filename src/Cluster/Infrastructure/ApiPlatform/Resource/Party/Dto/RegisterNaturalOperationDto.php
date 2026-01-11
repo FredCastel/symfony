@@ -8,4 +8,8 @@ final class RegisterNaturalOperationDto
 {
     #[NotNull()]
     public string $name;
+    #[NotNull()]
+    public string $state;
+    #[NotNull()]
+    public string $category;
 }

@@ -131,14 +131,21 @@ abstract class AbstractAccount extends EntityRoot
             code: $event->currency,
         );
 
-        $this->validityPeriod = new ValidityPeriod(
-            since: $event->validSince,
-            until: $event->validUntil,
-        );
-
         // mapping parameters linked to an entity relation (external entity key)
         $this->bankId = $event->bankId ? new Id($event->bankId) : null;
         $this->partyId = new Id($event->partyId);
+
+        // initialize some properties
+
+        $this->balance = new Amount(
+            value: 0,
+            currency: $this->getCurrency(),
+        );
+
+        $this->validityPeriod = new ValidityPeriod(
+            since: null,
+            until: null,
+        );
 
         return $this;
     }
@@ -324,15 +331,13 @@ abstract class AbstractAccount extends EntityRoot
      *
      * @see Banking\Domain\Event\Account\AccountRegisteredEvent
      *
-     * @param string      $entity_id  entity id
-     * @param string      $name       account name
-     * @param string      $state      account initial state
-     * @param string      $category   account category
-     * @param string      $currency   account currency
-     * @param string|null $validSince account validity start date, can be null
-     * @param string|null $validUntil account validity end date, can be null
-     * @param string|null $bankId     id of the related bank
-     * @param string      $partyId    relation to Party
+     * @param string      $entity_id entity id
+     * @param string      $name      account name
+     * @param string      $state     account initial state
+     * @param string      $category  account category
+     * @param string      $currency  account currency
+     * @param string|null $bankId    id of the related bank
+     * @param string      $partyId   relation to Party
      */
     public function register(
         string $entity_id,
@@ -340,8 +345,6 @@ abstract class AbstractAccount extends EntityRoot
         string $state,
         string $category,
         string $currency,
-        ?string $validSince = null,
-        ?string $validUntil = null,
         ?string $bankId = null,
         string $partyId,
     ): array {
@@ -352,8 +355,6 @@ abstract class AbstractAccount extends EntityRoot
             state: $state,
             category: $category,
             currency: $currency,
-            validSince: $validSince,
-            validUntil: $validUntil,
             bankId: $bankId,
             partyId: $partyId,
         );
@@ -622,7 +623,7 @@ abstract class AbstractAccount extends EntityRoot
     // Is states getters
 
     /**
-     * check if the entity is in the "draft" state.
+     * check if the entity is in the "Draft" state.
      */
     public function isDraft(): bool
     {
@@ -630,7 +631,7 @@ abstract class AbstractAccount extends EntityRoot
     }
 
     /**
-     * check if the entity is in the "opened" state.
+     * check if the entity is in the "Opened" state.
      */
     public function isOpened(): bool
     {
@@ -638,7 +639,7 @@ abstract class AbstractAccount extends EntityRoot
     }
 
     /**
-     * check if the entity is in the "closed" state.
+     * check if the entity is in the "Closed" state.
      */
     public function isClosed(): bool
     {

@@ -9,4 +9,8 @@ final class RegisterLegalOperationDto
     #[NotNull()]
     public string $name;
     public ?string $url = null;
+    #[NotNull()]
+    public string $state;
+    #[NotNull()]
+    public string $category;
 }

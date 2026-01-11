@@ -6,6 +6,7 @@ class ValueObjectInputElement extends AbstractElement
 {
 
     public readonly ?string $type;
+    protected readonly string $initialValue;
     private readonly ?string $target_value_object_ref;
     protected static bool $lowerCaseName = true;
 
@@ -18,6 +19,7 @@ class ValueObjectInputElement extends AbstractElement
         if(!$this->enabled) return;
 
         $this->type = property_exists(object_or_class: $data, property: 'type') ? $data->type : null;
+        $this->initialValue = property_exists(object_or_class: $data, property: 'initialValue') ? $data->initialValue : 'null';
         $this->target_value_object_ref = property_exists(object_or_class: $data, property: 'target_value_object_ref') ? $data->target_value_object_ref : null;
 
         $this->valueObject->addInput($this);
@@ -31,5 +33,13 @@ class ValueObjectInputElement extends AbstractElement
     public function getTargetValueObject(): ValueObjectElement
     {
         return self::get($this->target_value_object_ref);
+    }
+
+    public function getInitialValue(): string
+    {
+        if ($this->linkedToValueObject()) {
+            return 'null';
+        }
+        return $this->initialValue ?? 'null';
     }
 }

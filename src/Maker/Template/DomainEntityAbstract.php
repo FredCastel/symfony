@@ -116,6 +116,31 @@ abstract <?= str_replace('final', '', $class_data->getClassDeclaration()) ?>
         <?php endforeach; ?>
         <?php endif; ?>
 
+        <?php if ($action->isInsertAction()): ?>
+        //initialize some properties 
+        <?php foreach ($entity->properties as $property): ?>
+        <?php if($property->initialize): ?>            
+        <?php if(!$action->hasProperty($property)): ?>            
+        $this-><?= $property->name ?> = new <?= $makers->domainValueObjectMaker::getName($property->valueObject) ?>( 
+            <?php foreach ($property->inputs as $input): ?>
+            <?php if ($input->hasLinkedProperty()): ?>
+            <?php switch($input->getLinkedEntity()): case 'this': ?>
+            <?= $input->valueObjectInput->name ?>: $this->get<?=ucfirst($input->getLinkedProperty()->name) ?>(),
+            <?php break; ?>
+            <?php case 'parent': ?>
+            <?= $input->valueObjectInput->name ?>: $this->parent->get<?=ucfirst($input->getLinkedProperty()->name) ?>(),
+            <?php break; ?>
+            <?php endswitch; ?>
+            <?php else: ?>
+            <?= $input->valueObjectInput->name ?>: <?= $input->valueObjectInput->getInitialValue() ?>,
+            <?php endif; ?>
+            <?php endforeach; ?>
+            );
+        <?php endif; ?>
+        <?php endif; ?>
+        <?php endforeach; ?>
+        <?php endif; ?>
+
         return $this;
     }    
     <?php endforeach; ?>
@@ -265,12 +290,12 @@ abstract <?= str_replace('final', '', $class_data->getClassDeclaration()) ?>
 
     <?php foreach ($entity->getStateProperty()->valueObject->values as $state): ?>
     /**
-    * check if the entity is in the "<?= $state ?>" state
+    * check if the entity is in the "<?= $state->name ?>" state
     * @return bool
     */
-    public function is<?= ucfirst($state) ?>(): bool
+    public function is<?= ucfirst($state->name) ?>(): bool
     {
-        return $this-><?= lcfirst($entity->getStateProperty()->name) ?> == <?= $entity->getStateProperty()->valueObject->name ?>::<?= strtoupper($state) ?>();
+        return $this-><?= lcfirst($entity->getStateProperty()->name) ?> == <?= $entity->getStateProperty()->valueObject->name ?>::<?= $state->constantName ?>();
     }
     <?php endforeach; ?>
     <?php endif; ?>

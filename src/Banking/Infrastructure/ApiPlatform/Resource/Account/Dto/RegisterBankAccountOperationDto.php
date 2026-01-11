@@ -14,4 +14,8 @@ final class RegisterBankAccountOperationDto
     public string $partyId;
     #[NotNull()]
     public string $bankId;
+    #[NotNull()]
+    public string $category;
+    #[NotNull()]
+    public string $state;
 }

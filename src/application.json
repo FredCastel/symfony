@@ -57,7 +57,8 @@
               "key": "c2061b14-6520-4f5f-97c8-b302445a61da",
               "name": "Value",
               "enabled": true,
-              "target_value_object_ref": "88d18c2f-4036-4ed8-b3dc-a8460f56ef23"
+              "type": "float",
+              "initialValue": "0"
             },
             {
               "key": "f64dd8e0-27bd-4126-a384-6fd1b276214a",
@@ -158,7 +159,8 @@
               "key": "daec1307-e2e1-407c-80f5-442ac361f22f",
               "name": "Value",
               "enabled": true,
-              "type": "float"
+              "type": "float",
+              "initialValue": "0"
             }
           ]
         },
@@ -223,7 +225,8 @@
               "key": "f70d9455-719b-463c-aea3-4a9f96015ce9",
               "name": "Value",
               "enabled": true,
-              "target_value_object_ref": "88d18c2f-4036-4ed8-b3dc-a8460f56ef23"
+              "type": "float",
+              "initialValue": "0"
             },
             {
               "key": "559a8072-9a52-41ac-a14b-be2ce8a84dd5",
@@ -403,6 +406,7 @@
                     "key": "ad7d677f-d25f-481c-a914-1f562774c755",
                     "name": "ValidityPeriod",
                     "enabled": true,
+                    "initialize": true,
                     "value_object_ref": "8cc60da4-20a3-4b53-9b88-0c1751b0579e",
                     "inputs": [
                       {
@@ -521,36 +525,6 @@
                         "nullable": true,
                         "target_property_ref": "dda9664e-3cb8-45f1-bb0a-815823dc389d",
                         "target_property_input_ref": "762bf377-37ef-4270-9c2e-e94da8c64963"
-                      },
-                      {
-                        "key": "0c82d167-1659-4e66-9fba-18064e26fd3c",
-                        "name": "Image",
-                        "description": "logo of the bank",
-                        "enabled": true,
-                        "type": "string",
-                        "nullable": true,
-                        "target_property_ref": "f9e2b184-9fbe-4999-b7ae-46986d1767b7",
-                        "target_property_input_ref": "0362d82e-20a8-4f1a-9b47-c888d380c0e2"
-                      },
-                      {
-                        "key": "6955ed06-0b86-4283-a559-f81d22b480ba",
-                        "name": "ValidSince",
-                        "description": "bank validity start date, can be null",
-                        "enabled": true,
-                        "type": "string",
-                        "nullable": true,
-                        "target_property_ref": "ad7d677f-d25f-481c-a914-1f562774c755",
-                        "target_property_input_ref": "da810b06-1fc2-47fb-9b19-02bc21d0dbef"
-                      },
-                      {
-                        "key": "0b9c30e1-0b40-4dce-95ee-5db1af538d17",
-                        "name": "ValidUntil",
-                        "description": "bank validity end date, can be null",
-                        "enabled": true,
-                        "type": "string",
-                        "nullable": true,
-                        "target_property_ref": "ad7d677f-d25f-481c-a914-1f562774c755",
-                        "target_property_input_ref": "da810b06-1fc2-47fb-9b19-02bc21d0dbef"
                       }
                     ]
                   },
@@ -672,35 +646,12 @@
                       "target_parameter_ref": "9a29db72-cf62-41bf-bd53-e6c9a6d36c14"
                     },
                     {
-                      "key": "b1dddb43-0218-444e-9ee0-25d239da44e9",
-                      "name": "ValidSince",
-                      "description": "bank validity start date, can be null",
-                      "enabled": false,
-                      "nullable": true,
-                      "target_parameter_ref": "6955ed06-0b86-4283-a559-f81d22b480ba"
-                    },
-                    {
-                      "key": "5d8fbc46-f92f-4bf1-8e51-faa3be5fd49c",
-                      "name": "ValidUntil",
-                      "description": "bank validity end date, can be null",
-                      "enabled": false,
-                      "nullable": true,
-                      "target_parameter_ref": "0b9c30e1-0b40-4dce-95ee-5db1af538d17"
-                    },
-                    {
                       "key": "dbd2bd1f-8361-47cc-8385-152419feb39a",
                       "name": "State",
                       "description": "bank initial state",
-                      "enabled": false,
+                      "enabled": true,
+                      "constant_ref": "734a6456-cf25-4ba8-bcd1-999b2957208e",
                       "target_parameter_ref": "9bc4e13e-80a3-4ea1-aa3e-99dac3055c00"
-                    },
-                    {
-                      "key": "c8bd90c2-5444-4e53-8d3f-d94a3e4abe1a",
-                      "name": "Image",
-                      "description": "logo of the bank",
-                      "enabled": false,
-                      "nullable": true,
-                      "target_parameter_ref": "0c82d167-1659-4e66-9fba-18064e26fd3c"
                     }
                   ]
                 },
@@ -960,11 +911,11 @@
               "queries": [
                 {
                   "key": "50187860-44b3-4300-ba61-cac633c2f5e2",
-                  "name": "List",
+                  "name": "BankList",
                   "enabled": true,
                   "method": "GET",
                   "type": "collection",
-                  "api_path": "list",
+                  "api_path": "bank-list",
                   "outputs": [
                     {
                       "key": "a9f54966-74d5-45cf-9931-30dee4c21d1d",
@@ -1070,6 +1021,7 @@
                     "name": "Balance",
                     "description": "the actual amount of the account",
                     "enabled": true,
+                    "initialize": true,
                     "value_object_ref": "c735c9e9-4051-47be-a462-d3ece360828e",
                     "inputs": [
                       {
@@ -1161,6 +1113,7 @@
                     "name": "ValidityPeriod",
                     "description": "the start and the end date of validity",
                     "enabled": true,
+                    "initialize": true,
                     "value_object_ref": "8cc60da4-20a3-4b53-9b88-0c1751b0579e",
                     "inputs": [
                       {
@@ -1240,26 +1193,6 @@
                         "type": "string",
                         "target_property_ref": "0186eeb1-7def-4c24-8d42-15b926bb730e",
                         "target_property_input_ref": "3039d58c-3e3f-4228-864b-0983ce7a406b"
-                      },
-                      {
-                        "key": "a8f3cd2d-0f0a-4955-b591-4b11b7155e5e",
-                        "name": "ValidSince",
-                        "description": "account validity start date, can be null",
-                        "enabled": true,
-                        "type": "string",
-                        "nullable": true,
-                        "target_property_ref": "e5954cf5-270f-4db5-9446-d0ba0c7fa9ee",
-                        "target_property_input_ref": "0ef15af6-88c7-4771-b49d-f6c95207f843"
-                      },
-                      {
-                        "key": "db9b489a-e9e0-47ca-abfa-f45f677bb7a8",
-                        "name": "ValidUntil",
-                        "description": "account validity end date, can be null",
-                        "enabled": true,
-                        "type": "string",
-                        "nullable": true,
-                        "target_property_ref": "e5954cf5-270f-4db5-9446-d0ba0c7fa9ee",
-                        "target_property_input_ref": "b82ec58a-8536-41fb-aed9-658a86f55d05"
                       },
                       {
                         "key": "59d4b633-9a9c-4b03-8974-931b35ce7d6f",
@@ -1577,34 +1510,19 @@
                       "target_parameter_ref": "59d4b633-9a9c-4b03-8974-931b35ce7d6f"
                     },
                     {
-                      "key": "5c17c42d-f83c-402d-b61d-81295c4ad532",
-                      "name": "State",
-                      "description": "account initial state",
-                      "enabled": false,
-                      "target_parameter_ref": "24412024-fb79-4e33-9a68-9d891d5bdf37"
-                    },
-                    {
                       "key": "ae8453ba-452e-4faa-a692-59e801f71158",
                       "name": "Category",
                       "description": "account category",
-                      "enabled": false,
+                      "enabled": true,
                       "target_parameter_ref": "bbd83b1f-1fc5-45dc-a10a-fd7759c23235"
                     },
                     {
-                      "key": "c0e5c654-008f-4e3b-ab42-72594629e037",
-                      "name": "ValidSince",
-                      "description": "account validity start date, can be null",
-                      "enabled": false,
-                      "nullable": true,
-                      "target_parameter_ref": "a8f3cd2d-0f0a-4955-b591-4b11b7155e5e"
-                    },
-                    {
-                      "key": "92a68978-2fe4-4ed3-bd6a-7de8215235e8",
-                      "name": "ValidUntil",
-                      "description": "account validity end date, can be null",
-                      "enabled": false,
-                      "nullable": true,
-                      "target_parameter_ref": "db9b489a-e9e0-47ca-abfa-f45f677bb7a8"
+                      "key": "5c17c42d-f83c-402d-b61d-81295c4ad532",
+                      "name": "State",
+                      "description": "account initial state",
+                      "enabled": true,
+                      "constant_ref": "79bf0ba1-754b-469d-b8e2-466b8705fef6",
+                      "target_parameter_ref": "24412024-fb79-4e33-9a68-9d891d5bdf37"
                     }
                   ]
                 },
@@ -1638,42 +1556,28 @@
                       "target_parameter_ref": "b7c1f720-1147-459c-bcb2-2ad33324bb2b"
                     },
                     {
-                      "key": "870d4967-50a2-47da-8268-7260ab16fa6c",
-                      "name": "validSince",
-                      "description": "account validity start date, can be null",
-                      "enabled": false,
-                      "nullable": true,
-                      "target_parameter_ref": "a8f3cd2d-0f0a-4955-b591-4b11b7155e5e"
-                    },
-                    {
-                      "key": "9e56b6e9-d44e-4d63-8f28-5835696f128c",
-                      "name": "validUntil",
-                      "description": "account validity end date, can be null",
-                      "enabled": false,
-                      "nullable": true,
-                      "target_parameter_ref": "db9b489a-e9e0-47ca-abfa-f45f677bb7a8"
-                    },
-                    {
-                      "key": "e9a4eded-cffd-44ff-9388-c6496175a676",
-                      "name": "State",
-                      "description": "account initial state",
-                      "enabled": false,
-                      "target_parameter_ref": "24412024-fb79-4e33-9a68-9d891d5bdf37"
-                    },
-                    {
-                      "key": "6e3db01f-9b52-4056-a48c-f4696c4c0198",
-                      "name": "Category",
-                      "description": "account category",
-                      "enabled": false,
-                      "target_parameter_ref": "bbd83b1f-1fc5-45dc-a10a-fd7759c23235"
-                    },
-                    {
                       "key": "b23cc9b0-38c9-4428-84f2-dadbe3d70541",
                       "name": "BankId",
                       "description": "id of the related bank",
                       "enabled": false,
                       "nullable": true,
                       "target_parameter_ref": "59d4b633-9a9c-4b03-8974-931b35ce7d6f"
+                    },
+                    {
+                      "key": "6e3db01f-9b52-4056-a48c-f4696c4c0198",
+                      "name": "Category",
+                      "description": "account category",
+                      "enabled": true,
+                      "constant_ref": "040ff317-5dbb-4bda-9c4a-573f904ab40f",
+                      "target_parameter_ref": "bbd83b1f-1fc5-45dc-a10a-fd7759c23235"
+                    },
+                    {
+                      "key": "e9a4eded-cffd-44ff-9388-c6496175a676",
+                      "name": "State",
+                      "description": "account initial state",
+                      "enabled": true,
+                      "constant_ref": "79bf0ba1-754b-469d-b8e2-466b8705fef6",
+                      "target_parameter_ref": "24412024-fb79-4e33-9a68-9d891d5bdf37"
                     }
                   ]
                 },
@@ -1952,10 +1856,10 @@
                 },
                 {
                   "key": "d0e5bc39-e722-4127-a50d-e698b509c328",
-                  "name": "OpenAccoun",
+                  "name": "OpenAccount",
                   "enabled": true,
                   "method": "PATCH",
-                  "api_path": "open-accoun",
+                  "api_path": "open-account",
                   "target_command_ref": "0c2c2d65-7b7b-44aa-abf8-27d30f142148"
                 },
                 {
@@ -2002,11 +1906,11 @@
               "queries": [
                 {
                   "key": "b5e3a156-44de-49d8-a2bb-21c31322e049",
-                  "name": "List",
+                  "name": "AccountList",
                   "enabled": true,
                   "method": "GET",
                   "type": "collection",
-                  "api_path": "list",
+                  "api_path": "account-list",
                   "outputs": [
                     {
                       "key": "c5811706-1f54-4391-8f51-0f5a64ffe88b",
@@ -2435,6 +2339,7 @@
                     "description": "Party Validity dates",
                     "enabled": true,
                     "nullable": false,
+                    "initialize": true,
                     "value_object_ref": "8cc60da4-20a3-4b53-9b88-0c1751b0579e",
                     "inputs": [
                       {
@@ -2515,7 +2420,7 @@
                         "target_property_input_ref": "034533c9-224d-4fd6-9f99-1bc13c58e360"
                       },
                       {
-                        "key": "192406ce-15b3-421b-a737-1c10bdd6c4ae",
+                        "key": "2ffb2281-01c3-4809-ac25-3c2fedf148d7",
                         "name": "Category",
                         "description": "Party Category",
                         "enabled": true,
@@ -2523,26 +2428,6 @@
                         "nullable": false,
                         "target_property_ref": "3002a21f-abb1-41b7-ab44-888509e5d189",
                         "target_property_input_ref": "fff59918-48fe-4e92-b440-6b28979228bf"
-                      },
-                      {
-                        "key": "b51f5891-a657-4a6d-b710-e1177e3021cf",
-                        "name": "ValidSince",
-                        "description": "Valid Since",
-                        "enabled": true,
-                        "type": "string",
-                        "nullable": true,
-                        "target_property_ref": "f16fc16c-eceb-402f-88e6-08c0704aa3a3",
-                        "target_property_input_ref": "492bfea2-2110-4ef5-8c75-5749ade3fa41"
-                      },
-                      {
-                        "key": "eb3e65fc-1911-4029-9387-bc479f8c015c",
-                        "name": "ValidUntil",
-                        "description": "Valid Until",
-                        "enabled": true,
-                        "type": "string",
-                        "nullable": true,
-                        "target_property_ref": "f16fc16c-eceb-402f-88e6-08c0704aa3a3",
-                        "target_property_input_ref": "6df20961-4c7d-42f7-bde2-2231da73071d"
                       },
                       {
                         "key": "03f0690e-7ae6-4a95-9f96-dd3429e50c65",
@@ -2553,16 +2438,6 @@
                         "nullable": true,
                         "target_property_ref": "9dbc24e4-b3bf-44f6-8f2d-1d477145c828",
                         "target_property_input_ref": "e77ddce3-2203-4f2b-a48c-0cd70bf89c33"
-                      },
-                      {
-                        "key": "72d86972-525a-44f4-931f-578f228d1abf",
-                        "name": "Image",
-                        "description": "Party Picture",
-                        "enabled": true,
-                        "type": "string",
-                        "nullable": true,
-                        "target_property_ref": "476fe771-7e5a-44a4-9688-6ff3ab60fb3b",
-                        "target_property_input_ref": "8b8d50f6-e735-4863-81c3-f94a3cf635c3"
                       }
                     ]
                   },
@@ -2637,24 +2512,25 @@
                       "name": "Image",
                       "description": "Party Picture",
                       "enabled": false,
-                      "nullable": true,
-                      "target_parameter_ref": "72d86972-525a-44f4-931f-578f228d1abf"
+                      "nullable": true
                     },
                     {
                       "key": "552d830f-7fcc-4d2a-be15-271a0ab6a439",
                       "name": "State",
                       "description": "Party State",
-                      "enabled": false,
+                      "enabled": true,
                       "nullable": false,
+                      "constant_ref": "b22b74df-43a1-42d4-ad48-9789ab54ae15",
                       "target_parameter_ref": "77a32aca-5294-4cd7-96ce-9e00a0eb464a"
                     },
                     {
                       "key": "181cd978-affb-4057-8e93-a67b07b87175",
                       "name": "Category",
                       "description": "Party Category",
-                      "enabled": false,
+                      "enabled": true,
                       "nullable": false,
-                      "target_parameter_ref": "192406ce-15b3-421b-a737-1c10bdd6c4ae"
+                      "constant_ref": "47e46e27-9dcc-4c95-b92d-0f49a98d092b",
+                      "target_parameter_ref": "2ffb2281-01c3-4809-ac25-3c2fedf148d7"
                     },
                     {
                       "key": "28f32756-2b77-448e-9bad-ab8ff48c758c",
@@ -2669,16 +2545,14 @@
                       "name": "ValidSince",
                       "description": "Valid Since",
                       "enabled": false,
-                      "nullable": false,
-                      "target_parameter_ref": "b51f5891-a657-4a6d-b710-e1177e3021cf"
+                      "nullable": false
                     },
                     {
                       "key": "800e4f6e-2d19-4b34-af9c-2d23e29c8ee4",
                       "name": "ValidUntil",
                       "description": "Valid Until",
                       "enabled": false,
-                      "nullable": false,
-                      "target_parameter_ref": "eb3e65fc-1911-4029-9387-bc479f8c015c"
+                      "nullable": false
                     }
                   ]
                 },
@@ -2710,40 +2584,39 @@
                       "name": "Image",
                       "description": "Party Picture",
                       "enabled": false,
-                      "nullable": true,
-                      "target_parameter_ref": "72d86972-525a-44f4-931f-578f228d1abf"
+                      "nullable": true
                     },
                     {
                       "key": "0ec79e5c-bc1d-4f43-a1c5-3aa2e0c10bd0",
                       "name": "State",
                       "description": "Party State",
-                      "enabled": false,
+                      "enabled": true,
                       "nullable": false,
+                      "constant_ref": "b22b74df-43a1-42d4-ad48-9789ab54ae15",
                       "target_parameter_ref": "77a32aca-5294-4cd7-96ce-9e00a0eb464a"
                     },
                     {
                       "key": "cfe8b98b-f4c1-4f42-aefb-3f2e5cd24e0e",
                       "name": "Category",
                       "description": "Party Category",
-                      "enabled": false,
+                      "enabled": true,
                       "nullable": false,
-                      "target_parameter_ref": "192406ce-15b3-421b-a737-1c10bdd6c4ae"
+                      "constant_ref": "47e46e27-9dcc-4c95-b92d-0f49a98d092b",
+                      "target_parameter_ref": "2ffb2281-01c3-4809-ac25-3c2fedf148d7"
                     },
                     {
                       "key": "f0c45a9e-83c4-4f6c-8862-776f8d749b19",
                       "name": "ValidSince",
                       "description": "Valid Since",
                       "enabled": false,
-                      "nullable": false,
-                      "target_parameter_ref": "b51f5891-a657-4a6d-b710-e1177e3021cf"
+                      "nullable": false
                     },
                     {
                       "key": "cfbb0190-1f0e-4b46-b5db-70b3d41384e9",
                       "name": "ValidUntil",
                       "description": "Valid Until",
                       "enabled": false,
-                      "nullable": false,
-                      "target_parameter_ref": "eb3e65fc-1911-4029-9387-bc479f8c015c"
+                      "nullable": false
                     }
                   ]
                 },
@@ -2936,11 +2809,11 @@
               "queries": [
                 {
                   "key": "d5928b7a-1408-4e43-b98a-0035c243190e",
-                  "name": "List",
+                  "name": "PartyList",
                   "enabled": true,
                   "method": "GET",
                   "type": "collection",
-                  "api_path": "list",
+                  "api_path": "party-list",
                   "outputs": [
                     {
                       "key": "a5e6d7e3-923a-41c5-90ed-94e868b759d0",

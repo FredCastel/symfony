@@ -5,6 +5,7 @@ namespace Maker\Element;
 class EntityPropertyElement extends AbstractElement
 {
     public readonly bool $nullable;
+    public readonly bool $initialize;
     public readonly ValueObjectElement $valueObject;
     protected static bool $lowerCaseName = true;
     /**
@@ -22,6 +23,7 @@ class EntityPropertyElement extends AbstractElement
         if(!$this->enabled) return;
 
         $this->nullable = property_exists(object_or_class: $data, property: 'nullable') ? $data->nullable : false;
+        $this->initialize = property_exists(object_or_class: $data, property: 'initialize') ? $data->initialize : false;
 
         $this->valueObject = self::get($data->value_object_ref);
 

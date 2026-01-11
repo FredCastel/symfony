@@ -89,6 +89,8 @@ abstract class AbstractOperation extends EntityChild
             value: $event->operationDate,
         );
 
+        // initialize some properties
+
         return $this;
     }
 
@@ -145,7 +147,7 @@ abstract class AbstractOperation extends EntityChild
     // Is states getters
 
     /**
-     * check if the entity is in the "ticked" state.
+     * check if the entity is in the "Ticked" state.
      */
     public function isTicked(): bool
     {
@@ -153,7 +155,7 @@ abstract class AbstractOperation extends EntityChild
     }
 
     /**
-     * check if the entity is in the "none" state.
+     * check if the entity is in the "None" state.
      */
     public function isNone(): bool
     {

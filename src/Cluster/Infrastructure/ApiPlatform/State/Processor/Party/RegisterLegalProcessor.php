@@ -25,6 +25,8 @@ final class RegisterLegalProcessor extends CommandProcessor
             entity_id: $entity_id,
             name: $input->name,
             url: $input->url,
+            state: $input->state,
+            category: $input->category,
         );
 
         $this->dispatch($command);

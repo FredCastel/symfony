@@ -9,6 +9,7 @@ class CommandParameterElement extends AbstractElement
     protected static bool $lowerCaseName = true;
 
     public readonly ?string $target_parameter_ref;
+    public readonly ?string $constant_ref;
 
     public function __construct(
         public CommandElement $command,
@@ -20,6 +21,7 @@ class CommandParameterElement extends AbstractElement
         
         $this->nullable = property_exists(object_or_class: $data, property: 'nullable') ? $data->nullable : false;
         $this->target_parameter_ref = property_exists(object_or_class: $data, property: 'target_parameter_ref') ? $data->target_parameter_ref : null;
+        $this->constant_ref = property_exists(object_or_class: $data, property: 'constant_ref') ? $data->constant_ref : null;
 
         if (property_exists(object_or_class: $data, property: 'type')) {
             $this->type = $data->type;
@@ -39,6 +41,18 @@ class CommandParameterElement extends AbstractElement
     public function getTargetParameter(): ActionParameterElement
     {
         return self::get($this->target_parameter_ref);
+    }
+
+    public function isConstant(): bool
+    {
+        return $this->constant_ref !== null;
+    }
+
+    public function getTargetConstant(): ?ValueObjectValueElement
+    {
+        if($this->isConstant())
+            return self::get($this->constant_ref);
+        return null;
     }
 
     public function isId(): bool

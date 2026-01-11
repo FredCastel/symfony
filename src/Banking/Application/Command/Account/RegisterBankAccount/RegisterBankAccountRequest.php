@@ -18,6 +18,7 @@ final class RegisterBankAccountRequest implements CommandRequest
         public string $currency,
         public string $partyId,
         public string $bankId,
+        public string $category,
     ) {
     }
 }

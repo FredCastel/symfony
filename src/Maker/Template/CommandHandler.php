@@ -31,7 +31,11 @@ namespace <?= $ns ?>;
             <?php foreach ($action->parameters as $parameter): ?>
             <?php $p = $command->getParameterForActionparameter($parameter); ?>
             <?php if ($p): ?>
+            <?php if ($p->isConstant()): ?>
+            <?= $parameter->name ?>: <?= $p->getTargetConstant()->valueObject->name ?>::<?= $p->getTargetConstant()->constantName ?>,
+            <?php else: ?>
             <?= $parameter->name ?>: $command-><?= $p->name ?>,
+            <?php endif; ?>
             <?php else: ?>
             <?php if ($parameter->nullable): ?>
             <?= $parameter->name ?>: null,

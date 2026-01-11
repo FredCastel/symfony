@@ -23,16 +23,14 @@ final readonly class AccountRegisteredEvent extends AbstractEvent
      * linked to action Register
      * of entity Account.
      *
-     * @param string      $id         the aggregate id
-     * @param string      $entity_id  the entity id
-     * @param string      $name       account name
-     * @param string      $state      account initial state
-     * @param string      $category   account category
-     * @param string      $currency   account currency
-     * @param string|null $validSince account validity start date, can be null
-     * @param string|null $validUntil account validity end date, can be null
-     * @param string|null $bankId     id of the related bank
-     * @param string      $partyId    relation to Party
+     * @param string      $id        the aggregate id
+     * @param string      $entity_id the entity id
+     * @param string      $name      account name
+     * @param string      $state     account initial state
+     * @param string      $category  account category
+     * @param string      $currency  account currency
+     * @param string|null $bankId    id of the related bank
+     * @param string      $partyId   relation to Party
      */
     public function __construct(
         string $id,
@@ -41,8 +39,6 @@ final readonly class AccountRegisteredEvent extends AbstractEvent
         public string $state,
         public string $category,
         public string $currency,
-        public ?string $validSince,
-        public ?string $validUntil,
         public ?string $bankId,
         public string $partyId,
     ) {

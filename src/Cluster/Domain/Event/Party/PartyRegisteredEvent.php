@@ -23,15 +23,12 @@ final readonly class PartyRegisteredEvent extends AbstractEvent
      * linked to action Register
      * of entity Party.
      *
-     * @param string      $id         the aggregate id
-     * @param string      $entity_id  the entity id
-     * @param string      $name       Party Name
-     * @param string      $state      Party State
-     * @param string      $category   Party Category
-     * @param string|null $validSince Valid Since
-     * @param string|null $validUntil Valid Until
-     * @param string|null $url        Party url
-     * @param string|null $image      Party Picture
+     * @param string      $id        the aggregate id
+     * @param string      $entity_id the entity id
+     * @param string      $name      Party Name
+     * @param string      $state     Party State
+     * @param string      $category  Party Category
+     * @param string|null $url       Party url
      */
     public function __construct(
         string $id,
@@ -39,10 +36,7 @@ final readonly class PartyRegisteredEvent extends AbstractEvent
         public string $name,
         public string $state,
         public string $category,
-        public ?string $validSince,
-        public ?string $validUntil,
         public ?string $url,
-        public ?string $image,
     ) {
         parent::__construct($id, $entity_id);
     }

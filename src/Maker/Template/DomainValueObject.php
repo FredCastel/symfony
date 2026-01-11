@@ -10,11 +10,9 @@ namespace <?= $ns ?>;
 */ 
 <?= $class_data->getClassDeclaration() ?>
 {
-    <?php if($valueObject->withValues()): ?>
     <?php foreach ($valueObject->values as $value): ?>
-    public const <?= strtoupper($value) ?> = '<?= $value ?>';
+    public const <?= $value->constantName ?> = '<?= $value->value ?>';
     <?php endforeach ?>
-    <?php endif ?>
 
     public function __construct(
         string $value,
@@ -24,10 +22,10 @@ namespace <?= $ns ?>;
 
     <?php if($valueObject->withValues()): ?>
     <?php foreach ($valueObject->values as $value): ?>
-    public static function <?= strtoupper($value) ?>(): self
+    public static function <?= $value->constantName?>(): self
     {
         return new self(
-            value: self::<?= strtoupper($value) ?>,
+            value: self::<?= $value->constantName ?>,
         );
     }
     <?php endforeach ?>
@@ -40,7 +38,7 @@ namespace <?= $ns ?>;
     {
         return array(
             <?php foreach ($valueObject->values as $value): ?>
-            <?= $valueObject->name ?>::<?= strtoupper($value) ?>(),
+            <?= $valueObject->name ?>::<?= $value->constantName ?>(),
             <?php endforeach ?>
         );
     }

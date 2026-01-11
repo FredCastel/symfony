@@ -18,11 +18,9 @@ final class RenameBankHandler extends AbstractRenameBankHandler implements Comma
         BankAggregate $aggregate,
         RenameBankRequest $command,
     ): array {
-        [$aggregate, $events] = $aggregate->getRoot()->Change(
+        [$aggregate, $events] = $aggregate->getRoot()->Rename(
             entity_id: $command->entity_id,
             name: $command->name,
-            url: $command->url,
-            bic: $command->bic,
         );
 
         return [$aggregate, $events];

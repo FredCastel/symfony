@@ -12,4 +12,8 @@ final class RegisterCashAccountOperationDto
     public string $currency;
     #[NotNull()]
     public string $partyId;
+    #[NotNull()]
+    public string $category;
+    #[NotNull()]
+    public string $state;
 }

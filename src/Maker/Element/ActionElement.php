@@ -138,6 +138,16 @@ class ActionElement extends AbstractElement
         return false;
     }
 
+    public function hasProperty(EntityPropertyElement $property): bool
+    {
+        foreach ($this->parameters as $parameter) {
+            if ($parameter->linkedToProperty() && $parameter->getTargetProperty()->key === $property->key) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public function getCommand(): ?CommandElement
     {
         foreach ($this->aggregate->commands as $command) {

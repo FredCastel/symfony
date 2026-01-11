@@ -12,4 +12,6 @@ final class RegisterOperationDto
     public string $country;
     public ?string $url = null;
     public ?string $bic = null;
+    #[NotNull()]
+    public string $state;
 }

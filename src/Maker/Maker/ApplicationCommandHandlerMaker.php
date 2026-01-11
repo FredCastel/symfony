@@ -84,6 +84,11 @@ class ApplicationCommandHandlerMaker extends AbstractMaker
                         if ($action->isInsertAction()) {
                             $useStatements[] = IdGenerator::class;
                         }
+                        foreach ($command->parameters as $parameter) {
+                            if ($parameter->isConstant()) {
+                                $useStatements[] = DomainValueObjectMaker::getFullName($parameter->getTargetConstant()->valueObject);
+                            }
+                        }
 
                         $class_data = ClassData::create(
                             class: static::$generatedPath . self::getFullName($command),
@@ -98,8 +103,8 @@ class ApplicationCommandHandlerMaker extends AbstractMaker
                         );
 
                         //replace file; so delete existing
-                        //  $this->deleteClassFile($class_data->getFullClassName());
-                        if ($this->existsClassFile($class_data->getFullClassName())) continue;
+                         $this->deleteClassFile($class_data->getFullClassName());
+                        // if ($this->existsClassFile($class_data->getFullClassName())) continue;
 
                         $generator->generateClass(
                             className: $class_data->getFullClassName(),

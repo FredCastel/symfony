@@ -4,6 +4,7 @@ namespace DataFixtures\Banking;
 
 use Banking\Application\Command\Account\RegisterBankAccount\RegisterBankAccountRequest;
 use Banking\Application\Command\Account\RegisterCashAccount\RegisterCashAccountRequest;
+use Banking\Domain\ValueObject\AccountCategory;
 use Banking\Infrastructure\Doctrine\Entity\DoctrineBank;
 use Banking\Infrastructure\Doctrine\Repository\Account\DoctrineAccountEntityRepository;
 use Cluster\Infrastructure\Doctrine\Entity\DoctrineParty;
@@ -58,6 +59,7 @@ class AccountFixtures extends Fixture implements \Doctrine\Common\DataFixtures\D
                             currency: $command->request->currency,
                             partyId: $party->getId()->__toString(),
                             bankId: $bank->getId()->__toString(),
+                            category: AccountCategory::CB,
                         );
                         break;
 

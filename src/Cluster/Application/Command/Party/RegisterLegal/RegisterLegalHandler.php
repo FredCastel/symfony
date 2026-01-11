@@ -22,12 +22,9 @@ final class RegisterLegalHandler extends AbstractRegisterLegalHandler implements
         [$aggregate, $events] = (new PartyAggregate(new Id($command->id)))->getRoot()->register(
             entity_id: $command->entity_id,
             name: $command->name,
-            state: PartyState::ENABLED,//  mapping rule
-            category: PartyCategory::LEGAL,//  mapping rule
+            state: PartyState::ENABLED,
+            category: PartyCategory::NATURAL,
             url: $command->url,
-            image: null,
-            validSince: null,
-            validUntil: null,
         );
 
         return [$aggregate, $events];
